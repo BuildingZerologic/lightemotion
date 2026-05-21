@@ -1,0 +1,238 @@
+@use "../../styles/abstracts/mixins" as *;
+
+.selected-works {
+    padding-bottom: var(--space-2xl);
+
+    background: var(--color-white);
+
+    overflow: hidden;
+
+    @include respond(md) {
+        padding-bottom: var(--space-3xl);
+    }
+
+    @include respond(xl) {
+        padding-bottom: var(--space-6xl);
+    }
+}
+
+.selected-works__intro {
+    display: grid;
+
+    gap: var(--space-xl);
+
+    margin-bottom: var(--space-3xl);
+
+    @include respond(md) {
+        gap: var(--space-3xl);
+
+        margin-bottom: var(--space-4xl);
+    }
+
+    @include respond(lg) {
+        grid-template-columns: minmax(12rem, 0.9fr) minmax(0, 1.4fr);
+
+        align-items: start;
+
+        gap: var(--space-5xl);
+    }
+}
+
+.selected-works__heading {
+    margin: 0;
+
+    font-family: var(--font-body);
+
+    font-size: var(--fs-body-lg);
+
+    font-weight: var(--fw-regular);
+
+    line-height: var(--lh-heading);
+
+    letter-spacing: var(--ls-caption);
+
+    text-transform: uppercase;
+
+    color: var(--color-black);
+
+    @include respond(md) {
+        font-size: var(--fs-h5);
+    }
+}
+
+.selected-works__statement {
+    position: relative;
+
+    max-width: 52rem;
+}
+
+.selected-works__statement-base,
+.selected-works__statement-fill {
+    margin: 0;
+
+    font-family: var(--font-body);
+
+    font-size: var(--fs-h4);
+
+    font-weight: var(--fw-medium);
+
+    line-height: var(--lh-heading);
+
+    letter-spacing: var(--ls-normal);
+
+    text-wrap: balance;
+
+    @include respond(md) {
+        font-size: var(--fs-h4);
+    }
+}
+
+.selected-works__statement-base {
+    color: var(--color-border);
+}
+
+.selected-works__statement-fill {
+    position: absolute;
+
+    inset: 0;
+
+    color: var(--color-black);
+
+    pointer-events: none;
+}
+
+.selected-works__grid {
+    display: grid;
+
+    gap: var(--space-3xl);
+
+    @include respond(md) {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+
+        gap: var(--space-lg);
+    }
+}
+
+.selected-works__project {
+    min-width: 0;
+}
+
+.selected-works__image-wrap {
+    aspect-ratio: 4 / 5;
+
+    margin-bottom: var(--space-md);
+
+    overflow: hidden;
+
+    background: var(--color-surface);
+
+    border-radius: var(--radius-xs);
+}
+
+.selected-works__image {
+    display: block;
+
+    width: 100%;
+
+    height: 100%;
+
+    object-fit: cover;
+
+    transform: scale(1);
+
+    border-radius: var(--radius-xs);
+
+    transition:
+        filter var(--transition-slow),
+        transform var(--transition-slow);
+}
+
+.selected-works__category {
+    margin-bottom: var(--space-sm);
+
+    font-size: var(--fs-caption);
+
+    font-weight: var(--fw-medium);
+
+    line-height: var(--lh-heading);
+
+    letter-spacing: var(--ls-wide);
+
+    text-transform: uppercase;
+
+    color: var(--color-black);
+}
+
+.selected-works__title {
+    margin: 0;
+
+    font-size: var(--fs-h5);
+
+    font-weight: var(--fw-medium);
+
+    line-height: var(--lh-heading);
+
+    letter-spacing: var(--ls-normal);
+
+    color: var(--color-black);
+}
+
+.selected-works__action {
+    display: flex;
+
+    justify-content: center;
+
+    margin-top: var(--space-3xl);
+
+    @include respond(md) {
+        margin-top: var(--space-4xl);
+    }
+}
+
+.selected-works__button {
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    min-height: var(--btn-height-lg);
+
+    padding-inline: var(--space-2xl);
+
+    border: 1px solid var(--color-black);
+
+    font-size: var(--fs-body-sm);
+
+    font-weight: var(--fw-medium);
+
+    line-height: var(--lh-heading);
+
+    letter-spacing: var(--ls-caption);
+
+    text-transform: uppercase;
+
+    color: var(--color-black);
+
+    background: transparent;
+
+    cursor: pointer;
+
+    transition:
+        background-color var(--transition-medium),
+        color var(--transition-medium);
+}
+
+@media (hover: hover) and (pointer: fine) {
+    .selected-works__project:hover .selected-works__image {
+        filter: brightness(0.96);
+
+        transform: scale(1.025);
+    }
+
+    .selected-works__button:hover {
+        background: var(--color-black);
+
+        color: var(--color-white);
+    }
+}

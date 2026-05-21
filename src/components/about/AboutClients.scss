@@ -1,0 +1,92 @@
+@use '../../styles/abstracts/mixins' as *;
+
+.about-clients {
+    padding-bottom: var(--space-4xl);
+
+    background: var(--color-white);
+
+    @include respond(md) {
+        padding-bottom: var(--space-6xl);
+    }
+}
+
+.about-clients__header {
+    display: flex;
+    flex-direction: column;
+
+    gap: var(--space-xl);
+
+    margin-bottom: var(--space-4xl);
+}
+
+.about-clients__label {
+    font-size: var(--font-size-xs);
+
+    font-weight: 500;
+
+    letter-spacing: 0.18em;
+
+    text-transform: uppercase;
+
+    color: var(--color-black);
+}
+
+.about-clients__heading {
+    max-width: 18ch;
+
+    text-wrap: balance;
+
+     
+    @include respond(md) {
+        max-width: none;
+    }
+}
+
+
+.about-clients__grid {
+    display: grid;
+
+    gap: var(--space-2xl);
+
+    @include respond(sm) {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    @include respond(lg) {
+        grid-template-columns: repeat(4, 1fr);
+
+        gap: var(--space-xl);
+    }
+}
+
+.about-clients__column {
+    display: flex;
+    flex-direction: column;
+
+    gap: var(--space-lg);
+
+    list-style: none;
+
+    padding: 0;
+    margin: 0;
+}
+
+.about-clients__item {
+    font-size: var(--font-size-base);
+
+    line-height: 1.5;
+
+    color: var(--color-text);
+
+    opacity: 0.92;
+
+    transition:
+        opacity 0.3s ease,
+        transform 0.3s ease;
+
+    &:hover {
+        opacity: 1;
+
+        transform: translateX(4px);
+    }
+}

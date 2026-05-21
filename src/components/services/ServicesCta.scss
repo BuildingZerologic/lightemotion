@@ -1,0 +1,132 @@
+@use "../../styles/abstracts/mixins" as *;
+
+.services-cta {
+    position: relative;
+
+    display: flex;
+
+    min-height: 40svh;
+
+    align-items: center;
+
+    justify-content: center;
+
+    overflow: hidden;
+
+    background: var(--color-black);
+
+    @include respond(lg) {
+        min-height: 60svh;
+    }
+
+    > img {
+        position: absolute;
+
+        inset: 0;
+
+        width: 100%;
+
+        height: 100%;
+
+        object-fit: cover;
+    }
+}
+
+.services-cta__overlay {
+    position: absolute;
+
+    inset: 0;
+
+    background: rgba(0, 0, 0, 0.24);
+
+    backdrop-filter: blur(2px);
+}
+
+.services-cta__content {
+    position: relative;
+
+    z-index: 1;
+
+    display: flex;
+
+    max-width: 42rem;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    gap: var(--space-xl);
+
+    padding-inline: var(--space-xl);
+
+    text-align: center;
+}
+
+.services-cta__title {
+    margin: 0;
+
+    font-size: var(--fs-h3);
+
+    font-weight: var(--fw-medium);
+
+    line-height: var(--lh-heading);
+
+    letter-spacing: var(--ls-normal);
+
+    color: var(--color-white);
+
+    text-wrap: balance;
+}
+
+.services-cta__button {
+    display: inline-flex;
+
+    min-height: var(--btn-height-md);
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding-inline: var(--space-2xl);
+
+    border: 1px solid rgba(255, 255, 255, 0.72);
+
+    border-radius: var(--radius-zero);
+
+    background: transparent;
+
+    font-size: var(--fs-caption);
+
+    font-weight: var(--fw-medium);
+
+    line-height: var(--lh-heading);
+
+    letter-spacing: var(--ls-wide);
+
+    text-transform: uppercase;
+
+    color: var(--color-white);
+
+    cursor: pointer;
+
+    transition:
+        background var(--transition-medium),
+        border-color var(--transition-medium),
+        color var(--transition-medium);
+}
+
+@media (hover: hover) and (pointer: fine) {
+    .services-cta__button:hover {
+        border-color: var(--color-white);
+
+        background: var(--color-white);
+
+        color: var(--color-black);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .services-cta__button {
+        transition: none;
+    }
+}

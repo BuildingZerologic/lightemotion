@@ -1,0 +1,45 @@
+@use "../../styles/abstracts/mixins" as *;
+
+.services-hero {
+    position: relative;
+
+    height: 55svh;
+
+    min-height: 28rem;
+
+    overflow: hidden;
+
+    background: var(--color-black);
+
+    @include respond(md) {
+        height: 65svh;
+    }
+
+    @include respond(lg) {
+        height: 100svh;
+    }
+
+    img {
+        position: absolute;
+
+        inset: 0;
+
+        width: 100%;
+
+        height: 100%;
+
+        object-fit: cover;
+
+        object-position: center;
+    }
+}
+
+.services-hero__overlay {
+    position: absolute;
+
+    inset: 0;
+
+    background: rgba(0, 0, 0, 0.18);
+
+    pointer-events: none;
+}

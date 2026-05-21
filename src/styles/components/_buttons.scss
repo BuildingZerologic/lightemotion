@@ -1,0 +1,96 @@
+@use "../abstracts/mixins" as *;
+
+.btn-primary,
+.btn-secondary,
+.btn-light {
+    height: var(--btn-height-md);
+
+    padding-inline: 1.5rem;
+
+    border-radius: var(--radius-zero);
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 0.5rem;
+
+    font-family: var(--font-body);
+
+    font-size: var(--fs-body);
+
+    font-weight: var(--fw-medium);
+
+    line-height: var(--lh-heading);
+
+    letter-spacing: var(--ls-caption);
+
+    text-transform: uppercase;
+
+    cursor: pointer;
+
+    transition:
+        background var(--transition-medium),
+        color var(--transition-medium),
+        border-color var(--transition-medium),
+        transform var(--transition-medium);
+
+    white-space: nowrap;
+}
+
+
+/* =====================================================
+   PRIMARY BUTTON
+===================================================== */
+
+.btn-primary {
+    border: 1px solid black;
+
+    background: var(--color-text-primary);
+
+    color: var(--color-white);
+
+    &:hover {
+        background: var(--color-white);
+        color: var(--color-black);
+        transform: translateY(-2px);
+    }
+}
+
+
+/* =====================================================
+   SECONDARY BUTTON
+===================================================== */
+
+.btn-secondary {
+     
+    border: 1px solid var(--color-black);
+
+    color: var(--color-black);
+
+    background: transparent;
+
+    transition:
+        background-color var(--transition-medium),
+        color var(--transition-medium);
+
+    &:hover {
+        background: var(--color-black);
+
+        color: var(--color-white);
+    }
+}
+
+
+@include respond(md) {
+
+    .btn-primary,
+    .btn-secondary,
+    .btn-light {
+        height: var(--btn-height-sm);
+
+        padding-inline: 1.2rem;
+
+        font-size: var(--fs-body-sm);
+    }
+}

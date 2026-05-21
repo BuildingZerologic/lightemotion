@@ -1,0 +1,104 @@
+// about-closing-cta.scss
+
+@use '../../styles/abstracts/mixins' as *;
+
+.about-closing-cta {
+    padding-bottom: var(--space-4xl);
+
+    background: var(--color-white);
+
+    @include respond(md) {
+        padding-bottom: var(--space-6xl);
+    }
+}
+
+.about-closing-cta__inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-2xl);
+}
+
+.about-closing-cta__content {
+    display: flex;
+    flex-direction: column;
+
+    gap: var(--space-xl);
+}
+
+.about-closing-cta__heading {
+
+
+    text-wrap: balance;
+}
+
+.about-closing-cta__text {
+    max-width: 42rem;
+
+    color: var(--color-black);
+
+    
+
+    text-wrap: balance;
+}
+
+.about-closing-cta__actions {
+    display: flex;
+    flex-wrap: wrap;
+
+    gap: var(--space-2xl);
+
+    padding-top: var(--space-lg);
+}
+
+.about-closing-cta__link {
+    position: relative;
+
+    display: inline-flex;
+    align-items: center;
+
+    gap: 0.5rem;
+
+    padding-bottom: 0.5rem;
+
+    font-size: var(--font-size-sm);
+
+    letter-spacing: 0.08em;
+
+    text-transform: uppercase;
+
+    color: var(--color-black);
+
+    text-decoration: none;
+
+    transition:
+        opacity 0.3s ease,
+        transform 0.3s ease;
+
+    &::after {
+        content: '';
+
+        position: absolute;
+        left: 0;
+        bottom: 0;
+
+        width: 100%;
+        height: 1px;
+
+        background: currentColor;
+
+        transform-origin: left center;
+
+        transition: transform 0.4s ease;
+    }
+
+    &:hover {
+        opacity: 0.7;
+
+        transform: translateY(-2px);
+
+        &::after {
+            transform: scaleX(0.75);
+        }
+    }
+}

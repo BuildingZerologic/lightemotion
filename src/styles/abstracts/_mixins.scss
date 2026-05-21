@@ -1,0 +1,114 @@
+@use "./breakpoints" as bp;
+
+
+/* =====================================================
+   RESPONSIVE BREAKPOINTS
+===================================================== */
+
+@mixin respond($breakpoint) {
+
+    @if $breakpoint == xs {
+        @media (min-width: bp.$breakpoint-xs) {
+            @content;
+        }
+    }
+
+    @else if $breakpoint == sm {
+        @media (min-width: bp.$breakpoint-sm) {
+            @content;
+        }
+    }
+
+    @else if $breakpoint == md {
+        @media (min-width: bp.$breakpoint-md) {
+            @content;
+        }
+    }
+
+    @else if $breakpoint == lg {
+        @media (min-width: bp.$breakpoint-lg) {
+            @content;
+        }
+    }
+
+    @else if $breakpoint == xl {
+        @media (min-width: bp.$breakpoint-xl) {
+            @content;
+        }
+    }
+
+    @else if $breakpoint == 2xl {
+        @media (min-width: bp.$breakpoint-2xl) {
+            @content;
+        }
+    }
+}
+
+
+/* =====================================================
+   FLEX CENTER
+===================================================== */
+
+@mixin flex-center {
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+}
+
+
+/* =====================================================
+   FLEX BETWEEN
+===================================================== */
+
+@mixin flex-between {
+    display: flex;
+
+    align-items: center;
+    justify-content: space-between;
+}
+
+
+/* =====================================================
+   ABSOLUTE CENTER
+===================================================== */
+
+@mixin absolute-center {
+    position: absolute;
+
+    top: 50%;
+    left: 50%;
+
+    transform: translate(-50%, -50%);
+}
+
+
+/* =====================================================
+   GLASS EFFECT
+===================================================== */
+
+@mixin glass-effect {
+    background: rgba(255, 255, 255, 0.08);
+
+    backdrop-filter: blur(16px);
+
+    -webkit-backdrop-filter: blur(16px);
+}
+
+
+/* =====================================================
+   HOVER LIFT
+===================================================== */
+
+@mixin hover-lift {
+
+    transition:
+        transform var(--transition-medium),
+        box-shadow var(--transition-medium);
+
+    &:hover {
+        transform: translateY(-4px);
+
+        box-shadow: var(--shadow-medium);
+    }
+}

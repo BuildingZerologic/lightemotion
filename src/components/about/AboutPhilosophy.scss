@@ -1,0 +1,182 @@
+@use '../../styles/abstracts/mixins' as *;
+
+/* ──────────────────────────────────────────────
+   SCROLL SCENE ARCHITECTURE
+────────────────────────────────────────────── */
+
+.about-scroll-scene {
+    position: relative;
+    background: var(--color-black); /* Dark base just in case of over-scroll */
+}
+
+/* ──────────────────────────────────────────────
+   LAYER 1: VIDEO (Sticky)
+────────────────────────────────────────────── */
+
+.about-video-layer {
+    position: sticky;
+    top: 0;
+    z-index: 1; /* Lowest layer */
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.about-philosophy__video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.about-philosophy__video--mobile {
+    display: block;
+    @include respond(md) {
+        display: none;
+    }
+}
+
+.about-philosophy__video--desktop {
+    display: none;
+    @include respond(md) {
+        display: block;
+    }
+}
+
+/* ──────────────────────────────────────────────
+   LAYER 2: SECTION 01 (Curtain Cover)
+────────────────────────────────────────────── */
+
+.about-philosophy {
+    position: relative;
+    z-index: 2; /* Sits ABOVE the video */
+    min-height: 100vh;
+    margin-top: -100vh; /* CRITICAL: Pulls the section up to cover the video completely on load */
+    
+    background: var(--color-white);
+    color: var(--color-black);
+    
+    display: flex;
+    align-items: center; /* Vertically centers the text */
+}
+
+.about-philosophy__statement {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding-block: var(--space-4xl);
+    
+    @include respond(md) {
+        padding-block: var(--space-6xl);
+    }
+}
+
+.about-philosophy__heading {
+    margin-bottom: var(--space-2xl);
+    text-wrap: balance;
+ }
+
+.about-philosophy__text {
+    max-width: 44rem;
+    color: var(--color-black);
+     
+}
+
+/* ──────────────────────────────────────────────
+   THE WINDOW: Video Reveal Gap
+────────────────────────────────────────────── */
+
+.about-video-gap {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    height: 150vh; /* This creates the exact 100vh window where the video is fully visible */
+    pointer-events: none;
+}
+
+/* ──────────────────────────────────────────────
+   LAYER 3: SECTION 02 (Overlap Slide Up)
+────────────────────────────────────────────── */
+
+.about-capabilities {
+    position: relative;
+    z-index: 3; /* Highest layer to cover the video from the bottom */
+    
+    margin-top: -15vh; /* Creates the overlap effect over the video */
+    
+    background: var(--color-white);
+    padding-top: var(--space-6xl);
+    padding-bottom: var(--space-6xl);
+
+    @include respond(md) {
+        padding-top: var(--space-6xl);
+        padding-bottom: var(--space-6xl);
+    }
+}
+
+.about-capabilities__header {
+    margin-bottom: var(--space-2xl);
+    @include respond(md) {
+        margin-bottom: var(--space-3xl);
+    }
+}
+
+.about-capabilities__heading {
+     
+    text-wrap: balance;
+}
+
+/* ──────────────────────────────────────────────
+   GRID & COLUMNS
+────────────────────────────────────────────── */
+
+.about-capabilities__grid {
+    display: grid;
+     gap: 0;
+
+    @include respond(lg) {
+        grid-template-columns: repeat(3, 1fr);
+        gap: var(--space-5xl);
+    }
+}
+
+.about-capabilities__item {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-xl);
+    
+    padding-top: var(--space-2xl);
+    padding-bottom: var(--space-2xl);
+
+    @include respond(lg) {
+        min-height: 100%;
+    }
+}
+
+.about-capabilities__number {
+    color: var(--color-text-muted);
+    font-size: var(--font-size-lg);
+    font-weight: 300;
+}
+
+.about-capabilities__content {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-md);
+}
+
+.about-capabilities__label {
+    font-size: 0.75rem;
+    letter-spacing: 0.16em;
+    font-weight: 600;
+    color: var(--color-text-muted);
+}
+
+.about-capabilities__title {
+    text-wrap: balance;
+    margin-bottom: 0.5rem;
+}
+
+.about-capabilities__text {
+    color: var(--color-black);
+     
+}

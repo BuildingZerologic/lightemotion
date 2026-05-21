@@ -1,0 +1,104 @@
+@use "../abstracts/mixins" as *;
+
+body {
+    background: var(--color-bg);
+
+    color: var(--color-text-primary);
+
+    font-family: var(--font-body);
+
+    line-height: var(--lh-body);
+
+    overflow-x: hidden;
+}
+
+
+/* =====================================================
+   CONTAINER
+===================================================== */
+
+.container {
+    width: 100%;
+
+    margin-inline: auto;
+
+    padding-inline: 2rem;
+
+    @include respond(sm) {
+        padding-inline: 2rem;
+    }
+
+    @include respond(md) {
+        padding-inline: 3rem;
+    }
+
+    @include respond(lg) {
+        padding-inline: 4rem;
+    }
+
+    @include respond(xl) {
+        padding-inline: 4rem;
+    }
+
+    @include respond(2xl) {
+        max-width: 1600px;
+
+        padding-inline: 5rem;
+    }
+}
+
+
+
+
+/* =====================================================
+   SECTION SPACING
+===================================================== */
+
+section {
+    position: relative;
+}
+
+
+/* =====================================================
+   MEDIA
+===================================================== */
+
+video,
+img {
+    width: 100%;
+    height: auto;
+}
+
+
+/* =====================================================
+   SELECTION
+===================================================== */
+
+::selection {
+    background: var(--color-accent);
+
+    color: var(--color-white);
+}
+
+
+/* =====================================================
+   SCROLLBAR
+===================================================== */
+
+::-webkit-scrollbar {
+    width: 0.6rem;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--color-surface);
+}
+
+::-webkit-scrollbar-thumb {
+    background: rgba(0, 0, 0, 0.22);
+
+    border-radius: var(--radius-full);
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: rgba(0, 0, 0, 0.38);
+}

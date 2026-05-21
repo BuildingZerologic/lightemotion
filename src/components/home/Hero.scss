@@ -1,0 +1,203 @@
+@use "../../styles/abstracts/mixins" as *;
+
+.hero {
+    position: relative;
+
+    min-height: 100svh;
+
+    overflow: hidden;
+
+    background: #0d0d0d;
+
+    border-radius: var(--radius-zero);
+
+    display: flex;
+    align-items: flex-end;
+
+    @include respond(md) {
+        min-height: 100svh;
+
+        align-items: flex-end;
+    }
+}
+
+
+/* =====================================================
+   VIDEO
+===================================================== */
+
+.hero__video-wrapper {
+    position: absolute;
+    inset: 0;
+
+    overflow: hidden;
+}
+
+.hero__video {
+    position: absolute;
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    filter:
+        brightness(0.48) saturate(0.92) contrast(1.05);
+
+    transform: scale(1.02);
+}
+
+
+/* =====================================================
+   MOBILE FIRST VIDEO SYSTEM
+===================================================== */
+
+.hero__video--desktop {
+    display: none;
+}
+
+.hero__video--mobile {
+    display: block;
+}
+
+@include respond(md) {
+
+    .hero__video--desktop {
+        display: block;
+    }
+
+    .hero__video--mobile {
+        display: none;
+    }
+}
+
+
+/* =====================================================
+   OVERLAY
+===================================================== */
+
+.hero__overlay {
+    position: absolute;
+    inset: 0;
+
+    z-index: 1;
+
+    // background:
+    //     linear-gradient(180deg,
+    //         rgba(0, 0, 0, 0.08) 0%,
+    //         rgba(0, 0, 0, 0.34) 30%,
+    //         rgba(0, 0, 0, 0.84) 100%);
+
+    // @include respond(md) {
+    //     background:
+    //         linear-gradient(90deg,
+    //             rgba(0, 0, 0, 0.72) 0%,
+    //             rgba(0, 0, 0, 0.42) 34%,
+    //             rgba(0, 0, 0, 0.12) 68%,
+    //             rgba(0, 0, 0, 0.04) 100%);
+    // }
+}
+
+
+/* =====================================================
+   CONTAINER
+===================================================== */
+
+.hero .container {
+    position: relative;
+
+    z-index: 3;
+
+    width: 100%;
+}
+
+
+/* =====================================================
+   CONTENT
+===================================================== */
+
+.hero__content {
+    width: 100%;
+
+    max-width: 100%;
+
+    padding-bottom: 6rem;
+
+    @include respond(md) {
+        max-width: 30rem;
+
+        padding-bottom: 5rem;
+    }
+
+    @include respond(lg) {
+        max-width: 36rem;
+    }
+}
+
+
+/* =====================================================
+   TITLE
+===================================================== */
+
+.hero__title {
+    margin-bottom: var(--space-lg);
+
+    font-size: var(--fs-h4);
+
+    line-height: var(--lh-heading);
+
+    letter-spacing: var(--ls-normal);
+
+    color: var(--color-white);
+
+    @include respond(md) {
+        font-size: var(--fs-h3);
+    }
+
+    @include respond(xl) {
+        font-size: 44px;
+    }
+}
+
+
+/* =====================================================
+   DESCRIPTION
+===================================================== */
+
+.hero__description {
+    max-width: 100%;
+
+    margin-bottom: var(--space-xl);
+
+    font-size: var(--fs-body);
+
+    line-height: 1.8;
+
+    color: rgba(255, 255, 255, 0.78);
+
+    @include respond(md) {
+        max-width: 30rem;
+
+        font-size: var(--fs-body-lg);
+
+        margin-bottom: var(--space-2xl);
+    }
+}
+
+
+/* =====================================================
+   ACTIONS
+===================================================== */
+
+.hero__actions {
+    display: flex;
+    align-items: center;
+
+    gap: var(--space-md);
+}
+
+.heading-highlight {
+    color: #26a9e0;
+    font-family: var(--font-heading);
+}

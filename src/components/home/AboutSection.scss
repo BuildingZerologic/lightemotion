@@ -1,0 +1,58 @@
+@use "../../styles/abstracts/mixins" as *;
+
+.about-section {
+    padding-block: var(--space-2xl);
+
+    background: var(--color-white);
+
+    overflow: hidden;
+
+    @include respond(md) {
+        padding-block: var(--space-3xl);
+    }
+
+    @include respond(lg) {
+        padding-block: var(--space-4xl);
+    }
+
+    @include respond(xl) {
+        padding-block: var(--space-6xl);
+    }
+}
+
+.about-section__content {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: var(--space-lg);
+}
+
+.about-section__eyebrow {
+    display: inline-block;
+
+    font-size: var(--fs-caption);
+
+    font-weight: var(--fw-medium);
+
+    letter-spacing: var(--ls-wide);
+
+    text-transform: uppercase;
+
+    color: var(--color-accent);
+
+    opacity: 0.9;
+}
+
+.about-section__description {
+    max-width: 70%;
+
+    font-size: var(--fs-h5);
+
+    line-height: var(--lh-body);
+
+    letter-spacing: var(--ls-wide);
+
+    color: var(--color-black);
+
+ }
