@@ -22,28 +22,13 @@ body {
 
     margin-inline: auto;
 
-    padding-inline: 2rem;
+    padding-inline: clamp(1rem, 4vw, 4rem);
 
-    @include respond(sm) {
-        padding-inline: 2rem;
-    }
-
-    @include respond(md) {
-        padding-inline: 3rem;
-    }
-
-    @include respond(lg) {
-        padding-inline: 4rem;
-    }
-
-    @include respond(xl) {
-        padding-inline: 4rem;
-    }
 
     @include respond(2xl) {
+
         max-width: 1600px;
 
-        padding-inline: 5rem;
     }
 }
 
@@ -86,19 +71,17 @@ img {
 ===================================================== */
 
 ::-webkit-scrollbar {
-    width: 0.6rem;
+    width: 0.4rem;
 }
 
 ::-webkit-scrollbar-track {
-    background: var(--color-surface);
+    background: var(--color-bg);
 }
 
 ::-webkit-scrollbar-thumb {
-    background: rgba(0, 0, 0, 0.22);
-
-    border-radius: var(--radius-full);
+    background: rgba(0, 0, 0, 0.15);
 }
 
 ::-webkit-scrollbar-thumb:hover {
-    background: rgba(0, 0, 0, 0.38);
+    background: rgba(0, 0, 0, 0.3);
 }

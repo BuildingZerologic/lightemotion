@@ -146,6 +146,25 @@ Layouts should remain:
 
 across all screen sizes.
 
+## Fluid Component Execution Grid Framework
+When writing layout styling structures inside components (e.g., SelectedWorks.scss, ShopByCategory.scss), structural alignment must default to single-column flex configurations on mobile, moving to clean grid column templates only inside standard progressive media queries:
+
+```scss
+.layout-grid {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-xl);
+
+    @include respond(md) {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+    }
+    @include respond(lg) {
+        grid-template-columns: repeat(3, 1fr);
+        gap: var(--space-2xl);
+    }
+}
+
 ---
 
 # Typography Philosophy
@@ -282,6 +301,18 @@ Prefer lightweight rendering patterns.
 ---
 
 # Media Rules
+
+## Strict Asset Delivery Rules
+
+1. **Mandatory Art-Direction for Hero / Large Banners:**
+   Every hero or high-impact image/video section must use a semantic `<picture>` element or explicit multi-source conditional mounting. Do not render desktop-wide visual crops (`16:9`) on mobile screen viewports.
+   
+   *Pattern Template:*
+   ```jsx
+   <picture>
+     <source media="(max-width: 767px)" srcSet={mobileAssetUrl} />
+     <img src={desktopAssetUrl} alt="Architectural lighting narrative descriptor" loading="lazy" />
+   </picture>
 
 Use responsive media handling.
 
