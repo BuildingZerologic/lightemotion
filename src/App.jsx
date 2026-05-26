@@ -4,10 +4,13 @@ import { Suspense } from "react";
 
 import Footer from "./layout/Footer";
 import Navbar from "./layout/Navbar";
+import ScrollToTop from "./layout/ScrollToTop";
 
 export default function App() {
     return (
         <>
+
+            <ScrollToTop />
 
             <Navbar />
 

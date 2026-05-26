@@ -1,0 +1,159 @@
+@use "../styles/abstracts/mixins" as *;
+
+.contact-page {
+    /* Uses the very light off-white from your mockup */
+    background: inherit; 
+    min-height: 100svh;
+}
+
+.contact {
+    padding-block: calc(88px + var(--space-2xl)) var(--space-4xl);
+    
+    @include respond(md) {
+        padding-block: calc(74px + var(--space-6xl)) var(--space-6xl);
+    }
+}
+
+
+.contact__container{
+    width: 100%;
+
+    margin-inline: auto;
+
+    padding-inline: 2rem;
+
+    @include respond(sm) {
+        padding-inline: 2rem;
+    }
+
+    @include respond(md) {
+        padding-inline: 3rem;
+    }
+
+    @include respond(lg) {
+        padding-inline: 4rem;
+    }
+
+    @include respond(xl) {
+        padding-inline: 4rem;
+        max-width: 800px;
+    }
+
+    @include respond(2xl) {
+        max-width: 800px;
+
+        padding-inline: 5rem;
+    }
+}
+
+.contact__header {
+    margin-bottom: var(--space-2xl);
+
+    @include respond(md) {
+        margin-bottom: var(--space-3xl);
+    }
+}
+
+.contact__title {
+    margin-bottom: var(--space-md);
+    font-family: var(--font-heading);
+    font-size: 3.5rem;
+    font-weight: 400;
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+    color: var(--color-black);
+
+    @include respond(md) {
+        font-size: 4.5rem;
+    }
+}
+
+.contact__description {
+    max-width: 34rem;
+    font-size: var(--fs-body);
+    line-height: 1.6;
+    color: #555; /* Slightly muted text for the description */
+}
+
+.contact__form {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-xl);
+}
+
+.contact__field {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-xs);
+}
+
+.contact__label {
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--color-black);
+}
+
+.contact__input {
+    width: 100%;
+    padding: 1rem 1.25rem;
+    background: inherit; /* Crisp white inputs against the off-white background */
+    border: 1px solid #e5e5e5;
+    border-radius: var(--radius-xs, 4px);
+    font-family: var(--font-body);
+    font-size: 1rem;
+    color: var(--color-black);
+    transition: 
+        border-color var(--transition-medium), 
+        box-shadow var(--transition-medium);
+
+    &::placeholder {
+        color: #999;
+    }
+
+    &:focus {
+        outline: none;
+        border-color: var(--color-black);
+        box-shadow: 0 0 0 1px var(--color-black);
+    }
+}
+
+.contact__textarea {
+    resize: vertical;
+    min-height: 140px;
+}
+
+.contact__submit {
+    margin-top: var(--space-md);
+    width: 100%;
+    padding: 1.25rem;
+    background: var(--color-black);
+    color: var(--color-white);
+    border: none;
+    font-family: var(--font-body);
+    font-size: 0.85rem;
+    font-weight: 500;
+    letter-spacing: 0.2em; /* Wide tracking to match the image */
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: 
+        background var(--transition-medium), 
+        transform var(--transition-medium);
+
+    @media (hover: hover) and (pointer: fine) {
+        &:hover {
+            background: #222;
+        }
+    }
+
+    &:active {
+        transform: scale(0.98);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .contact__submit {
+        transition: none;
+    }
+}

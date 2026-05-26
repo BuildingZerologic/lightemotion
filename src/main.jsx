@@ -14,7 +14,9 @@ import Catalog from "./pages/Catalog";
 import ErrorPage from "./pages/ErrorPage";
 import Home from "./pages/Home";
 import ProductDetail from "./pages/ProductDetail";
+import ProductRoute from "./pages/ProductRoute";
 import Services from "./pages/Services";
+import Contact from "./pages/Contact"
 
 import "./styles/main.scss";
 
@@ -53,9 +55,19 @@ const router = createBrowserRouter([
                 element: <ProductDetail />,
             },
             {
+                path: "products/:slug",
+
+                element: <ProductRoute />,
+            },
+            {
                 path: "services",
 
                 element: <Services />,
+            },
+            {
+                path: "contact",
+
+                element: <Contact />,
             },
         ],
     },

@@ -1,23 +1,18 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 import { motion } from "framer-motion";
 import { Link, useLocation } from "react-router-dom";
 
 import logo from "../assets/brand/light-emotion-logo.png";
+import { navigation } from "../data/navigation";
+import MobileNavDrawer from "./MobileNavDrawer";
 
 import "./Navbar.scss";
 
 const navLinks = [
+
     {
-        label: "Home",
-        href: "/",
-    },
-    {
-        label: "About",
-        href: "/about",
-    },
-    {
-        label: "Catalog",
+        label: "Products",
         href: "/catalog",
     },
     {
@@ -25,8 +20,12 @@ const navLinks = [
         href: "/services",
     },
     {
+        label: "About",
+        href: "/about",
+    },
+    {
         label: "Contact",
-        href: "/",
+        href: "/contact",
     },
 ];
 
@@ -34,6 +33,12 @@ export default function Navbar() {
     const location = useLocation();
     const [isScrolled, setIsScrolled] = useState(false);
     const [isMenuOpen, setIsMenuOpen] = useState(false);
+    const [isProductsMenuOpen, setIsProductsMenuOpen] = useState(false);
+    const [activeCategoryIndex, setActiveCategoryIndex] = useState(0);
+    const productsMenuRef = useRef(null);
+    const closeProductsTimerRef = useRef(null);
+
+    const activeCategory = navigation[activeCategoryIndex] || navigation[0];
 
     useEffect(() => {
         const handleScrollState = () => {
@@ -72,25 +77,68 @@ export default function Navbar() {
     }, [location.pathname]);
 
     useEffect(() => {
-        if (!isMenuOpen) {
+        if (!isMenuOpen && !isProductsMenuOpen) {
             return undefined;
         }
 
         const handleEscape = (event) => {
             if (event.key === "Escape") {
                 setIsMenuOpen(false);
+                setIsProductsMenuOpen(false);
             }
         };
 
         window.addEventListener("keydown", handleEscape);
 
         return () => window.removeEventListener("keydown", handleEscape);
-    }, [isMenuOpen]);
+    }, [isMenuOpen, isProductsMenuOpen]);
+
+    useEffect(() => {
+        if (!isProductsMenuOpen) {
+            return undefined;
+        }
+
+        const handleOutsideClick = (event) => {
+            if (!productsMenuRef.current?.contains(event.target)) {
+                setIsProductsMenuOpen(false);
+            }
+        };
+
+        document.addEventListener("pointerdown", handleOutsideClick);
+
+        return () => document.removeEventListener("pointerdown", handleOutsideClick);
+    }, [isProductsMenuOpen]);
+
+    useEffect(() => () => {
+        window.clearTimeout(closeProductsTimerRef.current);
+    }, []);
+
+    const openProductsMenu = () => {
+        window.clearTimeout(closeProductsTimerRef.current);
+        setIsProductsMenuOpen(true);
+        setActiveCategoryIndex((currentIndex) =>
+            navigation[currentIndex] ? currentIndex : 0
+        );
+    };
+
+    const closeProductsMenuWithDelay = () => {
+        window.clearTimeout(closeProductsTimerRef.current);
+
+        closeProductsTimerRef.current = window.setTimeout(() => {
+            setIsProductsMenuOpen(false);
+        }, 160);
+    };
+
+    const closeProductsMenu = () => {
+        window.clearTimeout(closeProductsTimerRef.current);
+        setIsProductsMenuOpen(false);
+    };
 
     const navbarClassName = [
         "site-navbar",
-        isScrolled || isMenuOpen ? "site-navbar--scrolled" : "site-navbar--hero",
+        isScrolled || isMenuOpen || isProductsMenuOpen ? "site-navbar--scrolled" : "site-navbar--hero",
         isMenuOpen ? "site-navbar--open" : "",
+        isProductsMenuOpen ? "site-navbar--products-open" : "",
     ].filter(Boolean).join(" ");
 
     return (
@@ -99,6 +147,7 @@ export default function Navbar() {
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
+            ref={productsMenuRef}
         >
             <div className="container">
                 <nav className="site-navbar__nav" aria-label="Primary navigation">
@@ -111,13 +160,41 @@ export default function Navbar() {
                     </Link>
 
                     <ul className="site-navbar__links">
-                        {navLinks.map((link) => (
-                            <li key={link.label}>
-                                <Link to={link.href}>
-                                    {link.label}
-                                </Link>
-                            </li>
-                        ))}
+                        {navLinks.map((link) => {
+                            if (link.label === "Products") {
+                                return (
+                                    <li
+                                        className="site-navbar__products-item"
+                                        key={link.label}
+                                        onMouseEnter={openProductsMenu}
+                                        onMouseLeave={closeProductsMenuWithDelay}
+                                    >
+                                        <button
+                                            className="site-navbar__link site-navbar__products-trigger"
+                                            type="button"
+                                            aria-expanded={isProductsMenuOpen}
+                                            aria-controls="products-mega-menu"
+                                            onClick={() => {
+                                                setIsProductsMenuOpen((current) => !current);
+                                                setActiveCategoryIndex((currentIndex) =>
+                                                    navigation[currentIndex] ? currentIndex : 0
+                                                );
+                                            }}
+                                        >
+                                            {link.label}
+                                        </button>
+                                    </li>
+                                );
+                            }
+
+                            return (
+                                <li key={link.label}>
+                                    <Link className="site-navbar__link" to={link.href}>
+                                        {link.label}
+                                    </Link>
+                                </li>
+                            );
+                        })}
                     </ul>
 
                     <button
@@ -125,7 +202,7 @@ export default function Navbar() {
                         type="button"
                         aria-label={isMenuOpen ? "Close navigation menu" : "Open navigation menu"}
                         aria-expanded={isMenuOpen}
-                        aria-controls="site-navbar-menu"
+                        aria-controls="mobile-nav-drawer"
                         onClick={() => setIsMenuOpen((current) => !current)}
                     >
                         <span />
@@ -134,19 +211,66 @@ export default function Navbar() {
                 </nav>
             </div>
 
-            <div className="site-navbar__mobile-menu" id="site-navbar-menu">
+            <div
+                className="products-mega-menu"
+                id="products-mega-menu"
+                aria-hidden={!isProductsMenuOpen}
+                onMouseEnter={openProductsMenu}
+                onMouseLeave={closeProductsMenuWithDelay}
+            >
                 <div className="container">
-                    <ul>
-                        {navLinks.map((link) => (
-                            <li key={link.label}>
-                                <Link to={link.href} onClick={() => setIsMenuOpen(false)}>
-                                    {link.label}
-                                </Link>
-                            </li>
-                        ))}
-                    </ul>
+                    <div className="products-mega-menu__inner">
+                        <section className="products-mega-menu__column products-mega-menu__column--categories" aria-labelledby="products-mega-menu-categories">
+                            <h2 id="products-mega-menu-categories">Categories</h2>
+
+                            <ul className="products-mega-menu__categories">
+                                {navigation.map((category, index) => (
+                                    <li key={category.slug}>
+                                        <button
+                                            className={index === activeCategoryIndex ? "is-active" : undefined}
+                                            type="button"
+                                            onClick={() => setActiveCategoryIndex(index)}
+                                            onMouseEnter={() => setActiveCategoryIndex(index)}
+                                        >
+                                            <span>{category.category}</span>
+                                            <span className="products-mega-menu__chevron" aria-hidden="true" />
+                                        </button>
+                                    </li>
+                                ))}
+                            </ul>
+                        </section>
+
+                        <section className="products-mega-menu__column products-mega-menu__column--subcategories" aria-labelledby="products-mega-menu-subcategories">
+                            <h2 id="products-mega-menu-subcategories">Subcategories</h2>
+
+                            <ul className="products-mega-menu__subcategories">
+                                {activeCategory?.subcategories.map((subcategory) => (
+                                    <li key={subcategory.slug}>
+                                        <Link to={subcategory.slug} onClick={closeProductsMenu}>
+                                            {subcategory.name}
+                                        </Link>
+                                    </li>
+                                ))}
+                            </ul>
+                        </section>
+
+                        <section className="products-mega-menu__column products-mega-menu__column--content" aria-labelledby="products-mega-menu-content">
+                            <h2 id="products-mega-menu-content">About This Category</h2>
+                            <p>{activeCategory?.category}</p>
+                            <span>
+                                {activeCategory?.subcategories.length} product families available.
+                            </span>
+                        </section>
+                    </div>
                 </div>
             </div>
+
+            <MobileNavDrawer
+                isOpen={isMenuOpen}
+                logoSrc={logo}
+                navLinks={navLinks}
+                onClose={() => setIsMenuOpen(false)}
+            />
         </motion.header>
     );
 }
