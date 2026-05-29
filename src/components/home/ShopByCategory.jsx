@@ -1,5 +1,4 @@
 import { motion } from "framer-motion";
-import { Link } from "react-router-dom";
 
 import exteriorLighting from "../../assets/categories/exterior-lighting.jpg";
 import pendantLighting from "../../assets/categories/pendant-lighting.jpg";

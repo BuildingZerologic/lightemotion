@@ -3,9 +3,7 @@
 .how-work {
     padding-block: var(--space-3xl);
 
-    background: var(--color-white);
-
-    overflow: hidden;
+    background: var(--color-surface-elevated);
 
     @include respond(md) {
         padding-block: var(--space-4xl);
@@ -30,6 +28,14 @@
 
 .how-work__intro {
     max-width: 42rem;
+
+    @include respond(lg) {
+        position: sticky;
+
+        top: 120px;
+
+        align-self: start;
+    }
 }
 
 .how-work__eyebrow {
@@ -41,45 +47,18 @@
 
     margin-bottom: var(--space-2xl);
 
-    font-size: var(--fs-caption);
-
-    font-weight: var(--fw-medium);
-
-    line-height: var(--lh-heading);
-
-    letter-spacing: var(--ls-caption);
-
-    text-transform: uppercase;
-
-    color: var(--color-black);
+    color: var(--color-text-primary);
 
     @include respond(md) {
         margin-bottom: var(--space-3xl);
     }
 
-    &::before {
-        content: "";
-
-        width: var(--space-xs);
-
-        aspect-ratio: 1;
-
-        background: var(--color-text-secondary);
-    }
 }
 
 .how-work__heading {
     margin: 0;
 
-    font-size: var(--fs-h2);
-
-    font-weight: var(--fw-medium);
-
-    line-height: var(--lh-tight);
-
-    letter-spacing: var(--ls-tight);
-
-    color: var(--color-black);
+    color: var(--color-text-primary);
 
     text-wrap: balance;
 }
@@ -90,12 +69,6 @@
     flex-direction: column;
 
     gap: 0;
-
-    border-top: 1px solid var(--color-border);
-
-    @include respond(lg) {
-        border-top: 0;
-    }
 }
 
 .how-work__item {
@@ -104,8 +77,6 @@
     gap: var(--space-lg);
 
     padding-block: var(--space-2xl);
-
-    border-bottom: 1px solid var(--color-border);
 
     @include respond(md) {
         grid-template-columns: minmax(7rem, 0.36fr) minmax(0, 1fr);
@@ -122,7 +93,19 @@
 
         padding-block: var(--space-2xl);
     }
+
+    &:first-child {
+        padding-block-start: 0;
+    }
+
+    &:last-child {
+        padding-block-end: 0;
+
+    }
+
 }
+
+
 
 .how-work__number {
     margin: 0;
@@ -137,7 +120,7 @@
 
     letter-spacing: var(--ls-normal);
 
-    color: var(--color-black);
+    color: var(--color-text-primary);
 
     @include respond(md) {
         font-size: var(--fs-h1);
@@ -155,25 +138,13 @@
 .how-work__item-title {
     margin: 0 0 var(--space-sm);
 
-    font-size: var(--fs-h5);
-
-    font-weight: var(--fw-medium);
-
-    line-height: var(--lh-heading);
-
-    letter-spacing: var(--ls-normal);
-
-    color: var(--color-black);
+     
+    color: var(--color-text-primary);
 
     @include respond(md) {
         margin-bottom: var(--space-md);
-
-        font-size: var(--fs-h4);
     }
 
-    @include respond(lg) {
-        font-size: var(--fs-h5);
-    }
 }
 
 .how-work__description {
@@ -195,15 +166,5 @@
 
     @include respond(lg) {
         font-size: var(--fs-body);
-    }
-}
-
-@media (hover: hover) and (pointer: fine) {
-    .how-work__item {
-        transition: border-color var(--transition-medium);
-
-        &:hover {
-            border-color: var(--color-text-secondary);
-        }
     }
 }

@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState } from "react";
+import { useMemo } from "react";
 
 import { motion } from "framer-motion";
 import { Link, useParams } from "react-router-dom";
@@ -18,30 +18,8 @@ const gridReveal = {
     },
 };
 
-function useDesktopHoverMedia() {
-    const [canUseHoverMedia, setCanUseHoverMedia] = useState(false);
-
-    useEffect(() => {
-        const mediaQuery = window.matchMedia("(min-width: 1024px) and (hover: hover) and (pointer: fine)");
-
-        const updateHoverMedia = () => {
-            setCanUseHoverMedia(mediaQuery.matches);
-        };
-
-        updateHoverMedia();
-        mediaQuery.addEventListener("change", updateHoverMedia);
-
-        return () => {
-            mediaQuery.removeEventListener("change", updateHoverMedia);
-        };
-    }, []);
-
-    return canUseHoverMedia;
-}
-
 export default function Subcategory() {
     const { slug, subcategorySlug } = useParams();
-    const canUseHoverMedia = useDesktopHoverMedia();
     const routeSlug = subcategorySlug || slug || "";
     const pageData = useMemo(
         () => getSubcategoryPageData(routeSlug),
@@ -68,28 +46,38 @@ export default function Subcategory() {
                         }}
                     />
                 )}
+
+                <div className="subcategory-hero__overlay" aria-hidden="true" />
+
+                <motion.h2
+                    className="subcategory-hero__heading"
+                    id="subcategory-title"
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{
+                        duration: 0.9,
+                        delay: 0.4,
+                        ease: [0.22, 1, 0.36, 1],
+                    }}
+                >
+                    {pageData.title}
+                </motion.h2>
             </section>
 
             <section className="subcategory" aria-labelledby="subcategory-title">
                 <div className="container">
-                    <motion.header
-                        className="subcategory__header"
-                        key={`${routeSlug}-header`}
-                        initial="hidden"
-                        whileInView="visible"
-                        viewport={{ once: true, amount: 0.35 }}
-                        variants={imageRevealVariants}
-                    >
-                        <h1 className="subcategory__title" id="subcategory-title">
-                            {pageData.title}
-                        </h1>
-
-                        {pageData.description && (
-                            <p className="subcategory__description">
-                                {pageData.description}
-                            </p>
-                        )}
-                    </motion.header>
+                    {pageData.description && (
+                        <motion.p
+                            className="subcategory__description"
+                            key={`${routeSlug}-desc`}
+                            initial={{ opacity: 0, y: 16 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            viewport={{ once: true, amount: 0.5 }}
+                            transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
+                        >
+                            {pageData.description}
+                        </motion.p>
+                    )}
 
                     <motion.div
                         className="subcategory__grid"
@@ -124,19 +112,6 @@ export default function Subcategory() {
                                             />
                                         )}
 
-                                        {canUseHoverMedia && family.hoverImage?.src && (
-                                            <img
-                                                className="subcategory-card__image subcategory-card__image--hover"
-                                                src={family.hoverImage.src}
-                                                alt=""
-                                                aria-hidden="true"
-                                                loading="lazy"
-                                                decoding="async"
-                                                onError={(event) => {
-                                                    resolveImageFallback(event, family.hoverImage.fallbackSources);
-                                                }}
-                                            />
-                                        )}
                                     </div>
 
                                     <div className="subcategory-card__content">

@@ -5,7 +5,7 @@ import { motion, useReducedMotion } from "framer-motion";
 import "./AboutHero.scss";
 
 const desktopVideo = "/videos/aboutushero.mp4";
-const mobileVideo = "/videos/about/about-hero-mobile.mp4";
+const mobileVideo = "/videos/aboutushero.mp4";
 
 function useDesktopVideo() {
     const [isDesktop, setIsDesktop] = useState(() => {

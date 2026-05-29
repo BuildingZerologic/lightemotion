@@ -13,7 +13,7 @@
 
     overflow: hidden;
 
-    background: var(--color-black);
+    background: var(--color-media-bg);
 
     @include respond(lg) {
         min-height: 60svh;
@@ -73,7 +73,7 @@
 
     letter-spacing: var(--ls-normal);
 
-    color: var(--color-white);
+    color: var(--color-on-media);
 
     text-wrap: balance;
 }
@@ -89,7 +89,7 @@
 
     padding-inline: var(--space-2xl);
 
-    border: 1px solid rgba(255, 255, 255, 0.72);
+    border: 1px solid var(--color-media-border);
 
     border-radius: var(--radius-zero);
 
@@ -105,7 +105,7 @@
 
     text-transform: uppercase;
 
-    color: var(--color-white);
+    color: var(--color-on-media);
 
     cursor: pointer;
 
@@ -117,11 +117,11 @@
 
 @media (hover: hover) and (pointer: fine) {
     .services-cta__button:hover {
-        border-color: var(--color-white);
+        border-color: var(--color-on-media);
 
-        background: var(--color-white);
+        background: var(--color-on-media);
 
-        color: var(--color-black);
+        color: var(--color-media-bg);
     }
 }
 

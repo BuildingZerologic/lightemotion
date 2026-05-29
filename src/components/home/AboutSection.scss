@@ -1,21 +1,15 @@
 @use "../../styles/abstracts/mixins" as *;
 
 .about-section {
-    padding-block: var(--space-2xl);
+    padding-block: var(--space-4xl);
 
-    background: var(--color-white);
-
-    overflow: hidden;
+    background: var(--color-surface-elevated);
 
     @include respond(md) {
-        padding-block: var(--space-3xl);
+        padding-block: var(--space-5xl);
     }
 
     @include respond(lg) {
-        padding-block: var(--space-4xl);
-    }
-
-    @include respond(xl) {
         padding-block: var(--space-6xl);
     }
 }
@@ -28,31 +22,51 @@
     gap: var(--space-lg);
 }
 
+
 .about-section__eyebrow {
     display: inline-block;
-
-    font-size: var(--fs-caption);
-
-    font-weight: var(--fw-medium);
-
-    letter-spacing: var(--ls-wide);
 
     text-transform: uppercase;
 
     color: var(--color-accent);
-
-    opacity: 0.9;
 }
 
-.about-section__description {
-    max-width: 70%;
 
+// Relative container so the overlay can sit absolutely on top of the text.
+.about-section__text-wrapper {
+    position: relative;
+}
+
+
+.about-section__description {
     font-size: var(--fs-h5);
 
-    line-height: var(--lh-body);
+    // Full primary colour — the overlay creates the "grey" appearance,
+    // not the text itself. This matches the John Cullen technique exactly.
+    color: var(--color-text-primary);
 
-    letter-spacing: var(--ls-wide);
+    white-space: normal;
+    overflow-wrap: normal;
 
-    color: var(--color-black);
+    @include respond(lg) {
+        max-width: 70%;
+    }
+}
 
- }
+
+// The overlay: matches the section background colour exactly.
+// Framer Motion drives its opacity from 0.85 → 0 via inline style as the
+// section scrolls into view, revealing the black text beneath.
+.about-section__overlay {
+    position: absolute;
+    inset: 0;
+
+    background: var(--color-surface-elevated);
+
+    // Extend slightly beyond the text bounds so no edge bleed occurs.
+    margin: calc(var(--space-xs) * -1);
+    padding: var(--space-xs);
+
+    // Prevent the overlay from blocking mouse events on the text beneath.
+    pointer-events: none;
+}

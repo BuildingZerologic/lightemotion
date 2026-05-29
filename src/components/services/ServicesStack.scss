@@ -3,7 +3,7 @@
 .services-stack {
     padding-bottom: var(--space-4xl);
 
-    background: var(--color-white);
+    background: var(--color-surface-elevated);
 
     @include respond(md) {
         padding-bottom: var(--space-6xl);
@@ -21,11 +21,11 @@
 
     letter-spacing: var(--ls-normal);
 
-    color: var(--color-black);
+    color: var(--color-text-primary);
 }
 
 .services-stack__list {
-    margin-top: var(--space-xl);
+    margin-top: var(--space-2xl);
 }
 
 .services-stack__item {
@@ -35,8 +35,7 @@
 
     padding-block: var(--space-2xl);
 
-    border-top: 1px solid var(--color-border);
-
+ 
     @include respond(md) {
         grid-template-columns: minmax(4rem, 0.35fr) minmax(12rem, 0.9fr) minmax(0, 1fr);
 
@@ -65,7 +64,7 @@
 
     letter-spacing: var(--ls-wide);
 
-    color: var(--color-black);
+    color: var(--color-text-primary);
 }
 
 .services-stack__heading {
@@ -79,7 +78,7 @@
 
     letter-spacing: var(--ls-normal);
 
-    color: var(--color-black);
+    color: var(--color-text-primary);
 }
 
 .services-stack__description {

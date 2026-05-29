@@ -2,7 +2,7 @@
 
 export const navigation = [
   {
-    category: "Architectural Downlights & Accent Lighting",
+    category: "Downlights & Accent Lighting",
 
     slug: "/products/downlights-accent",
 

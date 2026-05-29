@@ -1,7 +1,7 @@
 @use "../styles/abstracts/mixins" as *;
 
 .catalog-page {
-    background: var(--color-white);
+    background: var(--color-surface-elevated);
 }
 
 .catalog-hero {
@@ -13,7 +13,7 @@
 
     overflow: hidden;
 
-    background: var(--color-black);
+    background: var(--color-media-bg);
 
     @include respond(md) {
         height: 55svh;
@@ -43,7 +43,7 @@
 .catalog {
     padding-block: var(--space-xl) var(--space-4xl);
 
-    background: var(--color-white);
+    background: var(--color-surface-elevated);
 
     @include respond(md) {
         padding-block: var(--space-2xl) var(--space-5xl);
@@ -171,7 +171,7 @@
 }
 
 .catalog__tab--active {
-    color: var(--color-black);
+    color: var(--color-text-primary);
 
     &::after {
         transform: scaleX(1);
@@ -213,7 +213,7 @@
 }
 
 .catalog__view-button--active {
-    color: var(--color-black);
+    color: var(--color-text-primary);
 }
 
 .catalog__view-icon {
@@ -323,7 +323,7 @@
 
     text-transform: uppercase;
 
-    color: var(--color-black);
+    color: var(--color-text-primary);
 
     transition: opacity var(--transition-medium);
 }

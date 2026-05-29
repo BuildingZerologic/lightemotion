@@ -33,20 +33,20 @@
 }
 
 .product-detail-page {
-    background: var(--color-white);
+    background: var(--color-surface-elevated);
 }
 
 .product-detail {
-    padding-block: calc(88px + var(--space-xl)) var(--space-4xl);
+    padding-block: calc(var(--navbar-height) + var(--space-xl)) var(--space-4xl);
 
-    background: var(--color-white);
+    background: var(--color-surface-elevated);
 
     @include respond(md) {
-        padding-block: calc(88px + var(--space-md)) var(--space-5xl);
+        padding-block: calc(var(--navbar-height) + var(--space-md)) var(--space-5xl);
     }
 
     @include respond(xl) {
-        padding-block: 74px var(--space-6xl);
+        padding-block: var(--navbar-height-compact) var(--space-6xl);
     }
 }
 
@@ -72,7 +72,7 @@
 .product-detail__gallery {
     @include respond(lg) {
         position: sticky;
-        top: 74px;
+        top: var(--navbar-height-compact);
         height: max-content;
     }
 }
@@ -82,7 +82,7 @@
 
     overflow: hidden;
 
-    background: var(--color-surface);
+    background: inherit
 }
 
 .product-detail__media-button {
@@ -100,7 +100,7 @@
 
     @include respond(lg) {
         aspect-ratio: auto;
-        height: calc(100dvh - 74px);
+        height: calc(100dvh - var(--navbar-height-compact));
         max-height: 100dvh;
     }
 }
@@ -110,8 +110,9 @@
 
     height: 100%;
 
-    object-fit: cover;
-}
+    object-fit: contain;
+
+ }
 
 .product-detail__gallery-control,
 .product-detail__lightbox-control,
@@ -140,9 +141,9 @@
 
     height: var(--btn-height-md);
 
-    background: var(--color-white);
+    background: var(--color-surface-elevated);
 
-    color: var(--color-black);
+    color: var(--color-text-primary);
 
     border: 1px solid var(--color-border);
 
@@ -195,16 +196,13 @@
 }
 
 .product-detail__title {
-    max-width: 38rem;
-
+     
     margin-bottom: var(--space-md);
 
-    font-size: var(--fs-h4);
-
-    letter-spacing: var(--ls-normal);
+     
 
     @include respond(md) {
-        font-size: var(--fs-h3);
+        
     }
 }
 
@@ -229,7 +227,7 @@
 
     padding-block: var(--space-xs);
 
-    color: var(--color-black);
+    color: var(--color-text-primary);
 
     font-family: var(--font-body);
 
@@ -257,10 +255,6 @@
 
     background: currentColor;
 
-    opacity: 0.24;
-
-    transform: scaleX(0.36);
-
     transform-origin: left;
 
     transition:
@@ -269,21 +263,19 @@
 }
 
 .product-detail__inquire {
-    width: 100%;
+     width: min(100%, clamp(17rem, 24vw, 21rem));
 
     margin-top: var(--space-xl);
 
-    @include respond(lg) {
-        width: auto;
-    }
+     
 }
 
 .product-detail__variants-section {
     padding-block: 0 var(--space-6xl);
 
-    background: var(--color-white);
+    background: var(--color-surface-elevated);
 
-    scroll-margin-top: calc(74px + var(--space-xl));
+    scroll-margin-top: calc(var(--navbar-height-compact) + var(--space-xl));
 }
 
 .product-detail__variants-container {
@@ -377,7 +369,7 @@
     tbody th {
         min-width: 12rem;
 
-        color: var(--color-black);
+        color: var(--color-text-primary);
 
         font-weight: var(--fw-medium);
     }
@@ -410,7 +402,7 @@
 
     border: 1px solid var(--color-border);
 
-    color: var(--color-black);
+    color: var(--color-text-primary);
 
     line-height: var(--lh-heading);
 }
@@ -444,9 +436,9 @@
 
     padding: var(--space-md);
 
-    background: var(--color-black);
+    background: var(--color-media-bg);
 
-    color: var(--color-white);
+    color: var(--color-on-media);
 }
 
 .product-detail__lightbox-dialog {
@@ -503,7 +495,7 @@
 
     height: var(--btn-height-md);
 
-    color: var(--color-white);
+    color: var(--color-on-media);
 }
 
 .product-detail__lightbox-close {
@@ -549,23 +541,7 @@
     right: 0;
 }
 
-@media (hover: hover) and (pointer: fine) {
-    .product-detail__media-button:hover img {
-        transform: scale(1.02);
-    }
-
-    .product-detail__variants-link:hover::after {
-        opacity: 1;
-
-        transform: scaleX(1);
-    }
-
-    .product-detail__gallery-control:hover,
-    .product-detail__lightbox-control:hover,
-    .product-detail__lightbox-close:hover {
-        opacity: 0.72;
-    }
-}
+ 
 
 @media (prefers-reduced-motion: reduce) {
     .product-detail__gallery-control,

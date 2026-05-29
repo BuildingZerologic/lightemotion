@@ -3,7 +3,7 @@
 .services-industries {
     padding-bottom: var(--space-4xl);
 
-    background: var(--color-white);
+    background: var(--color-surface-elevated);
 
     @include respond(md) {
         padding-bottom: var(--space-6xl);
@@ -51,16 +51,8 @@
 }
 
 .services-industries__label {
+    
     margin-bottom: var(--space-3xl);
-
-    font-size: var(--fs-caption);
-
-    font-weight: var(--fw-medium);
-
-    line-height: var(--lh-heading);
-
-    letter-spacing: var(--ls-wide);
-
     color: var(--color-text-primary);
 }
 
@@ -93,7 +85,7 @@
 
     letter-spacing: var(--ls-normal);
 
-    color: var(--color-black);
+    color: var(--color-text-primary);
 
     cursor: pointer;
 
@@ -111,7 +103,7 @@
 
 @media (hover: hover) and (pointer: fine) {
     .services-industries__button:hover {
-        color: var(--color-black);
+        color: var(--color-text-primary);
 
         transform: translateX(var(--space-xs));
     }

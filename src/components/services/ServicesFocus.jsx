@@ -13,7 +13,7 @@ export default function ServicesFocus() {
                 </h1>
 
                 <div className="services-focus__grid">
-                    <motion.p
+                    <motion.h5
                         className="services-focus__label"
                         initial="hidden"
                         whileInView="visible"
@@ -21,7 +21,7 @@ export default function ServicesFocus() {
                         variants={reveal}
                     >
                         Our Focus
-                    </motion.p>
+                    </motion.h5>
 
                     <motion.div
                         className="services-focus__content"

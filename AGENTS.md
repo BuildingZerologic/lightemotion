@@ -135,7 +135,7 @@ Do not use:
 
 - desktop-first overrides
 - max-width breakpoint architecture
-- unnecessary xs overrides
+- unnecessary sm overrides
 
 Layouts should remain:
 
@@ -300,31 +300,149 @@ Prefer lightweight rendering patterns.
 
 ---
 
-# Media Rules
+ ## Responsive Media Execution Rules
 
-## Strict Asset Delivery Rules
+### Images
 
-1. **Mandatory Art-Direction for Hero / Large Banners:**
-   Every hero or high-impact image/video section must use a semantic `<picture>` element or explicit multi-source conditional mounting. Do not render desktop-wide visual crops (`16:9`) on mobile screen viewports.
-   
-   *Pattern Template:*
-   ```jsx
-   <picture>
-     <source media="(max-width: 767px)" srcSet={mobileAssetUrl} />
-     <img src={desktopAssetUrl} alt="Architectural lighting narrative descriptor" loading="lazy" />
-   </picture>
+Use semantic `<picture>` architecture for:
 
-Use responsive media handling.
+* hero banners
+* full-width editorial imagery
+* category banners
+* showcase sections
+* large compositional visuals
+* media-heavy storytelling sections
 
-Desktop and mobile videos/images should load separately when needed.
+Pattern:
+
+
+<picture>
+  <source
+    media="(max-width: 767px)"
+    srcSet={mobileImage}
+  />
+
+  <img
+    src={desktopImage}
+    alt="Meaningful descriptive alt"
+    loading="lazy"
+  />
+</picture>
+
+
+Goals:
+
+* prevent desktop crops on mobile
+* maintain cinematic composition
+* improve performance
+* optimize bandwidth usage
+* preserve art direction across devices
+
+Do not use `<picture>` unnecessarily for:
+
+* SVG icons
+* logos
+* tiny decorative assets
+* UI micro-images
+* small thumbnails
+
+Use responsive image delivery only where visual composition meaningfully changes across screen sizes.
+
+### Responsive Resolution Delivery
+
+For product listings, category grids, repeated ecommerce imagery, and card-based media:
+
+* prefer optimized `img` rendering with `srcSet` and `sizes`
+* allow the browser to select appropriate image resolutions responsively
+* preserve consistent composition across breakpoints when art direction is unnecessary
+* lazy load non-critical product imagery
+
+Use cases include:
+
+* product cards
+* category grids
+* related products
+* carousel thumbnails
+* repeated ecommerce media
+
+Example:
+
+```jsx id="jlwm5p"
+<img
+  src={imageSmall}
+  srcSet={`
+    ${imageSmall} 400w,
+    ${imageMedium} 800w,
+    ${imageLarge} 1200w
+  `}
+  sizes="(max-width: 768px) 50vw, 25vw"
+  alt="Descriptive alt"
+  loading="lazy"
+/>
+```
+
+Use semantic `<picture>` architecture primarily when:
+
+* image composition changes across breakpoints
+* mobile and desktop crops differ significantly
+* editorial or cinematic art direction is required
+* large compositional banners need responsive framing
+
+---
+
+### Video Rules
+
+Videos must use responsive source delivery.
+
+Avoid loading desktop-heavy videos on mobile devices.
+
+For large cinematic or hero videos:
+
+* use separate mobile and desktop video assets
+* conditionally render sources where appropriate
+* preserve autoplay, muted, loop, and playsInline behavior
+* keep rendering Safari-safe
+* lazy load non-critical videos when possible
+
+Preferred strategies:
+
+* conditional source rendering
+* multi-source responsive delivery
+* viewport-aware media loading
 
 Avoid:
 
-- loading desktop-heavy assets on mobile
-- oversized background videos
-- unoptimized media rendering
+* single massive videos for all devices
+* unnecessary autoplay videos
+* oversized background video payloads
+* excessive simultaneous video rendering
 
-Maintain cinematic visual quality while staying performant.
+Video implementation should remain:
+
+* performant
+* cinematic
+* bandwidth-conscious
+* mobile-safe
+
+---
+
+### Performance Priorities
+
+Always prioritize:
+
+* responsive asset delivery
+* lightweight media rendering
+* reduced mobile payloads
+* optimized loading behavior
+* cinematic quality without excessive bandwidth usage
+
+Media-heavy sections should remain visually premium while staying performant across:
+
+* mobile
+* tablets
+* laptops
+* ultrawide screens
+* Safari browsers
 
 ---
 

@@ -59,9 +59,9 @@ export default function AboutClients() {
                         OUR CLIENTS
                     </span>
 
-                    <h4 className="about-clients__heading heading-lg">
+                    <h3 className="about-clients__heading heading-lg">
                         The spaces that shape India's future - we light them
-                    </h4>
+                    </h3>
                 </div>
 
  

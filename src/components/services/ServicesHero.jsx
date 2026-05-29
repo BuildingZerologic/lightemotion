@@ -7,8 +7,7 @@ export default function ServicesHero() {
         <section className="services-hero" data-navbar-transparent>
             <motion.img
                 src="/images/services/serviceshero.webp"
-                alt=""
-                aria-hidden="true"
+                alt="Architectural lighting installation illuminating a refined interior space"
                 initial={{ opacity: 0, scale: 1.04 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{
@@ -18,6 +17,19 @@ export default function ServicesHero() {
             />
 
             <div className="services-hero__overlay" aria-hidden="true" />
+
+            <motion.h2
+                className="services-hero__heading"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{
+                    duration: 0.9,
+                    delay: 0.4,
+                    ease: [0.22, 1, 0.36, 1],
+                }}
+            >
+                Lighting That Shapes Spaces
+            </motion.h2>
         </section>
     );
 }

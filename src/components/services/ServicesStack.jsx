@@ -62,7 +62,7 @@ export default function ServicesStack() {
                     viewport={{ once: true, amount: 0.4 }}
                     variants={reveal}
                 >
-                    Services
+                    Services We Offer
                 </motion.h2>
 
                 <motion.div

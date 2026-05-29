@@ -3,7 +3,7 @@
 .about-clients {
     padding-bottom: var(--space-4xl);
 
-    background: var(--color-white);
+    background: var(--color-surface-elevated);
 
     @include respond(md) {
         padding-bottom: var(--space-6xl);
@@ -28,11 +28,11 @@
 
     text-transform: uppercase;
 
-    color: var(--color-black);
+    color: var(--color-text-primary);
 }
 
 .about-clients__heading {
-    max-width: 18ch;
+    
 
     text-wrap: balance;
 
@@ -46,10 +46,12 @@
 .about-clients__grid {
     display: grid;
 
-    gap: var(--space-2xl);
+    gap: var(--space-xl);
 
-    @include respond(sm) {
-        grid-template-columns: repeat(2, 1fr);
+     grid-template-columns: repeat(2, 1fr);
+
+    @include respond(md) {
+        grid-template-columns: repeat(3, 1fr);
     }
 
     @include respond(lg) {

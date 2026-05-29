@@ -3,6 +3,7 @@ import { useEffect, useMemo, useState } from "react";
 import { Link } from "react-router-dom";
 
 import { navigation } from "../data/navigation";
+import ThemeToggle from "./ThemeToggle";
 
 import "./MobileNavDrawer.scss";
 
@@ -126,6 +127,10 @@ export default function MobileNavDrawer({
                             </li>
                         );
                     })}
+
+                    <li className="mobile-nav-drawer__item mobile-nav-drawer__item--theme">
+                        <ThemeToggle className="mobile-nav-drawer__theme-toggle" />
+                    </li>
                 </ul>
             </nav>
         </div>

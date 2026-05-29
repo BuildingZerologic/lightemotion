@@ -9,7 +9,7 @@
 
     overflow: hidden;
 
-    background: var(--color-black);
+    background: var(--color-media-bg);
 
     @include respond(md) {
         height: 65svh;
@@ -39,7 +39,31 @@
 
     inset: 0;
 
-    background: rgba(0, 0, 0, 0.18);
+    background: rgba(0, 0, 0, 0.6);
 
     pointer-events: none;
+}
+
+.services-hero__heading {
+    position: absolute;
+
+    bottom: var(--space-xl);
+
+    left: var(--container-padding);
+
+    z-index: 2;
+
+    font-family: var(--font-heading);
+
+    color: var(--color-on-media);
+
+    pointer-events: none;
+
+    @include respond(md) {
+        bottom: var(--space-2xl);
+     }
+
+    @include respond(lg) {
+        bottom: var(--space-3xl);
+     }
 }

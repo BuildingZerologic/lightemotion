@@ -23,7 +23,7 @@
 .services-focus {
     padding-block: var(--space-4xl);
 
-    background: var(--color-white);
+    background: var(--color-surface-elevated);
 
     @include respond(md) {
         padding-block: var(--space-5xl);
@@ -49,14 +49,6 @@
 .services-focus__label {
     margin-bottom: var(--space-4xl);
 
-    font-size: var(--fs-caption);
-
-    font-weight: var(--fw-medium);
-
-    line-height: var(--lh-heading);
-
-    letter-spacing: var(--ls-wide);
-
     color: var(--color-text-primary);
 }
 
@@ -67,23 +59,17 @@
 .services-focus__statement {
     margin-bottom: var(--space-2xl);
 
-    font-family: var(--font-heading);
+    
 
-    font-size: var(--fs-h4);
+    font-size: var(--fs-h5);
 
     font-weight: var(--fw-medium);
 
-    line-height: var(--lh-heading);
-
-    letter-spacing: var(--ls-wide);
-
-    color: var(--color-black);
+    color: var(--color-text-primary);
 
     text-wrap: balance;
 
-    @include respond(md) {
-        font-size: var(--fs-h5);
-    }
+    
 }
 
 .services-focus__support {
@@ -93,6 +79,8 @@
         line-height: var(--lh-body);
 
         color: var(--color-text-secondary);
+
+        text-wrap: balance;
 
         @include respond(md) {
             font-size: var(--fs-body);

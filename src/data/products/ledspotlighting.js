@@ -1,5 +1,5 @@
 const LEDspotlighting = {
-  category: "Architectural Downlights & Accent Lighting",
+  category: "Downlights & Accent Lighting",
 
   subcategories: [
     {
@@ -8,7 +8,7 @@ const LEDspotlighting = {
         {
           name: "LED GLORIOUS R2 DOWNLIGHT",
           slug: "led-glorious-r2-downlight",
-          category: "Architectural Downlights & Accent Lighting",
+          category: "Downlights & Accent Lighting",
           subcategory: "Deep Recessed & Anti-Glare Downlights",
           shortDescription: "Premium deep recessed antiglare downlight featuring a front loading structural design and integrated Herculex performance lens technology.",
           thumbnail: "assets/images/products/led-glorious-r2-downlight.jpg",
@@ -69,7 +69,7 @@ const LEDspotlighting = {
         {
           name: "LED GLORIOUS PRO DOWNLIGHT",
           slug: "led-glorious-pro-downlight",
-          category: "Architectural Downlights & Accent Lighting",
+          category: "Downlights & Accent Lighting",
           subcategory: "Deep Recessed & Anti-Glare Downlights",
           shortDescription: "Premium structural anti-glare downlight boasting a sleek minimal aesthetic and high maintenance ease via front-loading hardware.",
           thumbnail: "assets/images/products/led-glorious-pro-downlight.jpg",
@@ -110,9 +110,9 @@ const LEDspotlighting = {
           ]
         },
         {
-          name: "Round Face Ring",
-          slug: "round-face-ring",
-          category: "Architectural Downlights & Accent Lighting",
+          name: "LED SWORD DOWNLIGHT",
+          slug: "led-sword-downlight",
+          category: "Downlights & Accent Lighting",
           subcategory: "Deep Recessed & Anti-Glare Downlights",
           shortDescription: "Premium deep recessed anti-glare spot downlight featuring an elegant 2-step removal design mechanism.",
           thumbnail: "assets/images/products/round-face-ring.jpg",
@@ -209,7 +209,7 @@ const LEDspotlighting = {
         {
           name: "LED SKYFALL DOWNLIGHT",
           slug: "led-skyfall-downlight",
-          category: "Architectural Downlights & Accent Lighting",
+          category: "Downlights & Accent Lighting",
           subcategory: "Deep Recessed & Anti-Glare Downlights",
           shortDescription: "High-grade anti-glare architectural spotlight configuration tailored with customizable secondary shields.",
           thumbnail: "assets/images/products/led-skyfall-downlight.jpg",
@@ -230,7 +230,7 @@ const LEDspotlighting = {
         {
           name: "LED GLIMMER DOWNLIGHT",
           slug: "led-glimmer-downlight",
-          category: "Architectural Downlights & Accent Lighting",
+          category: "Downlights & Accent Lighting",
           subcategory: "Deep Recessed & Anti-Glare Downlights",
           shortDescription: "Extremely compact architectural deep recessed spot utilizing performance anti-glare physics and versatile reflector inserts.",
           thumbnail: "assets/images/products/led-glimmer-downlight.jpg",
@@ -274,7 +274,7 @@ const LEDspotlighting = {
         {
           name: "LED NINJA DOWNLIGHT",
           slug: "led-ninja-downlight",
-          category: "Architectural Downlights & Accent Lighting",
+          category: "Downlights & Accent Lighting",
           subcategory: "Deep Recessed & Anti-Glare Downlights",
           shortDescription: "Micro-scale premium structural anti-glare light engine offered in an extensive palette of electroplated architectural finishes.",
           thumbnail: "assets/images/products/led-ninja-downlight.jpg",
@@ -325,7 +325,7 @@ const LEDspotlighting = {
         {
           name: "LED LOTUS R2 DOWNLIGHT",
           slug: "led-lotus-r2-downlight",
-          category: "Architectural Downlights & Accent Lighting",
+          category: "Downlights & Accent Lighting",
           subcategory: "Deep Recessed & Anti-Glare Downlights",
           shortDescription: "Elongated architectural deep recessed downlight system blending fine spatial visual comfort with a high-end ultra-thin bezel profile.",
           thumbnail: "assets/images/products/led-lotus-r2-downlight.jpg",
@@ -374,7 +374,7 @@ const LEDspotlighting = {
         {
           name: "LED AERO DOWNLIGHT",
           slug: "led-aero-downlight",
-          category: "Architectural Downlights & Accent Lighting",
+          category: "Downlights & Accent Lighting",
           subcategory: "Trimless Downlights",
           shortDescription: "High-contrast architectural focus and accent spot utilizing specialized optics to deliver superior glare mitigation.",
           thumbnail: "assets/images/products/led-aero-downlight.jpg",
@@ -417,7 +417,7 @@ const LEDspotlighting = {
         {
           name: "LED AERO R2 TRIMLESS DOWNLIGHT",
           slug: "led-aero-r2-trimless-downlight",
-          category: "Architectural Downlights & Accent Lighting",
+          category: "Downlights & Accent Lighting",
           subcategory: "Trimless Downlights",
           shortDescription: "Plaster-in seamless architectural spot engineered with dark-light reflectors for high precise ambient beam accentuation.",
           thumbnail: "assets/images/products/led-aero-r2-trimless-downlight.jpg",
@@ -431,7 +431,7 @@ const LEDspotlighting = {
         {
           name: "LED GLOSTER TRIMLESS DOWNLIGHT",
           slug: "led-gloster-trimless-downlight",
-          category: "Architectural Downlights & Accent Lighting",
+          category: "Downlights & Accent Lighting",
           subcategory: "Trimless Downlights",
           shortDescription: "Seamless architectural plaster-in downlight framework delivering clean ceiling integration with premium color variants.",
           thumbnail: "assets/images/products/led-gloster-trimless-downlight.jpg",
@@ -444,7 +444,7 @@ const LEDspotlighting = {
         {
           name: "LED GLORIOUS PRO TRIMLESS",
           slug: "led-glorious-pro-trimless",
-          category: "Architectural Downlights & Accent Lighting",
+          category: "Downlights & Accent Lighting",
           subcategory: "Trimless Downlights",
           shortDescription: "Premium deep-recessed micro frameless spot module meticulously optimized for high visual comfort architectural layouts.",
           thumbnail: "assets/images/products/led-glorious-pro-trimless.jpg",
@@ -458,7 +458,7 @@ const LEDspotlighting = {
         {
           name: "LED GLORIOUS TRIMLESS",
           slug: "led-glorious-trimless",
-          category: "Architectural Downlights & Accent Lighting",
+          category: "Downlights & Accent Lighting",
           subcategory: "Trimless Downlights",
           shortDescription: "Plaster-in modular anti-glare light engine system offering a sweeping selection of multi-beam structural variants.",
           thumbnail: "assets/images/products/led-glorious-trimless.jpg",
@@ -472,7 +472,7 @@ const LEDspotlighting = {
         {
           name: "LED SWORD TRIMLESS DOWNLIGHT",
           slug: "led-sword-trimless-downlight",
-          category: "Architectural Downlights & Accent Lighting",
+          category: "Downlights & Accent Lighting",
           subcategory: "Trimless Downlights",
           shortDescription: "Multi-functional frameless structural downlight line featuring deep multi-cell modules and twin-axis layouts.",
           thumbnail: "assets/images/products/led-sword-trimless-downlight.jpg",
@@ -489,7 +489,7 @@ const LEDspotlighting = {
         {
           name: "LED STELLA TRIMLESS DOWNLIGHT",
           slug: "led-stella-trimless-downlight",
-          category: "Architectural Downlights & Accent Lighting",
+          category: "Downlights & Accent Lighting",
           subcategory: "Trimless Downlights",
           shortDescription: "High-output architectural linear frameless downlight matrix featuring square and dual multi-lamp housing cells.",
           thumbnail: "assets/images/products/led-stella-trimless-downlight.jpg",
@@ -506,7 +506,7 @@ const LEDspotlighting = {
         {
           name: "LED CURVE TRIMLESS DOWNLIGHT",
           slug: "led-curve-trimless-downlight",
-          category: "Architectural Downlights & Accent Lighting",
+          category: "Downlights & Accent Lighting",
           subcategory: "Trimless Downlights",
           shortDescription: "Fluid curvilinear plaster-in frameless spots crafted for flowing aesthetic transitions and clean architectural geometry.",
           thumbnail: "assets/images/products/led-curve-trimless-downlight.jpg",
@@ -523,7 +523,7 @@ const LEDspotlighting = {
         {
           name: "LED SKYFALL TRIMLESS DOWNLIGHT",
           slug: "led-skyfall-trimless-downlight",
-          category: "Architectural Downlights & Accent Lighting",
+          category: "Downlights & Accent Lighting",
           subcategory: "Trimless Downlights",
           shortDescription: "Frameless architectural variants derived from the premium high-comfort Skyfall anti-glare lineage.",
           thumbnail: "assets/images/products/led-skyfall-trimless-downlight.jpg",
@@ -536,7 +536,7 @@ const LEDspotlighting = {
         {
           name: "LED ELVIN TRIMLESS DOWNLIGHT",
           slug: "led-elvin-trimless-downlight",
-          category: "Architectural Downlights & Accent Lighting",
+          category: "Downlights & Accent Lighting",
           subcategory: "Trimless Downlights",
           shortDescription: "Ultra low profile rotatable plaster-in specialized component optimized for clean flood wallwash distribution.",
           thumbnail: "assets/images/products/led-elvin-trimless-downlight.jpg",
@@ -547,7 +547,7 @@ const LEDspotlighting = {
         {
           name: "LED SABRE TRIMLESS DOWNLIGHT",
           slug: "led-sabre-trimless-downlight",
-          category: "Architectural Downlights & Accent Lighting",
+          category: "Downlights & Accent Lighting",
           subcategory: "Trimless Downlights",
           shortDescription: "Sleek low structural height plaster-in spot pairing seamless style with robust angular articulation.",
           thumbnail: "assets/images/products/led-sabre-trimless-downlight.jpg",
@@ -558,7 +558,7 @@ const LEDspotlighting = {
         {
           name: "LED TUNNEL TRIMLESS DOWNLIGHT",
           slug: "led-tunnel-trimless-downlight",
-          category: "Architectural Downlights & Accent Lighting",
+          category: "Downlights & Accent Lighting",
           subcategory: "Trimless Downlights",
           shortDescription: "Specialized modular trimless system configurable into spot, pin beam, curves, and elegant micro slit cuts.",
           thumbnail: "assets/images/products/led-tunnel-trimless-downlight.jpg",
@@ -572,7 +572,7 @@ const LEDspotlighting = {
         {
           name: "LED GLIMMER TRIMLESS DOWNLIGHT",
           slug: "led-glimmer-trimless-downlight",
-          category: "Architectural Downlights & Accent Lighting",
+          category: "Downlights & Accent Lighting",
           subcategory: "Trimless Downlights",
           shortDescription: "Seamless plaster-in variant of the ultra-compact Glimmer anti-glare spot product group.",
           thumbnail: "assets/images/products/led-glimmer-trimless-downlight.jpg",
@@ -586,7 +586,7 @@ const LEDspotlighting = {
         {
           name: "LED NARROW BEAM TRIMLESS DOWNLIGHT",
           slug: "led-narrow-beam-trimless-downlight",
-          category: "Architectural Downlights & Accent Lighting",
+          category: "Downlights & Accent Lighting",
           subcategory: "Trimless Downlights",
           shortDescription: "Micro-scale high focal accuracy architectural frameless spot engineered for ultra precise accentuation.",
           thumbnail: "assets/images/products/led-narrow-beam-trimless-downlight.jpg",
@@ -597,7 +597,7 @@ const LEDspotlighting = {
         {
           name: "LED MIRAGE PIPE TRIMLESS DOWNLIGHT",
           slug: "led-mirage-pipe-trimless-downlight",
-          category: "Architectural Downlights & Accent Lighting",
+          category: "Downlights & Accent Lighting",
           subcategory: "Trimless Downlights",
           shortDescription: "Plaster-in seamless version of the distinct high intensity directional pipe projector tool.",
           thumbnail: "assets/images/products/led-mirage-pipe-trimless-downlight.jpg",
@@ -608,7 +608,7 @@ const LEDspotlighting = {
         {
           name: "LED JAWA LOW DEPTH TRIMLESS WALLWASHER",
           slug: "led-jawa-low-depth-trimless-wallwasher",
-          category: "Architectural Downlights & Accent Lighting",
+          category: "Downlights & Accent Lighting",
           subcategory: "Wallwasher Downlights",
           shortDescription: "Shallow recess architectural wallwasher component explicitly structured for extremely tight ceiling plenum restrictions.",
           thumbnail: "assets/images/products/led-jawa-low-depth-trimless-wallwasher.jpg",
@@ -626,7 +626,7 @@ const LEDspotlighting = {
         {
           name: "LED SABRE DOWNLIGHT",
           slug: "led-sabre-downlight",
-          category: "Architectural Downlights & Accent Lighting",
+          category: "Downlights & Accent Lighting",
           subcategory: "Adjustable Downlights",
           shortDescription: "Low structural height premium spot module enabling full 355° rotational control and a 30° layout tilt swing.",
           thumbnail: "assets/images/products/led-sabre-downlight.jpg",
@@ -654,7 +654,7 @@ const LEDspotlighting = {
         {
           name: "LED POP OUT DOWNLIGHT",
           slug: "led-pop-out-downlight",
-          category: "Architectural Downlights & Accent Lighting",
+          category: "Downlights & Accent Lighting",
           subcategory: "Adjustable Downlights",
           shortDescription: "Advanced projector-inspired pull-out spot delivering multi-axis 360° rotation and precise focal tracking.",
           thumbnail: "assets/images/products/led-pop-out-downlight.jpg",
@@ -682,7 +682,7 @@ const LEDspotlighting = {
         {
           name: "LED MIRAGE PIPE",
           slug: "led-mirage-pipe",
-          category: "Architectural Downlights & Accent Lighting",
+          category: "Downlights & Accent Lighting",
           subcategory: "Adjustable Downlights",
           shortDescription: "High-intensity directional spot engine leveraging performance secondary optics inside a fully rotatable pipe-like structure.",
           thumbnail: "assets/images/products/led-mirage-pipe.jpg",
@@ -716,7 +716,7 @@ const LEDspotlighting = {
         {
           name: "LED NARROW BEAM DOWNLIGHT",
           slug: "led-narrow-beam-downlight",
-          category: "Architectural Downlights & Accent Lighting",
+          category: "Downlights & Accent Lighting",
           subcategory: "Narrow Beam & Pin Spot Downlights",
           shortDescription: "Precision focal spotlight array offering narrow tight beams and highly advanced anti-dazzle dark optics.",
           thumbnail: "assets/images/products/led-narrow-beam-downlight.jpg",
@@ -752,7 +752,7 @@ const LEDspotlighting = {
         {
           name: "LED MINIATURE DOWNLIGHT",
           slug: "led-miniature-downlight",
-          category: "Architectural Downlights & Accent Lighting",
+          category: "Downlights & Accent Lighting",
           subcategory: "Miniature & Niche Lighting",
           shortDescription: "Ultra small structural deep recessed downlights equipped with highly robust aluminum fin thermal management.",
           thumbnail: "assets/images/products/led-miniature-downlight.jpg",
@@ -782,7 +782,7 @@ const LEDspotlighting = {
         {
           name: "LED NICHE LIGHT",
           slug: "led-niche-light",
-          category: "Architectural Downlights & Accent Lighting",
+          category: "Downlights & Accent Lighting",
           subcategory: "Miniature & Niche Lighting",
           shortDescription: "Micro structural accent fixtures explicitly packaged for tight spatial niches, product cabinets, and fine showcases.",
           thumbnail: "assets/images/products/led-niche-light.jpg",
@@ -811,7 +811,7 @@ const LEDspotlighting = {
         {
           name: "LED SKYFALL R2 DOWNLIGHT",
           slug: "led-skyfall-r2-downlight",
-          category: "Architectural Downlights & Accent Lighting",
+          category: "Downlights & Accent Lighting",
           subcategory: "Wallwasher Downlights",
           shortDescription: "Premium anti-glare downlight configuration housing high performance precision asymmetric wallwasher optics.",
           thumbnail: "assets/images/products/led-skyfall-r2-downlight.jpg",
@@ -830,7 +830,7 @@ const LEDspotlighting = {
         {
           name: "LED ELVIN WALLWASHER DOWNLIGHT",
           slug: "led-elvin-wallwasher-downlight",
-          category: "Architectural Downlights & Accent Lighting",
+          category: "Downlights & Accent Lighting",
           subcategory: "Wallwasher Downlights",
           shortDescription: "Low operational height wallwasher array engineered with an ultra-low glare rating and full 355° structural pivot tracking.",
           thumbnail: "assets/images/products/led-elvin-wallwasher-downlight.jpg",
@@ -860,7 +860,7 @@ const LEDspotlighting = {
         {
           name: "LED MEGATWIN DOWNLIGHT",
           slug: "led-megatwin-downlight",
-          category: "Architectural Downlights & Accent Lighting",
+          category: "Downlights & Accent Lighting",
           subcategory: "Twin & Multi-Module Downlights",
           shortDescription: "Dual-head layout architectural spot modules offering adjustable directional pointing and a wide variety of structural front-load trims.",
           thumbnail: "assets/images/products/led-megatwin-downlight.jpg",
@@ -887,7 +887,7 @@ const LEDspotlighting = {
         {
           name: "LED CLEO IP 54 DOWNLIGHT",
           slug: "led-cleo-ip-54-downlight",
-          category: "Architectural Downlights & Accent Lighting",
+          category: "Downlights & Accent Lighting",
           subcategory: "IP Rated Downlights",
           shortDescription: "High protection structural IP54 downlight series specifically crafted for performance lighting in wet zones, saunas, and steam rooms.",
           thumbnail: "assets/images/products/led-cleo-ip-54-downlight.jpg",
@@ -923,7 +923,7 @@ const LEDspotlighting = {
         {
           name: "LED PREMIUM SURFACE / HANGING",
           slug: "led-premium-surface-hanging",
-          category: "Architectural Downlights & Accent Lighting",
+          category: "Downlights & Accent Lighting",
           subcategory: "Surface Mounted Spotlights",
           shortDescription: "Premium structural surface spot cylinder supporting diverse custom textures like wood and fine electroplated brass finishes.",
           thumbnail: "assets/images/products/led-premium-surface-hanging.jpg",
@@ -943,7 +943,7 @@ const LEDspotlighting = {
         {
           name: "LED ROCCO SURFACE DRUM",
           slug: "led-rocco-surface-drum",
-          category: "Architectural Downlights & Accent Lighting",
+          category: "Downlights & Accent Lighting",
           subcategory: "Surface Mounted Spotlights",
           shortDescription: "Premium surface mounted directional cylinder spot deploying high performance organic curved glare mitigation glass optics.",
           thumbnail: "assets/images/products/led-rocco-surface-drum.jpg",
@@ -963,7 +963,7 @@ const LEDspotlighting = {
         {
           name: "LED TELLACE SURFACE DRUM",
           slug: "led-tellace-surface-drum",
-          category: "Architectural Downlights & Accent Lighting",
+          category: "Downlights & Accent Lighting",
           subcategory: "Surface Mounted Spotlights",
           shortDescription: "Premium architectural surface cylinder pairing premium anti-glare lens elements with high end electroplated chassis finishes.",
           thumbnail: "assets/images/products/led-tellace-surface-drum.jpg",
@@ -982,7 +982,7 @@ const LEDspotlighting = {
         {
           name: "LED JAZZ SURFACE DRUM",
           slug: "led-jazz-surface-drum",
-          category: "Architectural Downlights & Accent Lighting",
+          category: "Downlights & Accent Lighting",
           subcategory: "Surface Mounted Spotlights",
           shortDescription: "Extensive heavy wattage surface mounted architectural spot cylinder family offering unmatched customization scale.",
           thumbnail: "assets/images/products/led-jazz-surface-drum.jpg",
@@ -1012,7 +1012,7 @@ const LEDspotlighting = {
         {
           name: "LED JAZZ HANGING DRUM",
           slug: "led-jazz-hanging-drum",
-          category: "Architectural Downlights & Accent Lighting",
+          category: "Downlights & Accent Lighting",
           subcategory: "Suspended Spotlights",
           shortDescription: "Suspended high profile architectural light pendant engineered for deep task beam delivery and aesthetic focus.",
           thumbnail: "assets/images/products/led-jazz-hanging-drum.jpg",
@@ -1033,7 +1033,7 @@ const LEDspotlighting = {
         {
           name: "LED MAGNA BLADE TILTABLE",
           slug: "led-magna-blade-tiltable",
-          category: "Architectural Downlights & Accent Lighting",
+          category: "Downlights & Accent Lighting",
           subcategory: "Linear Blade Downlights",
           shortDescription: "Premium linear recess multi-cell blade downlight grouping featuring dynamic 90° adjustable eyeball structural movement.",
           thumbnail: "assets/images/products/led-magna-blade-tiltable.jpg",
@@ -1052,7 +1052,7 @@ const LEDspotlighting = {
         {
           name: "LED MAGNA BLADE TRIMLESS",
           slug: "led-magna-blade-trimless",
-          category: "Architectural Downlights & Accent Lighting",
+          category: "Downlights & Accent Lighting",
           subcategory: "Linear Blade Downlights",
           shortDescription: "Plaster-in seamless architectural linear front-loading dark optic multi-lens focus array.",
           thumbnail: "assets/images/products/led-magna-blade-trimless.jpg",
@@ -1063,7 +1063,7 @@ const LEDspotlighting = {
         {
           name: "LED MAGNA BLADE PRIME",
           slug: "led-magna-blade-prime",
-          category: "Architectural Downlights & Accent Lighting",
+          category: "Downlights & Accent Lighting",
           subcategory: "Linear Blade Downlights",
           shortDescription: "Die cast solid body linear multi-cell dark-reflector spotlight featuring stylized deep black concave glare control edges.",
           thumbnail: "assets/images/products/led-magna-blade-prime.jpg",
@@ -1083,7 +1083,7 @@ const LEDspotlighting = {
         {
           name: "LED MAGNA BLADE ELITE",
           slug: "led-magna-blade-elite",
-          category: "Architectural Downlights & Accent Lighting",
+          category: "Downlights & Accent Lighting",
           subcategory: "Linear Blade Downlights",
           shortDescription: "Frameless deep recess linear architectural downlight line deploying specialized geometric structural cells.",
           thumbnail: "assets/images/products/led-magna-blade-elite.jpg",
@@ -1102,7 +1102,7 @@ const LEDspotlighting = {
         {
           name: "LED MAGNA BLADE 15",
           slug: "led-magna-blade-15",
-          category: "Architectural Downlights & Accent Lighting",
+          category: "Downlights & Accent Lighting",
           subcategory: "Linear Blade Downlights",
           shortDescription: "Micro structural recess linear LED light array offering extensive length options and premium integrated anti-glare lens physics.",
           thumbnail: "assets/images/products/led-magna-blade-15.jpg",
@@ -1124,7 +1124,7 @@ const LEDspotlighting = {
         {
           name: "LED MAGNA BLADE 20",
           slug: "led-magna-blade-20",
-          category: "Architectural Downlights & Accent Lighting",
+          category: "Downlights & Accent Lighting",
           subcategory: "Linear Blade Downlights",
           shortDescription: "Recessed high utility architectural linear spot modules hosting easily swap-capable internal multi-color reflector modules.",
           thumbnail: "assets/images/products/led-magna-blade-20.jpg",
@@ -1145,7 +1145,7 @@ const LEDspotlighting = {
         {
           name: "LED MAGNA BLADE 30 FRONT LOADING",
           slug: "led-magna-blade-30-front-loading",
-          category: "Architectural Downlights & Accent Lighting",
+          category: "Downlights & Accent Lighting",
           subcategory: "Linear Blade Downlights",
           shortDescription: "Front loading architectural linear downlight array tailored for swift maintenance access.",
           thumbnail: "assets/images/products/led-magna-blade-30-front-loading.jpg",
@@ -1158,7 +1158,7 @@ const LEDspotlighting = {
         {
           name: "LED MAGNA BLADE 30",
           slug: "led-magna-blade-30",
-          category: "Architectural Downlights & Accent Lighting",
+          category: "Downlights & Accent Lighting",
           subcategory: "Linear Blade Downlights",
           shortDescription: "High-wattage multi-module linear architectural recessed spotlight family available in extensive scaling sizes.",
           thumbnail: "assets/images/products/led-magna-blade-30.jpg",
@@ -1180,7 +1180,7 @@ const LEDspotlighting = {
         {
           name: "LED MAGNA BLADE VELCENO",
           slug: "led-magna-blade-velceno",
-          category: "Architectural Downlights & Accent Lighting",
+          category: "Downlights & Accent Lighting",
           subcategory: "Linear Blade Downlights",
           shortDescription: "Distinct round implementation options utilizing the high-performance internal linear grid physics of the Magna Blade family.",
           thumbnail: "assets/images/products/led-magna-blade-velceno.jpg",
@@ -1207,7 +1207,7 @@ const LEDspotlighting = {
         {
           name: "LED ZETA TRACK LIGHT",
           slug: "led-zeta-track-light",
-          category: "Architectural Downlights & Accent Lighting",
+          category: "Downlights & Accent Lighting",
           subcategory: "Track Lighting",
           shortDescription: "Most economical continuous tracking spotlight solution capable of surface wall or ceiling hardware installations.",
           thumbnail: "assets/images/products/led-zeta-track-light.jpg",
@@ -1226,7 +1226,7 @@ const LEDspotlighting = {
         {
           name: "LED RITZ TRACK LIGHT",
           slug: "led-ritz-track-light",
-          category: "Architectural Downlights & Accent Lighting",
+          category: "Downlights & Accent Lighting",
           subcategory: "Track Lighting",
           shortDescription: "Premium high flexibility architectural track spotlight optimized with diverse lens angles.",
           thumbnail: "assets/images/products/led-ritz-track-light.jpg",
@@ -1239,7 +1239,7 @@ const LEDspotlighting = {
         {
           name: "LED ARM TRACK LIGHT",
           slug: "led-arm-track-light",
-          category: "Architectural Downlights & Accent Lighting",
+          category: "Downlights & Accent Lighting",
           subcategory: "Track Lighting",
           shortDescription: "Distinct wide-footprint track cylinder featuring an elegant architectural side mount arm design.",
           thumbnail: "assets/images/products/led-arm-track-light.jpg",
@@ -1259,7 +1259,7 @@ const LEDspotlighting = {
         {
           name: "LED PEARL TRACK LIGHT",
           slug: "led-pearl-track-light",
-          category: "Architectural Downlights & Accent Lighting",
+          category: "Downlights & Accent Lighting",
           subcategory: "Track Lighting",
           shortDescription: "High-wattage luxury commercial track fixture engineered to yield massive luminous flux and ultra high CRI values.",
           thumbnail: "assets/images/products/led-pearl-track-light.jpg",
@@ -1279,7 +1279,7 @@ const LEDspotlighting = {
         {
           name: "LED ANTIQUE TRACK LIGHT",
           slug: "led-antique-track-light",
-          category: "Architectural Downlights & Accent Lighting",
+          category: "Downlights & Accent Lighting",
           subcategory: "Track Lighting",
           shortDescription: "Premium commercial grade track spotlight designed to accommodate high-end electroplated custom architectural finishes.",
           thumbnail: "assets/images/products/led-antique-track-light.jpg",
@@ -1298,7 +1298,7 @@ const LEDspotlighting = {
         {
           name: "LED PROPLATING TRACK LIGHT",
           slug: "led-proplating-track-light",
-          category: "Architectural Downlights & Accent Lighting",
+          category: "Downlights & Accent Lighting",
           subcategory: "Track Lighting",
           shortDescription: "Micro architectural structural track cylinder family standardizing superior brass and nickel electroplating.",
           thumbnail: "assets/images/products/led-proplating-track-light.jpg",
@@ -1327,7 +1327,7 @@ const LEDspotlighting = {
         {
           name: "LED MAGNETIC TRACK 25",
           slug: "led-magnetic-track-25",
-          category: "Architectural Downlights & Accent Lighting",
+          category: "Downlights & Accent Lighting",
           subcategory: "Magnetic Track Lighting",
           shortDescription: "Robust 25mm structural magnetic power track system configured for flexible multi-modular architectural lights.",
           thumbnail: "assets/images/products/led-magnetic-track-25.jpg",
@@ -1362,7 +1362,7 @@ const LEDspotlighting = {
         {
           name: "LED MAGNETIC TRACK 10",
           slug: "led-magnetic-track-10",
-          category: "Architectural Downlights & Accent Lighting",
+          category: "Downlights & Accent Lighting",
           subcategory: "Magnetic Track Lighting",
           shortDescription: "Ultra-slim 10mm structural magnetic rail modules delivering minimalist accentuation across custom modular units.",
           thumbnail: "assets/images/products/led-magnetic-track-10.jpg",
@@ -1394,7 +1394,7 @@ const LEDspotlighting = {
         {
           name: "LED MAGNETIC TRACK 5",
           slug: "led-magnetic-track-5",
-          category: "Architectural Downlights & Accent Lighting",
+          category: "Downlights & Accent Lighting",
           subcategory: "Magnetic Track Lighting",
           shortDescription: "Micro pencil scale 5mm structural smart track system engineered perfectly for luxury display shelves and modular architectural millwork.",
           thumbnail: "assets/images/products/led-magnetic-track-5.jpg",
@@ -1435,7 +1435,7 @@ const LEDspotlighting = {
         {
           name: "LED ULTRA THIN MAGNETIC TRACK LIGHT",
           slug: "led-ultra-thin-magnetic-track-light",
-          category: "Architectural Downlights & Accent Lighting",
+          category: "Downlights & Accent Lighting",
           subcategory: "Magnetic Track Lighting",
           shortDescription: "The industry slimmest structural surface-mounted profile utilizing full smart modular components.",
           thumbnail: "assets/images/products/led-ultra-thin-magnetic-track-light.jpg",
@@ -1473,7 +1473,7 @@ const LEDspotlighting = {
         {
           name: "LED MAGNETIC BELT LINK",
           slug: "led-magnetic-belt-link",
-          category: "Architectural Downlights & Accent Lighting",
+          category: "Downlights & Accent Lighting",
           subcategory: "Magnetic Track Lighting",
           shortDescription: "Premium flexible woven fabric track rail enabling organic rope-like layout pathways and free architectural customization.",
           thumbnail: "assets/images/products/led-magnetic-belt-link.jpg",
@@ -1516,7 +1516,7 @@ const LEDspotlighting = {
         {
           name: "LED MAGNA BLADE PROFILE",
           slug: "led-magna-blade-profile",
-          category: "Architectural Downlights & Accent Lighting",
+          category: "Downlights & Accent Lighting",
           subcategory: "Linear Profile Systems",
           shortDescription: "Ultra thin customizable linear profile channels enabling integration across spotlights, tracks, and continuous diffusers.",
           thumbnail: "assets/images/products/led-magna-blade-profile.jpg",
@@ -1543,7 +1543,7 @@ const LEDspotlighting = {
 export default LEDspotlighting;
 
 const LEDDecorativeLighting = {
-  category: "Architectural Downlights & Accent Lighting",
+  category: "Downlights & Accent Lighting",
 
   subcategories: [
     {
@@ -1552,7 +1552,7 @@ const LEDDecorativeLighting = {
         {
           name: "Decorative Linear Shapes",
           slug: "decorative-linear-shapes",
-          category: "Architectural Downlights & Accent Lighting",
+          category: "Downlights & Accent Lighting",
           subcategory: "Decorative Linear & Suspended Lighting",
           shortDescription: "Premium customizable geometric linear suspension architecture packaged for sophisticated high-end workspaces.",
           thumbnail: "assets/images/products/decorative-linear-shapes.jpg",
@@ -1587,7 +1587,7 @@ const LEDDecorativeLighting = {
         {
           name: "LED STYLA HANGING LIGHT",
           slug: "led-styla-hanging-light",
-          category: "Architectural Downlights & Accent Lighting",
+          category: "Downlights & Accent Lighting",
           subcategory: "Decorative Linear & Suspended Lighting",
           shortDescription: "High styling premium geometric pendant systems utilizing milk acrylic shading for smooth high contrast visual aesthetics.",
           thumbnail: "assets/images/products/led-styla-hanging-light.jpg",
@@ -1625,7 +1625,7 @@ const LEDDecorativeLighting = {
         {
           name: "LED LUSTER HANGING LIGHTS",
           slug: "led-luster-hanging-lights",
-          category: "Architectural Downlights & Accent Lighting",
+          category: "Downlights & Accent Lighting",
           subcategory: "Decorative Linear & Suspended Lighting",
           shortDescription: "Luxury statement decorative light arrays finished in premium custom powder-coated and electroplated hardware finishes.",
           thumbnail: "assets/images/products/led-luster-hanging-lights.jpg",

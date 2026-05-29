@@ -11,6 +11,7 @@ import App from "./App";
 
 import About from "./pages/About";
 import Catalog from "./pages/Catalog";
+import Collection from "./pages/Collection";
 import ErrorPage from "./pages/ErrorPage";
 import Home from "./pages/Home";
 import ProductDetail from "./pages/ProductDetail";
@@ -48,6 +49,12 @@ const router = createBrowserRouter([
                 path: "catalog",
 
                 element: <Catalog />,
+            },
+            {
+                // Editorial collection pages — e.g. /collections/ceiling-presence
+                path: "collections/:collectionSlug",
+
+                element: <Collection />,
             },
             {
                 path: "product-detail",

@@ -3,7 +3,7 @@
 .shop-category {
     padding-bottom: var(--space-2xl);
 
-    background: var(--color-white);
+    background: var(--color-surface-elevated);
 
     overflow: hidden;
 
@@ -33,7 +33,7 @@
 
     text-transform: uppercase;
 
-    color: var(--color-black);
+    color: var(--color-text-primary);
 
     @include respond(md) {
         margin-bottom: var(--space-2xl);
@@ -69,22 +69,13 @@
 
     overflow: hidden;
 
-    background: var(--color-black);
+    background: var(--color-media-bg);
 
     border-radius: var(--radius-xs);
 
-    @include respond(md) {
-        min-height: 34rem;
-    }
+    aspect-ratio: 4 / 5;
 
-    @include respond(lg) {
-        min-height: 32rem;
-    }
-
-    @include respond(xl) {
-        min-height: auto;
-        aspect-ratio: 4/5;
-    }
+    min-height: 26rem;
 
     &::after {
         content: "";
@@ -161,7 +152,7 @@
 
     text-transform: uppercase;
 
-    color: var(--color-white);
+    color: var(--color-on-media);
 
     &::after {
         content: "";

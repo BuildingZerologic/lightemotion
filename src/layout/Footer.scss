@@ -140,15 +140,15 @@
 .site-footer__middle {
     display: grid;
 
-    gap: 4rem;
+    gap: var(--space-4xl);
 
-    align-items: center;
+    padding-top: var(--space-4xl);
 
     @include respond(md) {
         grid-template-columns:
             minmax(18rem, 1fr) minmax(14rem, auto) minmax(16rem, auto);
 
-        column-gap: 5rem;
+        column-gap: var(--space-5xl);
         padding-top: var(--space-4xl);
     }
 }
@@ -167,6 +167,10 @@
     }
 }
 
+// html[data-theme='dark'] .site-footer__brand img {
+//     filter: brightness(0) invert(1);
+// }
+
 .site-footer__right {
     display: contents;
 }
@@ -174,7 +178,7 @@
 .site-footer__offices {
     display: grid;
 
-    gap: 1rem;
+    gap: var(--space-md);
 }
 
 .site-footer__cta {
@@ -188,19 +192,19 @@
 
     justify-content: center;
 
-    height: 3rem;
+    height: var(--btn-height);
 
-    padding-inline: 2rem;
+    padding-inline: var(--space-xl);
 
-    border: 1px solid rgba(0, 0, 0, 0.12);
+    border: 1px solid var(--color-border-strong);
 
     background: transparent;
 
-    font-size: 0.76rem;
+    font-size: var(--fs-caption);
 
     font-weight: var(--fw-medium);
 
-    letter-spacing: 0.14em;
+    letter-spacing: var(--ls-wide);
 
     text-transform: uppercase;
 
@@ -293,6 +297,6 @@
 
         border-color: var(--color-text-primary);
 
-        color: var(--color-white);
+        color: var(--color-bg);
     }
 }

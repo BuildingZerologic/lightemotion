@@ -7,7 +7,7 @@
 
     overflow: hidden;
 
-    background: #0d0d0d;
+    background: var(--color-media-bg);
 
     border-radius: var(--radius-zero);
 
@@ -45,7 +45,7 @@
     filter:
         brightness(0.48) saturate(0.92) contrast(1.05);
 
-    transform: scale(1.02);
+     
 }
 
 
@@ -149,15 +149,13 @@
 
     letter-spacing: var(--ls-normal);
 
-    color: var(--color-white);
+    color: var(--color-on-media);
 
     @include respond(md) {
-        font-size: var(--fs-h3);
+        font-size: var(--fs-h4);
     }
 
-    @include respond(xl) {
-        font-size: 44px;
-    }
+     
 }
 
 
@@ -174,7 +172,7 @@
 
     line-height: 1.8;
 
-    color: rgba(255, 255, 255, 0.78);
+    color: var(--color-on-media-muted);
 
     @include respond(md) {
         max-width: 30rem;
@@ -198,6 +196,6 @@
 }
 
 .heading-highlight {
-    color: #26a9e0;
+    color: var(--color-accent);
     font-family: var(--font-heading);
 }

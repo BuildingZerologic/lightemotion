@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 
 import logo from "../assets/brand/light-emotion-logo.png";
 import { imageReveal } from "../utils/motion";
@@ -9,33 +10,32 @@ const footerColumns = [
     {
         title: "Products",
         links: [
-            "Industrial Lighting",
-            "Ceiling Lighting",
-            "Decorative Lighting",
-            "Outdoor Lighting",
-            "Track Lighting",
-            "Linear Lighting",
-            "Panel Lighting"
-         ],
+            { label: "Industrial Lighting", href: "/" },
+            { label: "Ceiling Lighting",    href: "/" },
+            { label: "Decorative Lighting", href: "/" },
+            { label: "Outdoor Lighting",    href: "/" },
+            { label: "Track Lighting",      href: "/" },
+            { label: "Linear Lighting",     href: "/" },
+            { label: "Panel Lighting",      href: "/" },
+        ],
     },
     {
         title: "Information",
         links: [
-            "Homepage",
-            "Catalog",
-            "Services",
-            "About",
-            "Privacy Policy",
-            "Terms & Conditions",
+            { label: "Home",               to: "/" },
+            { label: "Services",           to: "/services" },
+            { label: "About",              to: "/about" },
+            { label: "Privacy Policy",     href: "#" },
+            { label: "Terms & Conditions", href: "#" },
         ],
     },
     {
         title: "Social Media",
         links: [
-            "Facebook",
-            "Instagram",
-            "Pinterest",
-            "LinkedIn",
+            { label: "Facebook",  href: "#" },
+            { label: "Instagram", href: "#" },
+            { label: "Pinterest", href: "#" },
+            { label: "LinkedIn",  href: "#" },
         ],
     },
 ];
@@ -102,10 +102,16 @@ export default function Footer() {
 
                                 <ul className="site-footer__link-list">
                                     {column.links.map((link) => (
-                                        <li key={link}>
-                                            <a className="site-footer__link" href="/">
-                                                {link}
-                                            </a>
+                                        <li key={link.label}>
+                                            {link.to ? (
+                                                <Link className="site-footer__link" to={link.to}>
+                                                    {link.label}
+                                                </Link>
+                                            ) : (
+                                                <a className="site-footer__link" href={link.href}>
+                                                    {link.label}
+                                                </a>
+                                            )}
                                         </li>
                                     ))}
                                 </ul>
@@ -151,13 +157,11 @@ export default function Footer() {
                             ))}
                         </motion.div>
 
-                        <motion.button
-                            className="btn-secondary"
-                            type="button"
-                            variants={itemReveal}
-                        >
-                            Let's Connect
-                        </motion.button>
+                        <motion.div variants={itemReveal}>
+                            <Link to="/contact" className="btn-secondary">
+                                Let's Connect
+                            </Link>
+                        </motion.div>
 
                     </motion.div>
 

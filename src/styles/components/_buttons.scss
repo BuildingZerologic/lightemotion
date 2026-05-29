@@ -7,7 +7,7 @@
 
     padding-inline: 1.5rem;
 
-    border-radius: var(--radius-zero);
+    border-radius: var(--radius-xs);
 
     display: inline-flex;
     align-items: center;
@@ -44,15 +44,15 @@
 ===================================================== */
 
 .btn-primary {
-    border: 1px solid black;
+    border: 1px solid var(--color-text-primary);
 
     background: var(--color-text-primary);
 
-    color: var(--color-white);
+    color: var(--color-bg);
 
     &:hover {
-        background: var(--color-white);
-        color: var(--color-black);
+        background: var(--color-surface-elevated);
+        color: var(--color-text-primary);
         transform: translateY(-2px);
     }
 }
@@ -64,9 +64,9 @@
 
 .btn-secondary {
      
-    border: 1px solid var(--color-black);
+    border: 1px solid var(--color-text-primary);
 
-    color: var(--color-black);
+    color: var(--color-text-primary);
 
     background: transparent;
 
@@ -75,9 +75,9 @@
         color var(--transition-medium);
 
     &:hover {
-        background: var(--color-black);
+        background: var(--color-text-primary);
 
-        color: var(--color-white);
+        color: var(--color-bg);
     }
 }
 
@@ -87,10 +87,25 @@
     .btn-primary,
     .btn-secondary,
     .btn-light {
-        height: var(--btn-height-sm);
+        height: var(--btn-height);
 
-        padding-inline: 1.2rem;
+        padding-inline: clamp(1.2rem, 2vw, 1.5rem);
 
-        font-size: var(--fs-body-sm);
+        font-size: var(--fs-button);
+    }
+}
+
+.btn-light {
+    border: 1px solid var(--color-on-media);
+
+    background: inherit;
+
+    color: var(--color-on-media);
+
+    &:hover {
+         
+        background: var(--color-on-media);
+        color: var(--color-media-bg);
+        transform: translateY(-2px);
     }
 }

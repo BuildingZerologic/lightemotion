@@ -9,11 +9,12 @@
 
     z-index: var(--z-navbar);
 
-    height: 88px;
+    height: var(--navbar-height);
 
     color: var(--color-white);
 
     transition:
+        transform var(--transition-medium),
         height var(--transition-medium),
         background var(--transition-medium),
         border-color var(--transition-medium),
@@ -31,13 +32,13 @@
 }
 
 .site-navbar--scrolled {
-    height: 74px;
+    height: var(--navbar-height-compact);
 
     border-bottom: 1px solid var(--color-border);
 
-    background: var(--color-white);
+    background: var(--color-nav-solid-bg);
 
-    color: var(--color-black);
+    color: var(--color-nav-solid-text);
 
     @supports (backdrop-filter: blur(14px)) {
         backdrop-filter: blur(14px);
@@ -46,6 +47,12 @@
     @supports (-webkit-backdrop-filter: blur(14px)) {
         -webkit-backdrop-filter: blur(14px);
     }
+}
+
+.site-navbar--hidden {
+    pointer-events: none;
+
+    transform: translateY(calc(-1 * var(--navbar-height))) !important;
 }
 
 .site-navbar .container {
@@ -90,9 +97,11 @@
     }
 }
 
-.site-navbar--hero .site-navbar__brand {
-    filter: brightness(0) invert(1);
-}
+// .site-navbar--hero .site-navbar__brand img,
+// html[data-theme='dark'] .site-navbar--scrolled .site-navbar__brand img {
+//     filter: brightness(0) invert(1);
+// }
+
 
 .site-navbar__links {
     display: none;
@@ -159,6 +168,54 @@
 
             transition: transform var(--transition-medium);
         }
+    }
+}
+
+.site-navbar__theme-toggle {
+    width: 2.5rem;
+    height: 2.5rem;
+
+    opacity: 0.88;
+}
+
+.site-navbar__actions {
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: var(--space-xs);
+
+    color: currentColor;
+
+    @include respond(md) {
+        display: none;
+    }
+}
+
+.site-navbar__theme-toggle--mobile {
+    @include respond(md) {
+        display: none;
+    }
+}
+
+.site-navbar__products-item {
+    position: relative;
+
+    /* Invisible bridge: extends 1rem below the nav bar to fill the
+       translateY entry gap, so the cursor never exits the hover zone
+       when moving from trigger to mega menu. */
+    &::after {
+        content: "";
+
+        position: absolute;
+
+        bottom: -1rem;
+        left: -1rem;
+        right: -1rem;
+
+        height: 1rem;
+
+        /* Transparent — purely a hover catch zone */
     }
 }
 
@@ -241,25 +298,30 @@
 }
 
 .products-mega-menu {
-    position: fixed;
+    /* Position flush to the bottom of the navbar — no gap.
+       The navbar element already spans --navbar-height, so this
+       element begins exactly where the header ends. */
+    position: absolute;
 
-    top: 74px;
+    top: 100%;
     left: 0;
     right: 0;
 
     display: none;
 
-    color: var(--color-black);
+    color: var(--color-text-primary);
 
     opacity: 0;
 
     pointer-events: none;
 
-    transform: translateY(-0.75rem);
+    /* Reduced translateY so the menu doesn't overshoot — prevents
+       a pixel gap between trigger hover zone and menu top edge. */
+    transform: translateY(-0.35rem);
 
     transition:
-        opacity var(--transition-medium),
-        transform var(--transition-medium);
+        opacity var(--transition-fast),
+        transform var(--transition-fast);
 
     @include respond(md) {
         display: block;
@@ -277,22 +339,35 @@
 .products-mega-menu__inner {
     display: grid;
 
-    grid-template-columns: minmax(16rem, 0.95fr) minmax(18rem, 1fr) minmax(18rem, 1.15fr);
+    grid-template-columns: minmax(15rem, 0.9fr) minmax(18rem, 1.1fr) minmax(16rem, 1fr);
 
-    min-height: min(48rem, calc(100svh - 8rem));
+    /* Cap height so subcategories never exceed the viewport. */
+    max-height: calc(100svh - var(--navbar-height-compact) - 1rem);
 
-    padding-block: var(--space-2xl);
+    /* Columns carry their own padding-block — no need for it here */
 
     border: 1px solid var(--color-border);
+    border-top: none;
 
-    background: var(--color-white);
+    background: var(--color-surface-elevated);
+
+    box-shadow: var(--shadow-medium);
 }
 
 .products-mega-menu__column {
+    display: flex;
+    flex-direction: column;
+
+    /* Columns are individually scrollable when content overflows */
+    overflow: hidden;
+
     padding-inline: var(--space-xl);
+    padding-block: var(--space-xl);
 
     h2 {
-        margin: 0 0 var(--space-lg);
+        flex-shrink: 0;
+
+        margin: 0 0 var(--space-md);
 
         font-size: var(--fs-caption);
 
@@ -322,20 +397,49 @@
 .products-mega-menu__subcategories {
     display: grid;
 
-    gap: var(--space-sm);
+    gap: var(--space-xs);
 
     margin: 0;
 
     padding: 0;
+    padding-right: var(--space-xs);
 
     list-style: none;
+
+    /* Allow internal scrolling when content is taller than the column.
+       Keeps the design clean — no content cut off. */
+    overflow-y: auto;
+    overflow-x: hidden;
+
+    /* Custom slim scrollbar for premium feel */
+    scrollbar-width: thin;
+    scrollbar-color: var(--color-border) transparent;
+
+    &::-webkit-scrollbar {
+        width: 3px;
+    }
+
+    &::-webkit-scrollbar-track {
+        background: transparent;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background: var(--color-border);
+        border-radius: var(--radius-full);
+    }
+}
+
+.products-mega-menu__subcategories {
+     @include respond(lg) {
+         gap: 0;
+    }
 }
 
 .products-mega-menu__categories button,
 .products-mega-menu__subcategories a {
     width: 100%;
 
-    color: var(--color-black);
+    color: var(--color-text-primary);
 
     font-size: var(--fs-body-sm);
 
@@ -357,7 +461,7 @@
 
     gap: var(--space-md);
 
-    min-height: var(--btn-height-sm);
+    min-height: 2.25rem;
 
     padding: var(--space-xs) var(--space-sm);
 
@@ -371,10 +475,10 @@
 
     cursor: pointer;
 
-    transition: background var(--transition-medium);
+    transition: background var(--transition-fast);
 
     &.is-active {
-        background: var(--color-bg);
+        background: var(--color-surface-muted);
     }
 }
 
@@ -395,7 +499,7 @@
 .products-mega-menu__subcategories a {
     display: inline-flex;
 
-    padding-block: 0.35rem;
+    padding-block: var(--space-xs);
 
     transition: opacity var(--transition-medium);
 }
@@ -436,7 +540,7 @@
     }
 
     .products-mega-menu__categories button:hover {
-        background: var(--color-bg);
+        background: var(--color-surface-muted);
     }
 
     .products-mega-menu__subcategories a:hover {

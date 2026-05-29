@@ -45,16 +45,16 @@ export default function ServicesIndustries() {
                         className="services-industries__image"
                         {...imageReveal}
                     >
-                        <AnimatePresence mode="wait">
+                        <AnimatePresence mode="sync">
                             <motion.img
                                 key={activeIndustry.image}
                                 src={activeIndustry.image}
                                 alt={`${activeIndustry.name} lighting environment`}
                                 loading="lazy"
                                 decoding="async"
-                                initial={{ opacity: 0, scale: 1.02 }}
-                                animate={{ opacity: 1, scale: 1 }}
-                                exit={{ opacity: 0, scale: 1.01 }}
+                                initial={{ opacity: 0 }}
+                                animate={{ opacity: 1}}
+                                exit={{ opacity: 0}}
                                 transition={{
                                     duration: 0.6,
                                     ease: [0.22, 1, 0.36, 1],
@@ -70,13 +70,13 @@ export default function ServicesIndustries() {
                         viewport={{ once: true, amount: 0.25 }}
                         variants={staggerReveal}
                     >
-                        <motion.p
+                        <motion.h5
                             className="services-industries__label"
                             id="services-industries-title"
                             variants={reveal}
                         >
                             Industries We Cover
-                        </motion.p>
+                        </motion.h5>
 
                         <motion.ul
                             className="services-industries__list"

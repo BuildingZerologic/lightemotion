@@ -2,15 +2,15 @@
 
 .contact-page {
     /* Uses the very light off-white from your mockup */
-    background: inherit; 
+    background: var(--color-bg);
     min-height: 100svh;
 }
 
 .contact {
-    padding-block: calc(88px + var(--space-2xl)) var(--space-4xl);
+    padding-block: calc(var(--navbar-height) + var(--space-2xl)) var(--space-4xl);
     
     @include respond(md) {
-        padding-block: calc(74px + var(--space-6xl)) var(--space-6xl);
+        padding-block: calc(var(--navbar-height-compact) + var(--space-6xl)) var(--space-6xl);
     }
 }
 
@@ -57,11 +57,11 @@
 .contact__title {
     margin-bottom: var(--space-md);
     font-family: var(--font-heading);
-    font-size: 3.5rem;
-    font-weight: 400;
-    line-height: 1.1;
-    letter-spacing: -0.02em;
-    color: var(--color-black);
+    font-size: var(--fs-h3);
+    font-weight: var(--fw-regular);
+    line-height: var(--lh-heading);
+    letter-spacing: var(--ls-normal);
+    color: var(--color-text-primary);
 
     @include respond(md) {
         font-size: 4.5rem;
@@ -72,7 +72,7 @@
     max-width: 34rem;
     font-size: var(--fs-body);
     line-height: 1.6;
-    color: #555; /* Slightly muted text for the description */
+    color: var(--color-text-secondary);
 }
 
 .contact__form {
@@ -88,34 +88,34 @@
 }
 
 .contact__label {
-    font-size: 0.75rem;
-    font-weight: 600;
-    letter-spacing: 0.1em;
+    font-size: var(--fs-caption);
+    font-weight: var(--fw-semibold);
+    letter-spacing: var(--ls-wide);
     text-transform: uppercase;
-    color: var(--color-black);
+    color: var(--color-text-primary);
 }
 
 .contact__input {
     width: 100%;
-    padding: 1rem 1.25rem;
-    background: inherit; /* Crisp white inputs against the off-white background */
-    border: 1px solid #e5e5e5;
+    padding: var(--space-md) var(--space-lg);
+    background: var(--color-input-bg);
+    border: 1px solid var(--color-border);
     border-radius: var(--radius-xs, 4px);
     font-family: var(--font-body);
-    font-size: 1rem;
-    color: var(--color-black);
+    font-size: var(--fs-body-sm);
+    color: var(--color-text-primary);
     transition: 
         border-color var(--transition-medium), 
         box-shadow var(--transition-medium);
 
     &::placeholder {
-        color: #999;
+        color: var(--color-input-placeholder);
     }
 
     &:focus {
         outline: none;
-        border-color: var(--color-black);
-        box-shadow: 0 0 0 1px var(--color-black);
+        border-color: var(--color-focus-ring);
+        box-shadow: 0 0 0 1px var(--color-focus-ring);
     }
 }
 
@@ -128,13 +128,13 @@
     margin-top: var(--space-md);
     width: 100%;
     padding: 1.25rem;
-    background: var(--color-black);
-    color: var(--color-white);
+    background: var(--color-text-primary);
+    color: var(--color-bg);
     border: none;
     font-family: var(--font-body);
-    font-size: 0.85rem;
-    font-weight: 500;
-    letter-spacing: 0.2em; /* Wide tracking to match the image */
+    font-size: var(--fs-body-sm);
+    font-weight: var(--fw-medium);
+    letter-spacing: var(--ls-caption);
     text-transform: uppercase;
     cursor: pointer;
     transition: 
@@ -143,7 +143,8 @@
 
     @media (hover: hover) and (pointer: fine) {
         &:hover {
-            background: #222;
+            background: var(--color-text-primary);
+            opacity: 0.86;
         }
     }
 

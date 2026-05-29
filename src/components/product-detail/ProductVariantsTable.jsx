@@ -154,7 +154,7 @@ export default function ProductVariantsTable({ tableId, variants = [] }) {
                         className="product-detail__variants-title"
                         id="product-detail-variants-title"
                     >
-                        Variant Matrix
+                        Product Variants
                     </h2>
                 </header>
 

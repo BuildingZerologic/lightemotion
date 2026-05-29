@@ -8,7 +8,7 @@ export default function ProductIntro({
     title,
     variantsCount = 0,
 }) {
-    const variantsLabel = `${variantsCount} ${variantsCount === 1 ? "Variant" : "Variants"} Available`;
+    const variantsLabel = `Explore ${variantsCount} ${variantsCount === 1 ? "Variant" : "Variants"}`;
 
     return (
         <motion.div
@@ -18,9 +18,9 @@ export default function ProductIntro({
             transition={{ duration: 0.8, delay: 0.12, ease: [0.22, 1, 0.36, 1] }}
         >
             <header className="product-detail__header">
-                <h1 className="product-detail__title" id="product-detail-title">
+                <h3 className="product-detail__title" id="product-detail-title">
                     {title}
-                </h1>
+                </h3>
 
                 {description && (
                     <p className="product-detail__description">

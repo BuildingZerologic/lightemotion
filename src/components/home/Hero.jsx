@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import "./Hero.scss";
 
 export default function Hero() {
@@ -52,9 +53,9 @@ export default function Hero() {
 
                     <div className="hero__actions">
 
-                        <button className="btn-light">
+                        <Link to="/contact" className="btn-light">
                             START COLLABORATION
-                        </button>
+                        </Link>
 
                     </div>
 

@@ -6,7 +6,7 @@
 
 .about-scroll-scene {
     position: relative;
-    background: var(--color-black); /* Dark base just in case of over-scroll */
+    background: var(--color-media-bg);
 }
 
 /* ──────────────────────────────────────────────
@@ -52,8 +52,8 @@
     min-height: 100vh;
     margin-top: -100vh; /* CRITICAL: Pulls the section up to cover the video completely on load */
     
-    background: var(--color-white);
-    color: var(--color-black);
+    background: var(--color-surface-elevated);
+    color: var(--color-text-primary);
     
     display: flex;
     align-items: center; /* Vertically centers the text */
@@ -77,7 +77,7 @@
 
 .about-philosophy__text {
     max-width: 44rem;
-    color: var(--color-black);
+    color: var(--color-text-primary);
      
 }
 
@@ -103,7 +103,7 @@
     
     margin-top: -15vh; /* Creates the overlap effect over the video */
     
-    background: var(--color-white);
+    background: var(--color-surface-elevated);
     padding-top: var(--space-6xl);
     padding-bottom: var(--space-6xl);
 
@@ -177,6 +177,6 @@
 }
 
 .about-capabilities__text {
-    color: var(--color-black);
+    color: var(--color-text-primary);
      
 }

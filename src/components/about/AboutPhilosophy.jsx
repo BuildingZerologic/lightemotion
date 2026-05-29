@@ -36,7 +36,7 @@ export default function AboutPhilosophy() {
                     playsInline
                     preload="metadata"
                 >
-                    <source src="/videos/about/philosophy-mobile.mp4" type="video/mp4" />
+                    <source src="/videos/aboutprocess.mp4" type="video/mp4" />
                 </video>
             </div>
 
@@ -101,7 +101,7 @@ export default function AboutPhilosophy() {
                             whileInView="visible"
                             viewport={{ once: true, amount: 0.4 }}
                         >
-                            What defines every lighting system
+                            Pillars Of Lighting
                         </motion.h2>
                     </div>
 
@@ -116,8 +116,7 @@ export default function AboutPhilosophy() {
                         >
                             <span className="about-capabilities__number">01</span>
                             <div className="about-capabilities__content">
-                                <span className="about-capabilities__label">CUSTOM ENGINEERING</span>
-                                <h4 className="about-capabilities__title">Bespoke Frameworks</h4>
+                                 <h5 className="about-capabilities__title">Bespoke Frameworks</h5>
                                 <p className="about-capabilities__text">
                                     Every premium project has unique structural and architectural
                                     demands. We alter fixture optics, engineer custom linear
@@ -138,8 +137,7 @@ export default function AboutPhilosophy() {
                         >
                             <span className="about-capabilities__number">02</span>
                             <div className="about-capabilities__content">
-                                <span className="about-capabilities__label">INTELLIGENT CONTROL</span>
-                                <h4 className="about-capabilities__title">Smart Automation</h4>
+                                 <h5 className="about-capabilities__title">Smart Automation</h5>
                                 <p className="about-capabilities__text">
                                     Modern luxury demands fluid, automated adaptation. Our
                                     fixtures are engineered to integrate flawlessly with global
@@ -160,8 +158,7 @@ export default function AboutPhilosophy() {
                         >
                             <span className="about-capabilities__number">03</span>
                             <div className="about-capabilities__content">
-                                <span className="about-capabilities__label">ENGINEERING LONGEVITY</span>
-                                <h4 className="about-capabilities__title">Sustainable Performance</h4>
+                                 <h5 className="about-capabilities__title">Sustainable Performance</h5>
                                 <p className="about-capabilities__text">
                                     Built for permanent architectural impact. We combine
                                     advanced thermal management with premium, high-CRI chipsets

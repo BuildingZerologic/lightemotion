@@ -87,15 +87,13 @@ export default function HowWeWork() {
                         className="how-work__intro"
                         variants={introReveal}
                     >
-                        <p className="how-work__eyebrow">How We Work</p>
+                        {/* <h5 className="how-work__eyebrow">How We Work</h5> */}
 
                         <h2
                             className="how-work__heading"
                             id="how-work-title"
                         >
-                            From blueprint
-                            <br />
-                            to beautiful reality.
+                            How We Work
                         </h2>
                     </motion.div>
 
@@ -117,11 +115,11 @@ export default function HowWeWork() {
                                 </p>
 
                                 <div className="how-work__content">
-                                    <h3
+                                    <h5
                                         className="how-work__item-title"
                                     >
                                         {item.title}
-                                    </h3>
+                                    </h5>
 
                                     <p className="how-work__description">
                                         {item.description}

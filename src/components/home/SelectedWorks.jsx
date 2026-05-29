@@ -1,5 +1,7 @@
 import { useRef } from "react";
 
+import { Link } from "react-router-dom";
+
 import {
     motion,
     useScroll,
@@ -152,12 +154,12 @@ export default function SelectedWorks() {
                     className="selected-works__action"
                     initial={{ opacity: 0, y: 30 }}
                     whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true, amount: 0.5 }}
+                    viewport={{ once: true, amount: 0.2 }}
                     transition={{ duration: 0.8 }}
                 >
-                    <button className="btn-secondary" type="button">
+                    <Link to="/services" className="btn-secondary">
                         Discover More
-                    </button>
+                    </Link>
                 </motion.div>
 
             </div>

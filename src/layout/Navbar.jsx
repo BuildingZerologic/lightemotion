@@ -6,6 +6,7 @@ import { Link, useLocation } from "react-router-dom";
 import logo from "../assets/brand/light-emotion-logo.png";
 import { navigation } from "../data/navigation";
 import MobileNavDrawer from "./MobileNavDrawer";
+import ThemeToggle from "./ThemeToggle";
 
 import "./Navbar.scss";
 
@@ -32,21 +33,43 @@ const navLinks = [
 export default function Navbar() {
     const location = useLocation();
     const [isScrolled, setIsScrolled] = useState(false);
+    const [isNavbarHidden, setIsNavbarHidden] = useState(false);
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const [isProductsMenuOpen, setIsProductsMenuOpen] = useState(false);
     const [activeCategoryIndex, setActiveCategoryIndex] = useState(0);
     const productsMenuRef = useRef(null);
     const closeProductsTimerRef = useRef(null);
+    const lastScrollYRef = useRef(0);
 
     const activeCategory = navigation[activeCategoryIndex] || navigation[0];
 
+    const NAVBAR_HEIGHT = 88;
+    const NAVBAR_HEIGHT_COMPACT = 74;
+    const NAVBAR_HIDE_OFFSET = 120;
+    const SCROLL_DIRECTION_THRESHOLD = 8;
+
     useEffect(() => {
         const handleScrollState = () => {
+            const currentScrollY = window.scrollY;
+            const scrollDelta = currentScrollY - lastScrollYRef.current;
+            const canHideNavbar = !isMenuOpen && !isProductsMenuOpen;
+
+            if (!canHideNavbar || currentScrollY <= NAVBAR_HIDE_OFFSET) {
+                setIsNavbarHidden(false);
+            } else if (Math.abs(scrollDelta) > SCROLL_DIRECTION_THRESHOLD) {
+                setIsNavbarHidden(scrollDelta > 0);
+            }
+
+            lastScrollYRef.current = currentScrollY;
+
             const solidSurface = document.querySelector("[data-navbar-solid]");
 
             if (solidSurface) {
                 setIsScrolled(true);
-
+                document.documentElement.style.setProperty(
+                    "--navbar-height",
+                    `${NAVBAR_HEIGHT_COMPACT}px`
+                );
                 return;
             }
 
@@ -55,16 +78,25 @@ export default function Navbar() {
                 document.querySelector(".hero");
 
             if (!transparentSurface) {
-                setIsScrolled(window.scrollY > 24);
-
+                const scrolled = window.scrollY > 24;
+                setIsScrolled(scrolled);
+                document.documentElement.style.setProperty(
+                    "--navbar-height",
+                    scrolled ? `${NAVBAR_HEIGHT_COMPACT}px` : `${NAVBAR_HEIGHT}px`
+                );
                 return;
             }
 
             const surfaceBottom = transparentSurface.getBoundingClientRect().bottom;
-
-            setIsScrolled(surfaceBottom <= 74);
+            const scrolled = surfaceBottom <= NAVBAR_HEIGHT_COMPACT;
+            setIsScrolled(scrolled);
+            document.documentElement.style.setProperty(
+                "--navbar-height",
+                scrolled ? `${NAVBAR_HEIGHT_COMPACT}px` : `${NAVBAR_HEIGHT}px`
+            );
         };
 
+        lastScrollYRef.current = window.scrollY;
         handleScrollState();
 
         window.addEventListener("scroll", handleScrollState, { passive: true });
@@ -74,7 +106,7 @@ export default function Navbar() {
             window.removeEventListener("scroll", handleScrollState);
             window.removeEventListener("resize", handleScrollState);
         };
-    }, [location.pathname]);
+    }, [isMenuOpen, isProductsMenuOpen, location.pathname]);
 
     useEffect(() => {
         if (!isMenuOpen && !isProductsMenuOpen) {
@@ -126,7 +158,7 @@ export default function Navbar() {
 
         closeProductsTimerRef.current = window.setTimeout(() => {
             setIsProductsMenuOpen(false);
-        }, 160);
+        }, 120);
     };
 
     const closeProductsMenu = () => {
@@ -139,6 +171,7 @@ export default function Navbar() {
         isScrolled || isMenuOpen || isProductsMenuOpen ? "site-navbar--scrolled" : "site-navbar--hero",
         isMenuOpen ? "site-navbar--open" : "",
         isProductsMenuOpen ? "site-navbar--products-open" : "",
+        isNavbarHidden ? "site-navbar--hidden" : "",
     ].filter(Boolean).join(" ");
 
     return (
@@ -146,7 +179,7 @@ export default function Navbar() {
             className={navbarClassName}
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, ease: "easeOut" }}
+            transition={{ duration: 0.42, ease: "easeOut" }}
             ref={productsMenuRef}
         >
             <div className="container">
@@ -195,19 +228,27 @@ export default function Navbar() {
                                 </li>
                             );
                         })}
+
+                        <li>
+                            <ThemeToggle className="site-navbar__theme-toggle" />
+                        </li>
                     </ul>
 
-                    <button
-                        className="site-navbar__toggle"
-                        type="button"
-                        aria-label={isMenuOpen ? "Close navigation menu" : "Open navigation menu"}
-                        aria-expanded={isMenuOpen}
-                        aria-controls="mobile-nav-drawer"
-                        onClick={() => setIsMenuOpen((current) => !current)}
-                    >
-                        <span />
-                        <span />
-                    </button>
+                    <div className="site-navbar__actions">
+                        <ThemeToggle className="site-navbar__theme-toggle site-navbar__theme-toggle--mobile" />
+
+                        <button
+                            className="site-navbar__toggle"
+                            type="button"
+                            aria-label={isMenuOpen ? "Close navigation menu" : "Open navigation menu"}
+                            aria-expanded={isMenuOpen}
+                            aria-controls="mobile-nav-drawer"
+                            onClick={() => setIsMenuOpen((current) => !current)}
+                        >
+                            <span />
+                            <span />
+                        </button>
+                    </div>
                 </nav>
             </div>
 

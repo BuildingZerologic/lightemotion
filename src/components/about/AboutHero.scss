@@ -3,7 +3,7 @@
 .about-hero {
     padding-top: var(--space-5xl);
 
-    background: var(--color-white);
+    background: var(--color-surface-elevated);
 
     overflow: hidden;
 
@@ -40,7 +40,7 @@
 
     letter-spacing: var(--ls-tight);
 
-    color: var(--color-black);
+    color: var(--color-text-primary);
 
     @include respond(md) {
         margin-bottom: var(--space-2xl);
@@ -54,7 +54,7 @@
 
     margin: 0;
 
-    color: var(--color-black);
+    color: var(--color-text-primary);
 
     @include respond(md) {
     }
@@ -70,7 +70,7 @@
 
     overflow: hidden;
 
-    background: var(--color-black);
+    background: var(--color-media-bg);
 
     @include respond(md) {
         aspect-ratio: 21 / 9;

@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 
 import { reveal, staggerReveal } from "./servicesAnimations";
 
@@ -32,13 +33,11 @@ export default function ServicesCta() {
                     What should your space feel like?
                 </motion.h2>
 
-                <motion.button
-                    className="services-cta__button"
-                    type="button"
-                    variants={reveal}
-                >
-                    Let&apos;s connect
-                </motion.button>
+                <motion.div variants={reveal}>
+                    <Link to="/contact" className="btn-light">
+                        Let's connect
+                    </Link>
+                </motion.div>
             </motion.div>
         </section>
     );
