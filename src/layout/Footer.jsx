@@ -128,7 +128,14 @@ export default function Footer() {
                         aria-label="Light Emotion homepage"
                         {...imageReveal}
                     >
-                        <img src={logo} alt="Light Emotion" loading="lazy" decoding="async" />
+                        <img
+                            src={logo}
+                            alt="Light Emotion"
+                            width="4228"
+                            height="833"
+                            loading="lazy"
+                            decoding="async"
+                        />
                     </motion.a>
 
                     <motion.div

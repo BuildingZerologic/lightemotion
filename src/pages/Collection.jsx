@@ -76,6 +76,9 @@ export default function Collection() {
                     className="collection-hero__image"
                     src={collection.image}
                     alt={collection.imageAlt}
+                    loading="eager"
+                    fetchPriority="high"
+                    decoding="async"
                     initial={{ opacity: 0, scale: 1.025 }}
                     animate={{ opacity: 1, scale: 1 }}
                     transition={{ duration: 1, ease: [0.22, 1, 0.36, 1] }}

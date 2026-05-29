@@ -28,20 +28,6 @@
     object-fit: cover;
 }
 
-.about-philosophy__video--mobile {
-    display: block;
-    @include respond(md) {
-        display: none;
-    }
-}
-
-.about-philosophy__video--desktop {
-    display: none;
-    @include respond(md) {
-        display: block;
-    }
-}
-
 /* ──────────────────────────────────────────────
    LAYER 2: SECTION 01 (Curtain Cover)
 ────────────────────────────────────────────── */

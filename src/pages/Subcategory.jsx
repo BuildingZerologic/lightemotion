@@ -35,6 +35,9 @@ export default function Subcategory() {
                         src={pageData.heroMedia.src}
                         alt=""
                         aria-hidden="true"
+                        loading="eager"
+                        fetchPriority="high"
+                        decoding="async"
                         onError={(event) => {
                             resolveImageFallback(event, pageData.heroMedia.fallbackSources);
                         }}

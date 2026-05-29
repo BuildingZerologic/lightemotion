@@ -1,42 +1,26 @@
+import { useReducedMotion } from "framer-motion";
 import { Link } from "react-router-dom";
 import "./Hero.scss";
 
 export default function Hero() {
+    const shouldReduceMotion = useReducedMotion();
+
     return (
         <section className="hero">
 
             <div className="hero__video-wrapper">
 
-                {/* Desktop Video */}
                 <video
-                    className="hero__video hero__video--desktop"
-                    autoPlay
-                    muted
-                    loop
-                    playsInline
-                    preload="auto"
-                >
-                    <source
-                        src="/videos/herovideo.mp4"
-                        type="video/mp4"
-                        media="(min-width: 769px)"
-                    />
-                </video>
-
-                {/* Mobile Video */}
-                <video
-                    className="hero__video hero__video--mobile"
-                    autoPlay
+                    className="hero__video"
+                    autoPlay={!shouldReduceMotion}
                     muted
                     loop
                     playsInline
                     preload="metadata"
+                    poster="/images/hero-poster.webp"
+                    aria-hidden="true"
                 >
-                    <source
-                        src="/videos/hero-mobile.mp4"
-                        type="video/mp4"
-                        media="(max-width: 768px)"
-                    />
+                    <source src="/videos/herovideo.mp4" type="video/mp4" />
                 </video>
 
             </div>
@@ -48,7 +32,7 @@ export default function Hero() {
                 <div className="hero__content">
 
                     <h2 className="hero__title">
-                       Lighting Solutions For Business
+                        Lighting Solutions For Business
                     </h2>
 
                     <div className="hero__actions">
@@ -63,7 +47,6 @@ export default function Hero() {
 
             </div>
 
- 
         </section>
     );
 }

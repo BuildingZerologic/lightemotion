@@ -1,7 +1,9 @@
-import { motion } from 'framer-motion';
+import { motion, useReducedMotion } from 'framer-motion';
 import './AboutPhilosophy.scss';
 
 export default function AboutPhilosophy() {
+    const shouldReduceMotion = useReducedMotion();
+
     // Premium Awwwards-style ease animation
     const revealUp = {
         hidden: { y: 60, opacity: 0 },
@@ -18,23 +20,13 @@ export default function AboutPhilosophy() {
             {/* 🎥 LAYER 1: VIDEO (Sticky Base - Z-Index 1) */}
             <div className="about-video-layer" aria-hidden="true">
                 <video
-                    className="about-philosophy__video about-philosophy__video--desktop"
-                    autoPlay
+                    className="about-philosophy__video"
+                    autoPlay={!shouldReduceMotion}
                     muted
                     loop
                     playsInline
                     preload="metadata"
-                >
-                    <source src="/videos/aboutprocess.mp4" type="video/mp4" />
-                </video>
-
-                <video
-                    className="about-philosophy__video about-philosophy__video--mobile"
-                    autoPlay
-                    muted
-                    loop
-                    playsInline
-                    preload="metadata"
+                    poster="/images/about-process-poster.webp"
                 >
                     <source src="/videos/aboutprocess.mp4" type="video/mp4" />
                 </video>

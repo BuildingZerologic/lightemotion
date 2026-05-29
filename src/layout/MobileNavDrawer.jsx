@@ -64,7 +64,13 @@ export default function MobileNavDrawer({
                     aria-label="Light Emotion homepage"
                     onClick={handleClose}
                 >
-                    <img src={logoSrc} alt="Light Emotion" />
+                    <img
+                        src={logoSrc}
+                        alt="Light Emotion"
+                        width="4228"
+                        height="833"
+                        decoding="async"
+                    />
                 </Link>
 
                 <button

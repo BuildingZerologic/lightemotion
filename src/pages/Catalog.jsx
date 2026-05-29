@@ -5,6 +5,10 @@ import { Link } from "react-router-dom";
 import { AnimatePresence, motion } from "framer-motion";
 
 import { imageRevealVariants } from "../utils/motion";
+import {
+    getPublicProductWidth,
+    responsiveSizes,
+} from "../utils/responsiveMedia";
 
 import allProductsBanner from "../assets/catalog/banners/all-products-banner.webp";
 import exteriorBanner from "../assets/catalog/banners/exterior-lighting-banner.webp";
@@ -182,6 +186,23 @@ const tabsReveal = {
     },
 };
 
+function getCatalogProductSrcSet(image) {
+    const productMatch = image.match(/prod \((\d+)\)\.jpeg$/);
+
+    if (!productMatch) {
+        return undefined;
+    }
+
+    const responsiveImage = `/all-products/responsive/prod-${productMatch[1]}.jpeg`;
+    const fullWidth = getPublicProductWidth(image);
+
+    if (fullWidth <= 400) {
+        return `${image} ${fullWidth}w`;
+    }
+
+    return `${responsiveImage} 400w, ${image} ${fullWidth}w`;
+}
+
 export default function Catalog() {
     const [activeCategory, setActiveCategory] = useState("all");
     const [viewMode, setViewMode] = useState("editorial");
@@ -208,6 +229,9 @@ export default function Catalog() {
                         src={selectedCategory.banner}
                         alt=""
                         aria-hidden="true"
+                        loading="eager"
+                        fetchPriority="high"
+                        decoding="async"
                         initial={{ opacity: 0, scale: 1.025 }}
                         animate={{ opacity: 1, scale: 1 }}
                         exit={{ opacity: 0, scale: 1.015 }}
@@ -321,6 +345,12 @@ export default function Catalog() {
                                     <img
                                         className="catalog__image"
                                         src={product.image}
+                                        srcSet={getCatalogProductSrcSet(product.image)}
+                                        sizes={
+                                            viewMode === "dense"
+                                                ? responsiveSizes.denseProductGrid
+                                                : responsiveSizes.productGrid
+                                        }
                                         alt={`${product.name} ${product.category}`}
                                         loading="lazy"
                                         decoding="async"

@@ -18,17 +18,12 @@ export default function AboutClosingCta() {
                     <div className="about-closing-cta__actions">
                         <a
                             href="/contact"
-                            className="btn-primary"
+                            className="btn-secondary"
                         >
                             Discuss a Project
                         </a>
 
-                        <a
-                            href="/catalog"
-                            className="btn-secondary"
-                        >
-                            Explore Our Collection
-                        </a>
+
                     </div>
 
                 </div>

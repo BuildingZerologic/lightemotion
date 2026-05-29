@@ -8,6 +8,9 @@ export default function ServicesHero() {
             <motion.img
                 src="/images/services/serviceshero.webp"
                 alt="Architectural lighting installation illuminating a refined interior space"
+                loading="eager"
+                fetchPriority="high"
+                decoding="async"
                 initial={{ opacity: 0, scale: 1.04 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{

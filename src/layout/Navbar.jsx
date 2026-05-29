@@ -14,7 +14,6 @@ const navLinks = [
 
     {
         label: "Products",
-        href: "/catalog",
     },
     {
         label: "Services",
@@ -189,7 +188,13 @@ export default function Navbar() {
                         to="/"
                         aria-label="Light Emotion homepage"
                     >
-                        <img src={logo} alt="Light Emotion" />
+                        <img
+                            src={logo}
+                            alt="Light Emotion"
+                            width="4228"
+                            height="833"
+                            decoding="async"
+                        />
                     </Link>
 
                     <ul className="site-navbar__links">

@@ -44,32 +44,6 @@
 
     filter:
         brightness(0.48) saturate(0.92) contrast(1.05);
-
-     
-}
-
-
-/* =====================================================
-   MOBILE FIRST VIDEO SYSTEM
-===================================================== */
-
-.hero__video--desktop {
-    display: none;
-}
-
-.hero__video--mobile {
-    display: block;
-}
-
-@include respond(md) {
-
-    .hero__video--desktop {
-        display: block;
-    }
-
-    .hero__video--mobile {
-        display: none;
-    }
 }
 
 
@@ -154,8 +128,6 @@
     @include respond(md) {
         font-size: var(--fs-h4);
     }
-
-     
 }
 
 

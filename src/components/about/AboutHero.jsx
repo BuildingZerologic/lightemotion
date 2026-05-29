@@ -124,6 +124,7 @@ export default function AboutHero() {
                     loop
                     playsInline
                     preload="metadata"
+                    poster="/images/about-hero-poster.webp"
                     aria-hidden="true"
                 >
                     <source src={videoSource} type="video/mp4" />

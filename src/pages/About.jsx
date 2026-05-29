@@ -7,7 +7,7 @@ import "./About.scss";
 
 export default function About() {
     return (
-        <div className="about-page">
+        <div className="about-page" data-navbar-solid>
             <AboutHero />
             <AboutPhilosophy />
             <AboutClients />

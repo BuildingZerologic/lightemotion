@@ -1,4 +1,4 @@
-import React from "react";
+import React, { lazy } from "react";
 
 import ReactDOM from "react-dom/client";
 
@@ -9,18 +9,14 @@ import {
 
 import App from "./App";
 
-import About from "./pages/About";
-import Catalog from "./pages/Catalog";
-import Collection from "./pages/Collection";
 import ErrorPage from "./pages/ErrorPage";
-import Home from "./pages/Home";
-import ProductDetail from "./pages/ProductDetail";
-import ProductRoute from "./pages/ProductRoute";
-import Services from "./pages/Services";
-import Contact from "./pages/Contact"
 
 import "./styles/main.scss";
 
+function lazyElement(resolvePage) {
+    const Page = lazy(resolvePage);
+    return <Page />;
+}
 
 const router = createBrowserRouter([
     {
@@ -34,47 +30,39 @@ const router = createBrowserRouter([
             {
                 index: true,
 
-                element: <Home />,
-
-                loader: async () => {
-                    return null;
-                },
+                element: lazyElement(() => import("./pages/Home")),
             },
             {
                 path: "about",
 
-                element: <About />,
+                element: lazyElement(() => import("./pages/About")),
             },
-            {
-                path: "catalog",
 
-                element: <Catalog />,
-            },
             {
                 // Editorial collection pages — e.g. /collections/ceiling-presence
                 path: "collections/:collectionSlug",
 
-                element: <Collection />,
+                element: lazyElement(() => import("./pages/Collection")),
             },
             {
                 path: "product-detail",
 
-                element: <ProductDetail />,
+                element: lazyElement(() => import("./pages/ProductDetail")),
             },
             {
                 path: "products/:slug",
 
-                element: <ProductRoute />,
+                element: lazyElement(() => import("./pages/ProductRoute")),
             },
             {
                 path: "services",
 
-                element: <Services />,
+                element: lazyElement(() => import("./pages/Services")),
             },
             {
                 path: "contact",
 
-                element: <Contact />,
+                element: lazyElement(() => import("./pages/Contact")),
             },
         ],
     },
