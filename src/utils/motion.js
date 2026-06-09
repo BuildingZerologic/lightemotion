@@ -27,7 +27,7 @@ export const EASE = [0.22, 1, 0.36, 1];
  * Use `viewportLow` for large sections that are hard to scroll 20% into view.
  */
 export const viewport      = { once: true, amount: 0.2  };
-export const viewportLow   = { once: true, amount: 0.1  };
+export const viewportLow   = { once: true, amount: 0.2 };
 export const viewportHigh  = { once: true, amount: 0.4  };
 
 // ─── Named reveal variants (by element type) ──────────────────────────────────
