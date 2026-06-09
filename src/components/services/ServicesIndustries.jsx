@@ -1,14 +1,12 @@
-import { useState } from "react";
+import { Link } from "react-router-dom";
 
-import { AnimatePresence, motion } from "framer-motion";
+import { motion } from "framer-motion";
 
 import {
-    EASE,
     revealCard,
     revealHeading,
     revealImage,
     staggerContainer,
-    viewport,
 } from "../../utils/motion";
 
 import "./ServicesIndustries.scss";
@@ -27,21 +25,25 @@ const industries = [
         image: "/images/industries/corporate.jpg",
     },
     {
-        name: "Infrastructure",
+        name: "Entertainment",
         image: "/images/industries/infra.jpg",
     },
     {
-        name: "Wellness",
+        name: "Fitness",
         image: "/images/industries/wellness.jpg",
     },
     {
-        name: "Retail & Food",
+        name: "Institutional",
+        image: "/images/industries/retail.jpg",
+    },
+    {
+        name: "Religious",
         image: "/images/industries/retail.jpg",
     },
 ];
 
 export default function ServicesIndustries() {
-    const [activeIndustry, setActiveIndustry] = useState(industries[0]);
+    const featuredIndustry = industries[0];
 
     return (
         <motion.section
@@ -55,24 +57,17 @@ export default function ServicesIndustries() {
                 <div className="services-industries__grid">
                     <motion.div
                         className="services-industries__image"
-                        {...revealImage}
+                        initial="hidden"
+                        whileInView="visible"
+                        viewport={{ once: true, amount: 0.25 }}
+                        variants={revealImage}
                     >
-                        <AnimatePresence mode="sync">
-                            <motion.img
-                                key={activeIndustry.image}
-                                src={activeIndustry.image}
-                                alt={`${activeIndustry.name} lighting environment`}
-                                loading="lazy"
-                                decoding="async"
-                                initial={{ opacity: 0 }}
-                                animate={{ opacity: 1}}
-                                exit={{ opacity: 0}}
-                                transition={{
-                                    duration: 0.6,
-                                    ease: EASE,
-                                }}
-                            />
-                        </AnimatePresence>
+                        <img
+                            src={featuredIndustry.image}
+                            alt={`${featuredIndustry.name} lighting environment`}
+                            loading="lazy"
+                            decoding="async"
+                        />
                     </motion.div>
 
                     <motion.div
@@ -96,19 +91,12 @@ export default function ServicesIndustries() {
                         >
                             {industries.map((industry) => (
                                 <motion.li key={industry.name} variants={revealCard}>
-                                    <button
-                                        className={
-                                            activeIndustry.name === industry.name
-                                                ? "services-industries__button services-industries__button--active"
-                                                : "services-industries__button"
-                                        }
-                                        type="button"
-                                        onMouseEnter={() => setActiveIndustry(industry)}
-                                        onFocus={() => setActiveIndustry(industry)}
-                                        onClick={() => setActiveIndustry(industry)}
+                                    <Link
+                                        className="services-industries__button"
+                                        to={`/projects?category=${encodeURIComponent(industry.name)}`}
                                     >
                                         {industry.name}
-                                    </button>
+                                    </Link>
                                 </motion.li>
                             ))}
                         </motion.ul>

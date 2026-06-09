@@ -13,28 +13,16 @@
 
     gap: var(--space-3xl);
 
-    .services-industries__content {
-        order: 1;
-    }
+    @include respond(md) {
+        grid-template-columns: minmax(0, 1.1fr) minmax(18rem, 0.9fr);
 
-    .services-industries__image {
-        order: 2;
+        align-items: center;
     }
 
     @include respond(lg) {
         grid-template-columns: minmax(0, 1.1fr) minmax(20rem, 0.9fr);
 
-        align-items: center;
-
         gap: var(--space-6xl);
-
-        .services-industries__image {
-            order: 1;
-        }
-
-        .services-industries__content {
-            order: 2;
-        }
     }
 }
 
@@ -91,17 +79,21 @@
 }
 
 .services-industries__button {
+    display: inline-block;
+
     padding: 0;
 
     border: 0;
 
     background: transparent;
 
+    color: var(--color-text-secondary);
+
     font-family: var(--font-body);
 
     font-size: var(--fs-h6);
 
-     
+    text-decoration: none;
 
     cursor: pointer;
 

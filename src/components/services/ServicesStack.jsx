@@ -103,7 +103,7 @@ export default function ServicesStack() {
 
                             <motion.div
                                 className="services-stack__image-wrap"
-                                {...revealImage}
+                                variants={revealImage}
                             >
                                 <img
                                     src={service.image}

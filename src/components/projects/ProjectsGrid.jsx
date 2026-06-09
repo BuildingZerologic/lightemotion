@@ -1,5 +1,4 @@
-import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useSearchParams } from "react-router-dom";
 
 import { motion } from "framer-motion";
 
@@ -14,7 +13,20 @@ import {
 import "./ProjectsGrid.scss";
 
 export default function ProjectsGrid() {
-    const [activeFilter, setActiveFilter] = useState("All");
+    const [searchParams, setSearchParams] = useSearchParams();
+    const requestedCategory = searchParams.get("category");
+    const activeFilter = projectCategories.includes(requestedCategory)
+        ? requestedCategory
+        : "All";
+
+    const handleFilterChange = (category) => {
+        if (category === "All") {
+            setSearchParams({});
+            return;
+        }
+
+        setSearchParams({ category });
+    };
 
     const filteredProjects =
         activeFilter === "All"
@@ -41,7 +53,7 @@ export default function ProjectsGrid() {
                                 <button
                                     type="button"
                                     className={`projects-filters__btn${activeFilter === category ? " is-active" : ""}`}
-                                    onClick={() => setActiveFilter(category)}
+                                    onClick={() => handleFilterChange(category)}
                                     aria-pressed={activeFilter === category}
                                 >
                                     {category}
