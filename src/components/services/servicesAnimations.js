@@ -1,20 +1,10 @@
-export const reveal = {
-    hidden: { opacity: 0, y: 30 },
-    visible: {
-        opacity: 1,
-        y: 0,
-        transition: {
-            duration: 0.8,
-            ease: [0.22, 1, 0.36, 1],
-        },
-    },
-};
-
-export const staggerReveal = {
-    hidden: {},
-    visible: {
-        transition: {
-            staggerChildren: 0.12,
-        },
-    },
-};
+/**
+ * servicesAnimations.js — Deprecated shim.
+ *
+ * All animation logic has moved to src/utils/motion.js.
+ * This file re-exports aliases so existing imports continue to work
+ * while the individual components are being updated.
+ *
+ * @deprecated Import directly from "../../utils/motion" instead.
+ */
+export { revealSection as reveal, staggerContainer as staggerReveal } from "../../utils/motion";

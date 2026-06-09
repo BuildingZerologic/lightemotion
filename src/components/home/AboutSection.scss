@@ -1,6 +1,8 @@
 @use "../../styles/abstracts/mixins" as *;
 
 .about-section {
+    position: relative;
+
     padding-block: var(--space-4xl);
 
     background: var(--color-surface-elevated);
@@ -24,11 +26,12 @@
 
 
 .about-section__eyebrow {
-    display: inline-block;
 
+    font-size: var(--font-size-xs);
+    font-weight: 500;
+    letter-spacing: 0.18em;
     text-transform: uppercase;
-
-    color: var(--color-accent);
+    color: var(--color-text-primary);
 }
 
 
@@ -39,7 +42,6 @@
 
 
 .about-section__description {
-    font-size: var(--fs-h5);
 
     // Full primary colour — the overlay creates the "grey" appearance,
     // not the text itself. This matches the John Cullen technique exactly.
@@ -50,6 +52,8 @@
 
     @include respond(lg) {
         max-width: 70%;
+        font-size: var(--fs-h5);
+
     }
 }
 

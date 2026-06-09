@@ -2,7 +2,12 @@ import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 
 import { editorialCollections } from "../../data/editorialCollections";
-import { imageRevealVariants } from "../../utils/motion";
+import {
+    EASE,
+    revealHeading,
+    staggerContainer,
+    viewportLow,
+} from "../../utils/motion";
 
 import "./EditorialCollections.scss";
 
@@ -22,24 +27,9 @@ const LAYOUT_POSITIONS = [
     "last",         // 6 — full-width landscape cinematic closer
 ];
 
-// ——————————————————————————————————————————————
-// Animation variants
-// ——————————————————————————————————————————————
-
-const sectionReveal = {
-    hidden: {},
-    visible: {
-        transition: { staggerChildren: 0.08 },
-    },
-};
-
-const headerReveal = {
-    hidden: { opacity: 0, y: 20 },
-    visible: {
-        opacity: 1,
-        y: 0,
-        transition: { duration: 0.8, ease: [0.22, 1, 0.36, 1] },
-    },
+const imageCardReveal = {
+    hidden:  { opacity: 0, y: 32 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: EASE } },
 };
 
 // ——————————————————————————————————————————————
@@ -48,34 +38,35 @@ const headerReveal = {
 
 export default function EditorialCollections() {
     return (
-        <section
+        <motion.section
             className="editorial-collections"
             aria-labelledby="editorial-collections-title"
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.1 }}
+            variants={staggerContainer}
         >
             <div className="container">
 
                 <motion.header
                     className="editorial-collections__header"
-                    initial="hidden"
-                    whileInView="visible"
-                    viewport={{ once: true, amount: 0.6 }}
-                    variants={headerReveal}
+                    variants={revealHeading}
                 >
                      
-                    <h2
+                    <h3
                         className="editorial-collections__heading"
                         id="editorial-collections-title"
                     >
                         Light for Every Space
-                    </h2>
+                    </h3>
                 </motion.header>
 
                 <motion.div
                     className="editorial-collections__grid"
-                    variants={sectionReveal}
+                    variants={staggerContainer}
                     initial="hidden"
                     whileInView="visible"
-                    viewport={{ once: true, amount: 0.06 }}
+                    viewport={viewportLow}
                 >
                     {editorialCollections.map((collection, index) => (
                         <EditorialCard
@@ -87,7 +78,7 @@ export default function EditorialCollections() {
                 </motion.div>
 
             </div>
-        </section>
+        </motion.section>
     );
 }
 
@@ -100,7 +91,7 @@ function EditorialCard({ collection, layout }) {
         <motion.article
             className="editorial-card"
             data-layout={layout}
-            variants={imageRevealVariants}
+            variants={imageCardReveal}
         >
             <Link
                 className="editorial-card__link"
@@ -124,10 +115,7 @@ function EditorialCard({ collection, layout }) {
                         <h3 className="editorial-card__title">
                             {collection.title}
                         </h3>
-
-                        {/* <p className="editorial-card__subtitle">
-                            {collection.subtitle}
-                        </p> */}
+ 
                     </div>
 
                     <span className="editorial-card__cta" aria-hidden="true">

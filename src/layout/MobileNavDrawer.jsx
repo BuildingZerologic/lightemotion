@@ -2,7 +2,7 @@ import { useEffect, useMemo, useState } from "react";
 
 import { Link } from "react-router-dom";
 
-import { navigation } from "../data/navigation";
+import { editorialCollections } from "../data/editorialCollections";
 import ThemeToggle from "./ThemeToggle";
 
 import "./MobileNavDrawer.scss";
@@ -16,7 +16,7 @@ export default function MobileNavDrawer({
     const [isProductsOpen, setIsProductsOpen] = useState(false);
 
     const productSubcategories = useMemo(
-        () => navigation.flatMap((category) => category.subcategories),
+        () => editorialCollections,
         []
     );
 
@@ -56,6 +56,7 @@ export default function MobileNavDrawer({
             className={`mobile-nav-drawer${isOpen ? " is-open" : ""}`}
             id="mobile-nav-drawer"
             aria-hidden={!isOpen}
+            inert={!isOpen}
         >
             <div className="mobile-nav-drawer__header">
                 <Link
@@ -73,14 +74,18 @@ export default function MobileNavDrawer({
                     />
                 </Link>
 
-                <button
-                    className="mobile-nav-drawer__close"
-                    type="button"
-                    aria-label="Close navigation menu"
-                    onClick={handleClose}
-                >
-                    <span aria-hidden="true" />
-                </button>
+                <div className="mobile-nav-drawer__actions">
+                    <ThemeToggle className="mobile-nav-drawer__theme-toggle" />
+
+                    <button
+                        className="mobile-nav-drawer__close"
+                        type="button"
+                        aria-label="Close navigation menu"
+                        onClick={handleClose}
+                    >
+                        <span aria-hidden="true" />
+                    </button>
+                </div>
             </div>
 
             <nav className="mobile-nav-drawer__nav" aria-label="Mobile navigation">
@@ -104,13 +109,14 @@ export default function MobileNavDrawer({
                                         className="mobile-nav-drawer__products"
                                         id="mobile-products-subcategories"
                                         aria-hidden={!isProductsOpen}
+                                        inert={!isProductsOpen}
                                     >
                                         <div>
                                             <ul>
-                                                {productSubcategories.map((subcategory) => (
-                                                    <li key={subcategory.slug}>
-                                                        <Link to={subcategory.slug} onClick={handleClose}>
-                                                            {subcategory.name}
+                                                {productSubcategories.map((collection) => (
+                                                    <li key={collection.slug}>
+                                                        <Link to={`/collections/${collection.slug}`} onClick={handleClose}>
+                                                            {collection.title}
                                                         </Link>
                                                     </li>
                                                 ))}
@@ -134,9 +140,6 @@ export default function MobileNavDrawer({
                         );
                     })}
 
-                    <li className="mobile-nav-drawer__item mobile-nav-drawer__item--theme">
-                        <ThemeToggle className="mobile-nav-drawer__theme-toggle" />
-                    </li>
                 </ul>
             </nav>
         </div>

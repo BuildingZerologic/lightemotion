@@ -1,0 +1,82 @@
+@use "../../styles/abstracts/mixins" as *;
+
+.project-gallery {
+    padding-block: var(--space-2xl);
+    background: var(--color-surface-elevated);
+
+    @include respond(md) {
+        padding-block: var(--space-5xl);
+    }
+
+    @include respond(lg) {
+        padding-block: var(--space-3xl);
+    }
+}
+
+.project-gallery__intro {
+    margin-bottom: var(--space-3xl);
+
+    @include respond(md) {
+        margin-bottom: var(--space-4xl);
+    }
+}
+
+.project-gallery__eyebrow {
+    margin: 0 0 var(--space-md);
+    font-size: 0.62rem;
+    font-weight: var(--fw-medium);
+    letter-spacing: var(--ls-caption);
+    text-transform: uppercase;
+    color: var(--color-text-secondary);
+    opacity: 0.7;
+}
+
+.project-gallery__title {
+    margin: 0;
+}
+
+.project-gallery__grid {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-lg);
+
+    @include respond(md) {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: var(--space-lg);
+    }
+
+    @include respond(lg) {
+        gap: var(--space-xl);
+    }
+}
+
+.project-gallery__item {
+    margin: 0;
+}
+
+.project-gallery__item--landscape {
+    @include respond(md) {
+        grid-column: span 2;
+    }
+}
+
+.project-gallery__media {
+    overflow: hidden;
+    background: var(--color-surface);
+}
+
+.project-gallery__item--landscape .project-gallery__media {
+    aspect-ratio: 16 / 10;
+}
+
+.project-gallery__item--portrait .project-gallery__media {
+    aspect-ratio: 4 / 5;
+}
+
+.project-gallery__image {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}

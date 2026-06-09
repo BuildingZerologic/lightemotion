@@ -4,6 +4,7 @@ import ReactDOM from "react-dom/client";
 
 import {
     createBrowserRouter,
+    Navigate,
     RouterProvider,
 } from "react-router-dom";
 
@@ -47,7 +48,7 @@ const router = createBrowserRouter([
             {
                 path: "product-detail",
 
-                element: lazyElement(() => import("./pages/ProductDetail")),
+                element: <Navigate to="/products/flexible-strip-2835-led" replace />,
             },
             {
                 path: "products/:slug",
@@ -58,6 +59,16 @@ const router = createBrowserRouter([
                 path: "services",
 
                 element: lazyElement(() => import("./pages/Services")),
+            },
+            {
+                path: "projects",
+
+                element: lazyElement(() => import("./pages/Projects")),
+            },
+            {
+                path: "projects/:slug",
+
+                element: lazyElement(() => import("./pages/ProjectDetail")),
             },
             {
                 path: "contact",

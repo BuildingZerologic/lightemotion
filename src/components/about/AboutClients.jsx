@@ -1,88 +1,106 @@
-import "./AboutClients.scss"
+import { motion } from "framer-motion";
 
+import {
+    revealEyebrow,
+    revealHeading,
+    revealSection,
+    viewport,
+} from "../../utils/motion";
+
+import "./AboutClients.scss";
+
+import gail from "../../assets/clients/gail.svg";
+import hsbc from "../../assets/clients/hsbc.svg";
+import westin from "../../assets/clients/westin.svg";
+import mango from "../../assets/clients/mango.png";
+import bikanerwala from "../../assets/clients/bikanerwala.avif";
+import asianp from "../../assets/clients/asianpaints.avif";
+import alsisar from "../../assets/clients/alsisar.avif";
+import sleepwell from "../../assets/clients/sleepwell.svg";
+import raphe from "../../assets/clients/raphe.png";
+import mamaearth from "../../assets/clients/mamaearth.png";
+import kiaasa from "../../assets/clients/kiaasa.webp";
+import volks from "../../assets/clients/volkswagen.avif";
+
+/* ----------------------------------------------------------------
+   clients list
+   - logo : imported image asset  →  renders as <img>
+   - logo : null                  →  renders first word of name as text
+---------------------------------------------------------------- */
 const clients = [
-    'ITC Hotels',
-    'Hyatt Regency',
-    'Taj Hotels',
-    'JW Marriott',
-    'The Claridges Hotels & Resorts',
-    'The Lalit',
-    'Hilton',
-    'Crowne Plaza',
-
-    'Radisson',
-    'Westin Hotels & Resorts',
-    'HSBC',
-    'Google',
-    'Volkswagen',
-    'GAIL (India) Limited',
-    'Emerson',
-    'Harman',
-
-    'Asian Paints',
-    'Timex',
-    'Ray-Ban',
-    'Xiaomi',
-    'Raffles Hotels & Resorts',
-    'D Decor',
-    'M3M',
-    'Lanco',
-
-    'American Express',
-    "Gold's Gym",
-    'PVR Cinemas',
-    'Delhi International Airport',
-    'Max Healthcare',
-    'Jaquar Lighting',
-    'The Great India Place',
+    
+    { name: "Westin", logo: westin },
+    { name: "Mango", logo: mango },
+    { name: "Bikanerwala", logo: bikanerwala },
+    { name: "Asianpaints", logo: asianp },
+    { name: "HSBC", logo: hsbc },
+    { name: "Alsisar", logo: alsisar },
+    { name: "Sleepwell", logo: sleepwell },
+    { name: "Raphe", logo: raphe },
+    { name: "Mamaearth", logo: mamaearth },
+    { name: "Kiaasa", logo: kiaasa },
+    { name: "Volkswagen", logo: volks },
+    { name: "GAIL (India) Limited", logo: gail },
 
 ];
 
-function chunkArray(array, size) {
-    const chunked = [];
-
-    for (let i = 0; i < array.length; i += size) {
-        chunked.push(array.slice(i, i + size));
-    }
-
-    return chunked;
-}
-
-const columns = chunkArray(clients, 8);
+/* Duplicate for seamless loop */
+const marqueeItems = [...clients, ...clients];
 
 export default function AboutClients() {
     return (
-        <section className="about-clients">
+        <motion.section
+            className="about-clients"
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.2 }}
+            variants={revealSection}
+        >
             <div className="container">
-                <div className="about-clients__header">
-                    <span className="about-clients__label">
+                <motion.div
+                    className="about-clients__header"
+                    variants={revealHeading}
+                    initial="hidden"
+                    whileInView="visible"
+                    viewport={{ once: true, amount: 0.4 }}
+                >
+                    <motion.span
+                        className="about-clients__label"
+                        variants={revealEyebrow}
+                    >
                         OUR CLIENTS
-                    </span>
+                    </motion.span>
 
-                    <h3 className="about-clients__heading heading-lg">
+                    <h5 className="about-clients__heading">
                         The spaces that shape India's future - we light them
-                    </h3>
-                </div>
-
- 
-                <div className="about-clients__grid">
-                    {columns.map((column, index) => (
-                        <ul
-                            key={index}
-                            className="about-clients__column"
-                        >
-                            {column.map((client) => (
-                                <li
-                                    key={client}
-                                    className="about-clients__item"
-                                >
-                                    {client}
-                                </li>
-                            ))}
-                        </ul>
-                    ))}
-                </div>
+                    </h5>
+                </motion.div>
             </div>
-        </section>
+
+            {/* Full-bleed marquee */}
+            <div className="about-clients__marquee-wrapper" aria-hidden="true">
+                <ul className="about-clients__marquee-track">
+                    {marqueeItems.map((client, index) => (
+                        <li
+                            key={`${client.name}-${index}`}
+                            className="about-clients__marquee-item"
+                        >
+                            {client.logo ? (
+                                <img
+                                    src={client.logo}
+                                    alt={client.name}
+                                    loading="lazy"
+                                    className="about-clients__logo"
+                                />
+                            ) : (
+                                <span className="about-clients__name-text">
+                                    {client.name.split(" ")[0].toLowerCase()}
+                                </span>
+                            )}
+                        </li>
+                    ))}
+                </ul>
+            </div>
+        </motion.section>
     );
 }

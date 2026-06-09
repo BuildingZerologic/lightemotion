@@ -1,20 +1,28 @@
 @use '../../styles/abstracts/mixins' as *;
 
+/* ============================================================
+   ABOUT CLIENTS — marquee variant
+   ============================================================ */
+
 .about-clients {
-    padding-bottom: var(--space-4xl);
+    padding-bottom: var(--space-6xl);
 
     background: var(--color-surface-elevated);
+
+    overflow: hidden; /* clip the marquee at the section boundary */
 
     @include respond(md) {
         padding-bottom: var(--space-6xl);
     }
 }
 
+/* ── Header (unchanged) ──────────────────────────────────── */
+
 .about-clients__header {
     display: flex;
     flex-direction: column;
 
-    gap: var(--space-xl);
+    gap: var(--space-md);
 
     margin-bottom: var(--space-4xl);
 }
@@ -32,63 +40,132 @@
 }
 
 .about-clients__heading {
-    
-
     text-wrap: balance;
 
-     
     @include respond(md) {
         max-width: none;
+        font-size: var(--fs-h3);
     }
 }
 
+/* ── Marquee wrapper — full-bleed ────────────────────────── */
 
-.about-clients__grid {
-    display: grid;
+.about-clients__marquee-wrapper {
+    width: 100%;
+    overflow: hidden;
 
-    gap: var(--space-xl);
-
-     grid-template-columns: repeat(2, 1fr);
-
-    @include respond(md) {
-        grid-template-columns: repeat(3, 1fr);
-    }
-
-    @include respond(lg) {
-        grid-template-columns: repeat(4, 1fr);
-
-        gap: var(--space-xl);
-    }
+    /* fade edges so items appear to emerge from / disappear into space */
+    -webkit-mask-image: linear-gradient(
+        to right,
+        transparent 0%,
+        black 10%,
+        black 90%,
+        transparent 100%
+    );
+    mask-image: linear-gradient(
+        to right,
+        transparent 0%,
+        black 10%,
+        black 90%,
+        transparent 100%
+    );
 }
 
-.about-clients__column {
+/* ── Scrolling track ─────────────────────────────────────── */
+
+@keyframes marquee-scroll {
+    from { transform: translateX(0); }
+    to   { transform: translateX(-50%); }
+}
+
+.about-clients__marquee-track {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    align-items: center;
 
-    gap: var(--space-lg);
+    /* Critical: prevents the flex container from being constrained
+       to the viewport width — ensures all logos render in one row
+       and translateX(-50%) = exactly one full set of logos */
+    width: max-content;
+
+    gap: var(--space-2xl);
 
     list-style: none;
-
     padding: 0;
     margin: 0;
+
+    will-change: transform;
+
+    --marquee-duration: 20s;
+
+    /* The list is duplicated in JS so 50 % = one full loop */
+    animation: marquee-scroll var(--marquee-duration) linear infinite;
+
+    @include respond(md) {
+        gap: var(--space-4xl);
+        --marquee-duration: 28s;
+    }
+
+    /* Respect prefers-reduced-motion */
+    @media (prefers-reduced-motion: reduce) {
+        animation: none;
+        flex-wrap: wrap;
+        justify-content: center;
+        width: auto;
+        gap: var(--space-2xl);
+        padding: 0 var(--container-padding);
+    }
 }
 
-.about-clients__item {
-    font-size: var(--font-size-base);
+/* ── Individual logo item ────────────────────────────────── */
 
-    line-height: 1.5;
+.about-clients__marquee-item {
+    flex: 0 0 auto;
 
-    color: var(--color-text);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 
-    opacity: 0.92;
+.about-clients__logo {
+    display: block;
 
-    transition:
-        opacity 0.3s ease,
-        transform 0.3s ease;
+    width: 70px;
+    height: 36px;
+
+    @include respond(md) {
+        width: 100px;
+        height: 48px;
+    }
+
+    object-fit: contain;
+
+    transition: opacity var(--transition-medium);
 
     &:hover {
         opacity: 1;
+    }
+}
 
-        transform: translateX(4px);
+/* ── Text fallback for brands without a logo file ────────── */
+
+.about-clients__name-text {
+    display: block;
+
+    font-family: var(--font-body);
+    font-size: var(--fs-body-sm);
+    font-weight: var(--fw-medium);
+    letter-spacing: var(--ls-wide);
+
+    color: var(--color-text-primary);
+
+    opacity: 0.45;
+
+    white-space: nowrap;
+
+    transition: opacity var(--transition-medium);
+
+    &:hover {
+        opacity: 0.9;
     }
 }

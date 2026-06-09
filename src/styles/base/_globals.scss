@@ -1,7 +1,7 @@
 @use "../abstracts/mixins" as *;
 
 body {
-    background: var(--color-bg);
+    background: var(--surface-elevated);
 
     color: var(--color-text-primary);
 

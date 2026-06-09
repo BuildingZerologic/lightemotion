@@ -8,7 +8,7 @@ export const navigation = [
 
     subcategories: [
       {
-        name: "Deep Recessed & Anti-Glare Downlights",
+        name: "Recessed Downlights",
 
         slug: "/products/deep-recessed-antiglare",
       },
@@ -32,19 +32,19 @@ export const navigation = [
       },
 
       {
-        name: "Miniature & Niche Lighting",
+        name: "Niche Lights",
 
         slug: "/products/miniature-niche-lighting",
       },
 
       {
-        name: "Wallwasher Downlights",
+        name: "Wallwasher",
 
         slug: "/products/wallwasher-downlights",
       },
 
       {
-        name: "Twin & Multi-Module Downlights",
+        name: "Multi-Light Downlights",
 
         slug: "/products/multi-module-downlights",
       },
@@ -86,21 +86,21 @@ export const navigation = [
       },
 
       {
-        name: "Linear Profile Systems",
+        name: "Linear Profiles",
 
         slug: "/products/linear-profile-systems",
       },
 
       {
-        name: "Decorative Linear & Suspended Lighting",
+        name: "Panel Lights",
 
-        slug: "/products/decorative-linear-lighting",
+        slug: "/products/panel-lights",
       },
     ],
   },
 
   {
-    category: "Linear & Cove Lighting",
+    category: "Linear Lighting",
 
     slug: "/products/linear-cove-lighting",
 
@@ -168,7 +168,7 @@ export const navigation = [
   },
 
   {
-    category: "Landscape & Exterior Lighting",
+    category: "Outdoor Lighting",
 
     slug: "/products/landscape-exterior-lighting",
 
@@ -236,7 +236,7 @@ export const navigation = [
   },
 
   {
-    category: "Decorative & Statement Lighting",
+    category: "Decorative Lighting",
 
     slug: "/products/decorative-lighting",
 
@@ -266,26 +266,26 @@ export const navigation = [
       },
 
       {
-        name: "Decorative Linear & Suspended Lighting",
+        name: "Decorative Linear Shapes",
 
-        slug: "/products/decorative-suspended-lighting",
+        slug: "/products/decorative-linear-shapes",
       },
-    ],
-  },
 
-  {
-    category: "Architectural General Lighting",
-
-    slug: "/products/general-lighting",
-
-    subcategories: [
       {
-        name: "Panel Lights",
+        name: "Styla Hanging Light",
 
-        slug: "/products/panel-lights",
+        slug: "/products/styla-hanging-light",
+      },
+
+      {
+        name: "Luster Hanging Lights",
+
+        slug: "/products/luster-hanging-lights",
       },
     ],
   },
+
+
 
   {
     category: "Outdoor & Infrastructure Lighting",
@@ -300,7 +300,7 @@ export const navigation = [
       },
 
       {
-        name: "Sports & Stadium Lighting",
+        name: "Stadium Lighting",
 
         slug: "/products/stadium-lighting",
       },

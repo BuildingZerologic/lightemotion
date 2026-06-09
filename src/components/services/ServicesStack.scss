@@ -1,7 +1,7 @@
 @use "../../styles/abstracts/mixins" as *;
 
 .services-stack {
-    padding-bottom: var(--space-4xl);
+    padding-bottom: var(--space-6xl);
 
     background: var(--color-surface-elevated);
 
@@ -12,29 +12,20 @@
 
 .services-stack__title {
     margin: 0;
-
-    font-size: var(--fs-h3);
-
-    font-weight: var(--fw-medium);
-
-    line-height: var(--lh-heading);
-
-    letter-spacing: var(--ls-normal);
-
     color: var(--color-text-primary);
 }
 
 .services-stack__list {
-    margin-top: var(--space-2xl);
+    margin-top: var(--space-4xl);
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-4xl);
 }
 
 .services-stack__item {
     display: grid;
 
-    gap: var(--space-lg);
-
-    padding-block: var(--space-2xl);
-
+    gap: var(--space-md);
  
     @include respond(md) {
         grid-template-columns: minmax(4rem, 0.35fr) minmax(12rem, 0.9fr) minmax(0, 1fr);
@@ -44,7 +35,7 @@
         gap: var(--space-xl);
     }
 
-    @include respond(lg) {
+    @include respond(xl) {
         grid-template-columns: minmax(4rem, 0.3fr) minmax(14rem, 0.9fr) minmax(16rem, 1fr) minmax(22rem, 1.5fr);
 
         gap: var(--space-3xl);
@@ -70,16 +61,11 @@
 .services-stack__heading {
     margin: 0;
 
+    font-family: var(--font-body);
+
     font-size: var(--fs-h5);
 
-    font-weight: var(--fw-medium);
-
-    line-height: var(--lh-heading);
-
-    letter-spacing: var(--ls-normal);
-
-    color: var(--color-text-primary);
-}
+ }
 
 .services-stack__description {
     max-width: 34rem;
@@ -104,7 +90,7 @@
         grid-column: 2 / -1;
     }
 
-    @include respond(lg) {
+    @include respond(xl) {
         grid-column: auto;
     }
 

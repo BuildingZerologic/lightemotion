@@ -117,17 +117,10 @@
 .hero__title {
     margin-bottom: var(--space-lg);
 
-    font-size: var(--fs-h4);
-
-    line-height: var(--lh-heading);
-
-    letter-spacing: var(--ls-normal);
-
     color: var(--color-on-media);
 
     @include respond(md) {
-        font-size: var(--fs-h4);
-    }
+     }
 }
 
 
@@ -165,6 +158,19 @@
     align-items: center;
 
     gap: var(--space-md);
+
+    .btn-light {
+        min-width: 0;
+        max-width: 100%;
+        white-space: normal;
+        text-align: center;
+    }
+
+    @include respond(sm) {
+        .btn-light {
+            white-space: nowrap;
+        }
+    }
 }
 
 .heading-highlight {

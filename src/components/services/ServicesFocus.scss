@@ -21,7 +21,7 @@
 }
 
 .services-focus {
-    padding-block: var(--space-4xl);
+    padding-block: var(--space-5xl);
 
     background: var(--color-surface-elevated);
 
@@ -37,17 +37,17 @@
 .services-focus__grid {
     display: grid;
 
-    gap: var(--space-2xl);
+    gap: 0;
 
     @include respond(lg) {
-        grid-template-columns: minmax(10rem, 0.55fr) minmax(0, 1.45fr);
+        grid-template-columns: minmax(10rem, 0.7fr) minmax(0, 1.3fr);
 
         gap: var(--space-6xl);
     }
 }
 
 .services-focus__label {
-    margin-bottom: var(--space-4xl);
+    margin-bottom: var(--space-2xl);
 
     color: var(--color-text-primary);
 }
@@ -57,19 +57,11 @@
 }
 
 .services-focus__statement {
-    margin-bottom: var(--space-2xl);
+      
 
-    
-
-    font-size: var(--fs-h5);
-
-    font-weight: var(--fw-medium);
-
-    color: var(--color-text-primary);
-
-    text-wrap: balance;
-
-    
+    @include respond(md) {
+        font-size: var(--fs-body-lg);
+    }
 }
 
 .services-focus__support {
@@ -78,7 +70,6 @@
 
         line-height: var(--lh-body);
 
-        color: var(--color-text-secondary);
 
         text-wrap: balance;
 

@@ -8,7 +8,7 @@ const LEDlandscapeLighting = {
       productFamilies: [
         {
           name: "LED GARDEN LIGHT",
-          category: "Landscape & Exterior Lighting",
+          category: "Outdoor Lighting",
           subcategory: "Garden & Landscape Spotlights",
           slug: "led-garden-light",
           shortDescription: "Premium die-cast aluminum garden spike light with adjustable spot head.",
@@ -33,7 +33,7 @@ const LEDlandscapeLighting = {
 
         {
           name: "LED TRIANGLE GARDEN LIGHT",
-          category: "Landscape & Exterior Lighting",
+          category: "Outdoor Lighting",
           subcategory: "Garden & Landscape Spotlights",
           slug: "led-triangle-garden-light",
           shortDescription: "Designer triangular garden light featuring specialized multi-angle optics.",
@@ -58,7 +58,7 @@ const LEDlandscapeLighting = {
 
         {
           name: "LED PRO GARDEN LIGHT",
-          category: "Landscape & Exterior Lighting",
+          category: "Outdoor Lighting",
           subcategory: "Garden & Landscape Spotlights",
           slug: "led-pro-garden-light",
           shortDescription: "High-performance architectural spike light with multiple beam angle selections.",
@@ -97,7 +97,7 @@ const LEDlandscapeLighting = {
 
         {
           name: "LED PRO HOOD GARDEN LIGHT",
-          category: "Landscape & Exterior Lighting",
+          category: "Outdoor Lighting",
           subcategory: "Garden & Landscape Spotlights",
           slug: "led-pro-hood-garden-light",
           shortDescription: "Anti-glare pro garden light featuring an integrated hood for precise visual comfort.",
@@ -136,7 +136,7 @@ const LEDlandscapeLighting = {
 
         {
           name: "LED PROJECTOR SPOT",
-          category: "Landscape & Exterior Lighting",
+          category: "Outdoor Lighting",
           subcategory: "Garden & Landscape Spotlights",
           slug: "led-projector-spot",
           shortDescription: "High-power outdoor projector spotlight engineered for long-distance landscape throws.",
@@ -161,7 +161,7 @@ const LEDlandscapeLighting = {
 
         {
           name: "LED RIGAL GARDEN LIGHT",
-          category: "Landscape & Exterior Lighting",
+          category: "Outdoor Lighting",
           subcategory: "Garden & Landscape Spotlights",
           slug: "led-rigal-garden-light",
           shortDescription: "Heavy-duty architectural garden luminaire with a unified structural layout.",
@@ -186,7 +186,7 @@ const LEDlandscapeLighting = {
 
         {
           name: "LED RECTANGLE GARDEN LIGHT",
-          category: "Landscape & Exterior Lighting",
+          category: "Outdoor Lighting",
           subcategory: "Garden & Landscape Spotlights",
           slug: "led-rectangle-garden-light",
           shortDescription: "Compact rectangular form-factor pathway and low-level accent luminaire.",
@@ -204,7 +204,7 @@ const LEDlandscapeLighting = {
 
         {
           name: "LED RADAR GARDEN LIGHT",
-          category: "Landscape & Exterior Lighting",
+          category: "Outdoor Lighting",
           subcategory: "Garden & Landscape Spotlights",
           slug: "led-radar-garden-light",
           shortDescription: "Innovative zoomable spotlight featuring dynamic beam adjustment options from 4° to 24°.",
@@ -223,7 +223,7 @@ const LEDlandscapeLighting = {
 
         {
           name: "LED TREE STRAP GARDEN LIGHT",
-          category: "Landscape & Exterior Lighting",
+          category: "Outdoor Lighting",
           subcategory: "Facade & Tree Uplighting",
           slug: "led-tree-strap-garden-light",
           shortDescription: "Dedicated adjustable strap-mounted spotlight for non-invasive tree canopy lighting.",
@@ -241,7 +241,7 @@ const LEDlandscapeLighting = {
 
         {
           name: "LED SURFACE PRO HOOD GARDEN LIGHT",
-          category: "Landscape & Exterior Lighting",
+          category: "Outdoor Lighting",
           subcategory: "Garden & Landscape Spotlights",
           slug: "led-surface-pro-hood-garden-light",
           shortDescription: "Surface-mountable architectural spotlight featuring an anti-glare layout shield.",
@@ -259,7 +259,7 @@ const LEDlandscapeLighting = {
 
         {
           name: "LED BEAMER SQ GARDEN LIGHT",
-          category: "Landscape & Exterior Lighting",
+          category: "Outdoor Lighting",
           subcategory: "Garden & Landscape Spotlights",
           slug: "led-beamer-sq-garden-light",
           shortDescription: "Square profile directional landscape beamer for defined geometric lighting control.",
@@ -277,7 +277,7 @@ const LEDlandscapeLighting = {
 
         {
           name: "LED BEAMER RD GARDEN LIGHT",
-          category: "Landscape & Exterior Lighting",
+          category: "Outdoor Lighting",
           subcategory: "Garden & Landscape Spotlights",
           slug: "led-beamer-rd-garden-light",
           shortDescription: "Cylindrical landscape spotlight offering highly localized beam distribution.",
@@ -309,7 +309,7 @@ const LEDlandscapeLighting = {
       productFamilies: [
         {
           name: "LED FACADE LIGHT",
-          category: "Landscape & Exterior Lighting",
+          category: "Outdoor Lighting",
           subcategory: "Facade & Tree Uplighting",
           slug: "led-facade-light",
           shortDescription: "High-caliber architectural uplighter engineered with an ultra-narrow 3° beam option.",
@@ -417,7 +417,7 @@ const LEDlandscapeLighting = {
 
         {
           name: "LED TREE UP LIGHTER",
-          category: "Landscape & Exterior Lighting",
+          category: "Outdoor Lighting",
           subcategory: "Facade & Tree Uplighting",
           slug: "led-tree-up-lighter",
           shortDescription: "Modular outdoor tree uplighter designed for clean circumferential array placement.",
@@ -469,7 +469,7 @@ const LEDlandscapeLighting = {
       productFamilies: [
         {
           name: "LED LINEAR WALLWASHER",
-          category: "Landscape & Exterior Lighting",
+          category: "Outdoor Lighting",
           subcategory: "Linear Wall Washers",
           slug: "led-linear-wallwasher",
           shortDescription: "Extruded aluminum facade lighting solution featuring optimal vertical throw configurations.",
@@ -607,7 +607,7 @@ const LEDlandscapeLighting = {
       productFamilies: [
         {
           name: "LED INGROUND MINI IP67",
-          category: "Landscape & Exterior Lighting",
+          category: "Outdoor Lighting",
           subcategory: "Inground Lights",
           slug: "led-inground-mini-ip67",
           shortDescription: "Ultra-compact sub-miniature drive-over burial light with a 10mm cutout profile.",
@@ -644,7 +644,7 @@ const LEDlandscapeLighting = {
 
         {
           name: "LED INGROUND COB BURIAL",
-          category: "Landscape & Exterior Lighting",
+          category: "Outdoor Lighting",
           subcategory: "Inground Lights",
           slug: "led-inground-cob-burial",
           shortDescription: "High-density COB underground burial light with a robust stainless steel top ring.",
@@ -672,7 +672,7 @@ const LEDlandscapeLighting = {
 
         {
           name: "LED INGROUND BURIAL MULTIPLE LED",
-          category: "Landscape & Exterior Lighting",
+          category: "Outdoor Lighting",
           subcategory: "Inground Lights",
           slug: "led-inground-burial-multiple-led",
           shortDescription: "Multi-diode premium inground burial light providing powerful ground-up projection.",
@@ -739,7 +739,7 @@ const LEDlandscapeLighting = {
 
         {
           name: "LED INGROUND PATHWAY",
-          category: "Landscape & Exterior Lighting",
+          category: "Outdoor Lighting",
           subcategory: "Pathway & Foot Lights",
           slug: "led-inground-pathway",
           shortDescription: "Specialized multi-directional drive-over pathway light for clear pedestrian guide markings.",
@@ -822,7 +822,7 @@ const LEDlandscapeLighting = {
       productFamilies: [
         {
           name: "SURFACE MOUNTED",
-          category: "Landscape & Exterior Lighting",
+          category: "Outdoor Lighting",
           subcategory: "Underwater & Fountain Lighting",
           slug: "surface-mounted",
           shortDescription: "Low-profile surface-attached underwater disk luminaire for pools and water bodies.",
@@ -880,7 +880,7 @@ const LEDlandscapeLighting = {
 
         {
           name: "U CLAMP SURFACE & RECESSED MOUNTED",
-          category: "Landscape & Exterior Lighting",
+          category: "Outdoor Lighting",
           subcategory: "Underwater & Fountain Lighting",
           slug: "u-clamp-surface-recessed-mounted",
           shortDescription: "Versatile U-clamp adjustable or recessed underwater luminaire crafted from 314 stainless steel.",
@@ -935,7 +935,7 @@ const LEDlandscapeLighting = {
 
         {
           name: "NOZZLE FOUNTAIN",
-          category: "Landscape & Exterior Lighting",
+          category: "Outdoor Lighting",
           subcategory: "Underwater & Fountain Lighting",
           slug: "nozzle-fountain",
           shortDescription: "Specialized central core nozzle-integrated fountain light for coordinated dynamic water effects.",
@@ -989,7 +989,7 @@ const LEDlandscapeLighting = {
 
     {
       name: "LED FOOT LIGHT",
-      category: "Landscape & Exterior Lighting",
+      category: "Outdoor Lighting",
       subcategory: "Pathway & Foot Lights",
       slug: "led-foot-light",
       shortDescription: "Architectural step and low-level path wall lights for optimized corridor safety.",
@@ -1059,7 +1059,7 @@ const LEDlandscapeLighting = {
 
     {
       name: "LED OUTDOOR WALL LIGHT",
-      category: "Landscape & Exterior Lighting",
+      category: "Outdoor Lighting",
       subcategory: "Outdoor Wall Lights",
       slug: "led-outdoor-wall-light",
       shortDescription: "Architectural wall sconces offering up, down, and multi-directional surface illumination.",
@@ -1144,7 +1144,7 @@ const LEDlandscapeLighting = {
 
     {
       name: "LED GATE LIGHT",
-      category: "Landscape & Exterior Lighting",
+      category: "Outdoor Lighting",
       subcategory: "Gate & Pillar Lights",
       slug: "led-gate-light",
       shortDescription: "Premium structural pillar and gate-top post lights for sophisticated entrance highlighting.",
@@ -1186,7 +1186,7 @@ const LEDlandscapeLighting = {
 
     {
       name: "LED BOLLARD & PLANTER",
-      category: "Landscape & Exterior Lighting",
+      category: "Outdoor Lighting",
       subcategory: "Bollard & Planter Lights",
       slug: "led-bollard-planter",
       shortDescription: "Dual-purpose architectural bollards combined with coordinated aesthetic planter frameworks.",
@@ -1257,7 +1257,7 @@ const LEDlandscapeLighting = {
 
     {
       name: "LED BOLLARD LIGHT",
-      category: "Landscape & Exterior Lighting",
+      category: "Outdoor Lighting",
       subcategory: "Bollard & Planter Lights",
       slug: "led-bollard-light",
       shortDescription: "Architectural path and driveway border luminaires available in multiple high-end finishes.",
@@ -1357,7 +1357,7 @@ const LEDlandscapeLighting = {
   
       {
         name: "LED OUTDOOR POLE LIGHT",
-        category: "Landscape & Exterior Lighting",
+        category: "Outdoor Lighting",
         subcategory: "Outdoor Pole Lights",
         slug: "led-outdoor-pole-light",
         shortDescription: "Heavy-duty perimeter pole lights with a hollow heatsink design for optimal thermal dissipation.",

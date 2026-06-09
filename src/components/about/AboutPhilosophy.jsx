@@ -1,17 +1,23 @@
 import { motion, useReducedMotion } from 'framer-motion';
+
+import {
+    EASE,
+    revealCard,
+    revealHeading,
+    revealParagraph,
+    staggerContainer,
+    viewport,
+} from '../../utils/motion';
+
 import './AboutPhilosophy.scss';
 
 export default function AboutPhilosophy() {
     const shouldReduceMotion = useReducedMotion();
 
-    // Premium Awwwards-style ease animation
+    // Respect prefers-reduced-motion: collapse y to 0 and duration to near-instant
     const revealUp = {
-        hidden: { y: 60, opacity: 0 },
-        visible: {
-            y: 0,
-            opacity: 1,
-            transition: { duration: 1, ease: [0.16, 1, 0.3, 1] }
-        }
+        hidden:  { y: shouldReduceMotion ? 0 : 24, opacity: 0 },
+        visible: { y: 0, opacity: 1, transition: { duration: shouldReduceMotion ? 0.01 : 0.8, ease: EASE } },
     };
 
     return (
@@ -30,16 +36,20 @@ export default function AboutPhilosophy() {
                 >
                     <source src="/videos/aboutprocess.mp4" type="video/mp4" />
                 </video>
+                <div className="about-video-layer__watermark-mask" aria-hidden="true" />
             </div>
 
             {/* 📝 LAYER 2: SECTION 01 · OUR CORE PURPOSE (Curtain Cover - Z-Index 2) */}
-            <section
+            <motion.section
                 className="about-philosophy"
                 aria-labelledby="about-philosophy-title"
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true, amount: 0.2 }}
             >
                 <div className="container">
                     <div className="about-philosophy__statement">
-                        <motion.h2
+                        <motion.h3
                             id="about-philosophy-title"
                             className="about-philosophy__heading"
                             variants={revealUp}
@@ -48,7 +58,7 @@ export default function AboutPhilosophy() {
                             viewport={{ once: true, amount: 0.5 }}
                         >
                             Our core purpose
-                        </motion.h2>
+                        </motion.h3>
 
                         <motion.p
                             className="about-philosophy__text"
@@ -56,7 +66,6 @@ export default function AboutPhilosophy() {
                             initial="hidden"
                             whileInView="visible"
                             viewport={{ once: true, amount: 0.5 }}
-                            transition={{ delay: 0.1 }}
                         >
                             We believe light is not a final addition to a room, but a
                             fundamental material that dictates how a space behaves. Our
@@ -73,19 +82,22 @@ export default function AboutPhilosophy() {
                         </motion.p>
                     </div>
                 </div>
-            </section>
+            </motion.section>
 
             {/* 🪟 THE WINDOW: Gap to let the sticky video show through */}
             <div className="about-video-gap" aria-hidden="true"></div>
 
             {/* 🏛️ LAYER 3: SECTION 02 · CAPABILITY PILLARS (Overlaps Video - Z-Index 3) */}
-            <section
+            <motion.section
                 className="about-capabilities"
                 aria-labelledby="about-capabilities-title"
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true, amount: 0.2 }}
             >
                 <div className="container">
                     <div className="about-capabilities__header">
-                        <motion.h2
+                        <motion.h3
                             id="about-capabilities-title"
                             className="about-capabilities__heading"
                             variants={revealUp}
@@ -94,14 +106,14 @@ export default function AboutPhilosophy() {
                             viewport={{ once: true, amount: 0.4 }}
                         >
                             Pillars Of Lighting
-                        </motion.h2>
+                        </motion.h3>
                     </div>
 
                     <div className="about-capabilities__grid">
                         {/* COLUMN 01 */}
                         <motion.article
                             className="about-capabilities__item"
-                            variants={revealUp}
+                            variants={revealCard}
                             initial="hidden"
                             whileInView="visible"
                             viewport={{ once: true, amount: 0.3 }}
@@ -121,11 +133,10 @@ export default function AboutPhilosophy() {
                         {/* COLUMN 02 */}
                         <motion.article
                             className="about-capabilities__item"
-                            variants={revealUp}
+                            variants={revealCard}
                             initial="hidden"
                             whileInView="visible"
                             viewport={{ once: true, amount: 0.3 }}
-                            transition={{ delay: 0.1 }}
                         >
                             <span className="about-capabilities__number">02</span>
                             <div className="about-capabilities__content">
@@ -142,11 +153,10 @@ export default function AboutPhilosophy() {
                         {/* COLUMN 03 */}
                         <motion.article
                             className="about-capabilities__item"
-                            variants={revealUp}
+                            variants={revealCard}
                             initial="hidden"
                             whileInView="visible"
                             viewport={{ once: true, amount: 0.3 }}
-                            transition={{ delay: 0.2 }}
                         >
                             <span className="about-capabilities__number">03</span>
                             <div className="about-capabilities__content">
@@ -161,7 +171,7 @@ export default function AboutPhilosophy() {
                         </motion.article>
                     </div>
                 </div>
-            </section>
+            </motion.section>
 
         </div>
     );

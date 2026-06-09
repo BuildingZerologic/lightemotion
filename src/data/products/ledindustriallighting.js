@@ -12,7 +12,7 @@ const LEDindustrialLighting = {
           category: "Outdoor & Infrastructure Lighting",
           subcategory: "Flood Lighting",
           shortDescription: "High-intensity pressure die-cast aluminum floodlight designed for broad or narrow beam industrial illumination.",
-          thumbnail: "assets/images/products/led-flood-light.jpg",
+          thumbnail: "/images/products/families/led-flood-light/thumbnail.png",
 
           variants: [
             {
@@ -84,16 +84,16 @@ const LEDindustrialLighting = {
     },
 
     {
-      name: "Sports & Stadium Lighting",
+      name: "Stadium Lighting",
 
       productFamilies: [
         {
           name: "LED STADIUM LIGHT",
           slug: "led-stadium-light",
           category: "Outdoor & Infrastructure Lighting",
-          subcategory: "Sports & Stadium Lighting",
+          subcategory: "Stadium Lighting",
           shortDescription: "High-wattage architectural stadium light built for large area illumination and robust outdoor performance.",
-          thumbnail: "assets/images/products/led-stadium-light.jpg",
+          thumbnail: "/images/products/families/led-stadium-light/thumbnail.png",
 
           variants: [
             {
@@ -127,7 +127,7 @@ const LEDindustrialLighting = {
           category: "Outdoor & Infrastructure Lighting",
           subcategory: "Street & Roadway Lighting",
           shortDescription: "Premium die-cast aluminum streetlights equipped with asymmetric secondary lenses for optimized roadway distribution.",
-          thumbnail: "assets/images/products/led-street-light.jpg",
+          thumbnail: "/images/products/families/led-street-light/thumbnail.png",
 
           variants: [
             {

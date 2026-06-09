@@ -2,6 +2,8 @@ import { useEffect, useState } from "react";
 
 import { motion, useReducedMotion } from "framer-motion";
 
+import { EASE, revealHeading, revealParagraph, viewport } from "../../utils/motion";
+
 import "./AboutHero.scss";
 
 const desktopVideo = "/videos/aboutushero.mp4";
@@ -33,51 +35,30 @@ export default function AboutHero() {
     const isDesktop = useDesktopVideo();
     const videoSource = isDesktop ? desktopVideo : mobileVideo;
 
-    const headingReveal = {
-        hidden: {
-            opacity: 0,
-            y: shouldReduceMotion ? 0 : 28,
-        },
-        visible: {
-            opacity: 1,
-            y: 0,
-            transition: {
-                duration: shouldReduceMotion ? 0.01 : 0.8,
-                ease: [0.22, 1, 0.36, 1],
-            },
-        },
+    // Respect prefers-reduced-motion: collapse y translations and durations
+    const heading = {
+        hidden:  { opacity: 0, y: shouldReduceMotion ? 0 : 24 },
+        visible: { opacity: 1, y: 0, transition: { duration: shouldReduceMotion ? 0.01 : 0.8, ease: EASE } },
     };
 
-    const descriptionReveal = {
-        hidden: {
-            opacity: 0,
-            y: shouldReduceMotion ? 0 : 24,
-        },
-        visible: {
-            opacity: 1,
-            y: 0,
-            transition: {
-                duration: shouldReduceMotion ? 0.01 : 0.8,
-                delay: shouldReduceMotion ? 0 : 0.14,
-                ease: [0.22, 1, 0.36, 1],
-            },
-        },
+    const description = {
+        hidden:  { opacity: 0, y: shouldReduceMotion ? 0 : 16 },
+        visible: { opacity: 1, y: 0, transition: { duration: shouldReduceMotion ? 0.01 : 0.75, delay: shouldReduceMotion ? 0 : 0.14, ease: EASE } },
     };
 
     const videoReveal = {
-        hidden: { opacity: 0 },
-        visible: {
-            opacity: 1,
-            transition: {
-                duration: shouldReduceMotion ? 0.01 : 1,
-                delay: shouldReduceMotion ? 0 : 0.36,
-                ease: [0.22, 1, 0.36, 1],
-            },
-        },
+        hidden:  { opacity: 0 },
+        visible: { opacity: 1, transition: { duration: shouldReduceMotion ? 0.01 : 1, delay: shouldReduceMotion ? 0 : 0.36, ease: EASE } },
     };
 
     return (
-        <section className="about-hero" aria-labelledby="about-hero-title">
+        <motion.section
+            className="about-hero"
+            aria-labelledby="about-hero-title"
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.2 }}
+        >
             <div className="container">
                 <motion.div
                     className="about-hero__content"
@@ -85,17 +66,17 @@ export default function AboutHero() {
                     whileInView="visible"
                     viewport={{ once: true, amount: 0.4 }}
                 >
-                    <motion.h2
+                    <motion.h3
                         className="about-hero__title"
                         id="about-hero-title"
-                        variants={headingReveal}
+                        variants={heading}
                     >
                         Who we are
-                    </motion.h2>
+                    </motion.h3>
 
                     <motion.p
                         className="about-hero__description"
-                        variants={descriptionReveal}
+                        variants={description}
                     >
                         We engineer lighting environments that shape atmosphere, elevate architecture, and evoke emotion. 
                         Blending technical precision with artistic sensitivity, Lightemotion creates spaces designed to be felt as much as they are seen. 
@@ -130,6 +111,6 @@ export default function AboutHero() {
                     <source src={videoSource} type="video/mp4" />
                 </video>
             </motion.div>
-        </section>
+        </motion.section>
     );
 }

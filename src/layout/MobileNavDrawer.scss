@@ -23,6 +23,8 @@
 
     opacity: 0;
 
+    visibility: hidden;
+
     pointer-events: none;
 
     transform: translateY(-1rem);
@@ -38,6 +40,8 @@
 
 .mobile-nav-drawer.is-open {
     opacity: 1;
+
+    visibility: visible;
 
     pointer-events: auto;
 
@@ -58,12 +62,20 @@
     border-bottom: 1px solid var(--color-border);
 }
 
+.mobile-nav-drawer__actions {
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: var(--space-xs);
+}
+
 .mobile-nav-drawer__brand {
     display: inline-flex;
 
     align-items: center;
 
-    width: min(15rem, 72vw);
+    width: 9rem;
 
     img {
         display: block;
@@ -71,6 +83,10 @@
         width: 100%;
 
         height: auto;
+    }
+
+     @include respond(md) {
+        width: 13rem;
     }
 }
 
@@ -83,9 +99,9 @@
 
     display: inline-flex;
 
-    width: 2.75rem;
+    width: 2.5rem;
 
-    height: 2.75rem;
+    height: 2.5rem;
 
     align-items: center;
 
@@ -103,7 +119,7 @@
     &::before {
         position: absolute;
 
-        width: 2rem;
+        width: 1.5rem;
 
         height: 1px;
 
@@ -182,9 +198,9 @@
 
     flex: 0 0 auto;
 
-    width: 2rem;
+    width: 1.75rem;
 
-    height: 2rem;
+    height: 1.75rem;
 
     &::before,
     &::after {
@@ -195,7 +211,7 @@
         top: 50%;
         left: 50%;
 
-        width: 1.35rem;
+        width: 1.1rem;
 
         height: 1px;
 
@@ -224,9 +240,12 @@
 
     opacity: 0;
 
+    visibility: hidden;
+
     transition:
         grid-template-rows var(--transition-slow),
-        opacity var(--transition-medium);
+        opacity var(--transition-medium),
+        visibility var(--transition-medium);
 
     > div {
         overflow: hidden;
@@ -267,14 +286,8 @@
     grid-template-rows: 1fr;
 
     opacity: 1;
-}
 
-.mobile-nav-drawer__item--theme {
-    display: flex;
-
-    justify-content: flex-start;
-
-    padding-block: var(--space-md);
+    visibility: visible;
 }
 
 .mobile-nav-drawer__theme-toggle {

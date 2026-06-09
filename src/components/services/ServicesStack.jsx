@@ -1,7 +1,12 @@
 import { motion } from "framer-motion";
 
-import { imageReveal } from "../../utils/motion";
-import { reveal, staggerReveal } from "./servicesAnimations";
+import {
+    revealCard,
+    revealHeading,
+    revealImage,
+    staggerContainer,
+    viewport,
+} from "../../utils/motion";
 
 import "./ServicesStack.scss";
 
@@ -52,31 +57,37 @@ const services = [
 
 export default function ServicesStack() {
     return (
-        <section className="services-stack" aria-labelledby="services-stack-title">
+        <motion.section
+            className="services-stack"
+            aria-labelledby="services-stack-title"
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.2 }}
+        >
             <div className="container">
-                <motion.h2
+                <motion.h3
                     className="services-stack__title"
                     id="services-stack-title"
                     initial="hidden"
                     whileInView="visible"
                     viewport={{ once: true, amount: 0.4 }}
-                    variants={reveal}
+                    variants={revealHeading}
                 >
                     Services We Offer
-                </motion.h2>
+                </motion.h3>
 
                 <motion.div
                     className="services-stack__list"
                     initial="hidden"
                     whileInView="visible"
-                    viewport={{ once: true, amount: 0.12 }}
-                    variants={staggerReveal}
+                    viewport={{ once: true, amount: 0.1 }}
+                    variants={staggerContainer}
                 >
                     {services.map((service) => (
                         <motion.article
                             className="services-stack__item"
                             key={service.number}
-                            variants={reveal}
+                            variants={revealCard}
                         >
                             <p className="services-stack__number">
                                 [{service.number}]
@@ -92,7 +103,7 @@ export default function ServicesStack() {
 
                             <motion.div
                                 className="services-stack__image-wrap"
-                                {...imageReveal}
+                                {...revealImage}
                             >
                                 <img
                                     src={service.image}
@@ -105,6 +116,6 @@ export default function ServicesStack() {
                     ))}
                 </motion.div>
             </div>
-        </section>
+        </motion.section>
     );
 }

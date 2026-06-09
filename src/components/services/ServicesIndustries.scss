@@ -1,13 +1,11 @@
 @use "../../styles/abstracts/mixins" as *;
 
 .services-industries {
-    padding-bottom: var(--space-4xl);
-
+ 
     background: var(--color-surface-elevated);
 
     @include respond(md) {
-        padding-bottom: var(--space-6xl);
-    }
+     }
 }
 
 .services-industries__grid {
@@ -15,19 +13,35 @@
 
     gap: var(--space-3xl);
 
+    .services-industries__content {
+        order: 1;
+    }
+
+    .services-industries__image {
+        order: 2;
+    }
+
     @include respond(lg) {
         grid-template-columns: minmax(0, 1.1fr) minmax(20rem, 0.9fr);
 
         align-items: center;
 
         gap: var(--space-6xl);
+
+        .services-industries__image {
+            order: 1;
+        }
+
+        .services-industries__content {
+            order: 2;
+        }
     }
 }
 
 .services-industries__image {
     position: relative;
 
-    height: 500px;
+    height: 300px;
 
     overflow: hidden;
 
@@ -48,12 +62,20 @@
 
         border-radius: var(--radius-xs);
     }
+
+    @include respond(lg) {
+        height: 500px;
+    }
 }
 
 .services-industries__label {
-    
-    margin-bottom: var(--space-3xl);
+
     color: var(--color-text-primary);
+    margin-bottom: var(--space-lg);
+
+    @include respond (lg){
+        margin-bottom: var(--space-3xl);
+    }
 }
 
 .services-industries__list {
@@ -75,17 +97,11 @@
 
     background: transparent;
 
-    font-family: var(--font-heading);
+    font-family: var(--font-body);
 
-    font-size: var(--fs-h5);
+    font-size: var(--fs-h6);
 
-    font-weight: var(--fw-medium);
-
-    line-height: var(--lh-heading);
-
-    letter-spacing: var(--ls-normal);
-
-    color: var(--color-text-primary);
+     
 
     cursor: pointer;
 
@@ -97,7 +113,7 @@
         transform var(--transition-medium);
 
     @include respond(md) {
-        font-size: var(--fs-h4);
+        font-size: var(--fs-h5);
     }
 }
 

@@ -8,7 +8,7 @@ const LEDlinearlighting = {
       productFamilies: [
         {
           name: "Flexible Strip 2835 LED",
-          category: "Linear & Cove Lighting",
+          category: "Linear Lighting",
           subcategory: "Flexible LED Strips",
           slug: "flexible-strip-2835-led",
           shortDescription: "High-density architectural LED strip providing uniform illumination across multiple wattage options.",
@@ -107,7 +107,7 @@ const LEDlinearlighting = {
 
         {
           name: "CCT Tunable Strip",
-          category: "Linear & Cove Lighting",
+          category: "Linear Lighting",
           subcategory: "Tunable White Strips",
           slug: "cct-tunable-strip",
           shortDescription: "Dynamic tunable white LED strip offering seamless transition from 2700K to 6500K.",
@@ -150,7 +150,7 @@ const LEDlinearlighting = {
 
         {
           name: "Pixel Strip",
-          category: "Linear & Cove Lighting",
+          category: "Linear Lighting",
           subcategory: "Pixel & Dynamic RGB Lighting",
           slug: "pixel-strip",
           shortDescription: "Addressable dynamic pixel strip for advanced color-changing and localized chasing configurations.",
@@ -217,7 +217,7 @@ const LEDlinearlighting = {
 
         {
           name: "Encapsulated Flex Neon",
-          category: "Linear & Cove Lighting",
+          category: "Linear Lighting",
           subcategory: "Neon Flex Lighting",
           slug: "encapsulated-flex-neon",
           shortDescription: "Premium protective encapsulated neon flex featuring homogeneous dot-free light layout emission.",
@@ -312,7 +312,7 @@ const LEDlinearlighting = {
 
         {
           name: "COB Strip",
-          category: "Linear & Cove Lighting",
+          category: "Linear Lighting",
           subcategory: "COB & Dotless Strips",
           slug: "cob-strip",
           shortDescription: "Continuous point-free COB light strips offering seamless architectural illumination profiles.",
@@ -359,7 +359,7 @@ const LEDlinearlighting = {
 
         {
           name: "SMD Dropless Strip",
-          category: "Linear & Cove Lighting",
+          category: "Linear Lighting",
           subcategory: "COB & Dotless Strips",
           slug: "smd-dropless-strip",
           shortDescription: "Integrated IC constant current dropless SMD strip for uniform linear light runs without voltage degradation.",
@@ -381,7 +381,7 @@ const LEDlinearlighting = {
 
         {
           name: "Flexible Slim Line Strip 5MM",
-          category: "Linear & Cove Lighting",
+          category: "Linear Lighting",
           subcategory: "Flexible LED Strips",
           slug: "flexible-slim-line-strip-5mm",
           shortDescription: "Ultra-narrow 5mm width LED strip configured for specialized micro-profile channels and joinery recesses.",
@@ -429,7 +429,7 @@ const LEDlinearlighting = {
 
         {
           name: "Flex Neon Underwater IP68",
-          category: "Landscape & Exterior Lighting",
+          category: "Outdoor Lighting",
           subcategory: "Underwater & Fountain Lighting",
           slug: "flex-neon-underwater-ip68",
           shortDescription: "Submersible IP68 waterproof certified silicon neon flex designed for swimming pool water elements.",
@@ -461,7 +461,7 @@ const LEDlinearlighting = {
 
         {
           name: "Flexible Wallwasher IP67",
-          category: "Landscape & Exterior Lighting",
+          category: "Outdoor Lighting",
           subcategory: "Linear Wall Washers",
           slug: "flexible-wallwasher-ip67",
           shortDescription: "Flexible architectural wallwasher with IP67 classification offering horizontal and vertical bending limits.",
@@ -527,7 +527,7 @@ const LEDlinearlighting = {
       productFamilies: [
         {
           name: "NE RGB BLUETOOTH",
-          category: "Linear & Cove Lighting",
+          category: "Linear Lighting",
           subcategory: "Lighting Controls & Dimming",
           slug: "ne-rgb-bluetooth",
           shortDescription: "Bluetooth-enabled mobile app responsive architectural controller for RGB multi-color management.",
@@ -537,7 +537,7 @@ const LEDlinearlighting = {
 
         {
           name: "NE RGB 30A (A)",
-          category: "Linear & Cove Lighting",
+          category: "Linear Lighting",
           subcategory: "Lighting Controls & Dimming",
           slug: "ne-rgb-30a-a",
           shortDescription: "Heavy-duty 30-Ampere high capacity industrial grade RGB system controller setup.",
@@ -547,7 +547,7 @@ const LEDlinearlighting = {
 
         {
           name: "NE RGB TOUCH",
-          category: "Linear & Cove Lighting",
+          category: "Linear Lighting",
           subcategory: "Lighting Controls & Dimming",
           slug: "ne-rgb-touch",
           shortDescription: "Touch-capacitive elegant wall or hand-held controller module interface for color adjustments.",
@@ -557,7 +557,7 @@ const LEDlinearlighting = {
 
         {
           name: "NE RGB REMOTE",
-          category: "Linear & Cove Lighting",
+          category: "Linear Lighting",
           subcategory: "Lighting Controls & Dimming",
           slug: "ne-rgb-remote",
           shortDescription: "Wireless radio-frequency handheld remote control set for localized ambient color-changing loops.",
@@ -567,7 +567,7 @@ const LEDlinearlighting = {
 
         {
           name: "NE RGB+WW WIFI",
-          category: "Linear & Cove Lighting",
+          category: "Linear Lighting",
           subcategory: "Lighting Controls & Dimming",
           slug: "ne-rgb-ww-wifi",
           shortDescription: "Smart Wi-Fi enabled controller supporting network configuration for RGB and warm-white channels.",
@@ -577,7 +577,7 @@ const LEDlinearlighting = {
 
         {
           name: "MI BOXER RGBW+C",
-          category: "Linear & Cove Lighting",
+          category: "Linear Lighting",
           subcategory: "Lighting Controls & Dimming",
           slug: "mi-boxer-rgbw-c",
           shortDescription: "Premium 5-channel universal controller architecture designed for versatile architectural layout options.",
@@ -587,7 +587,7 @@ const LEDlinearlighting = {
 
         {
           name: "NE RGB 24 AMP",
-          category: "Linear & Cove Lighting",
+          category: "Linear Lighting",
           subcategory: "Lighting Controls & Dimming",
           slug: "ne-rgb-24-amp",
           shortDescription: "High capacity inline signal amplifier module rated for extensive 24A run additions.",
@@ -597,7 +597,7 @@ const LEDlinearlighting = {
 
         {
           name: "NE RGB+W+C 30 AMP",
-          category: "Linear & Cove Lighting",
+          category: "Linear Lighting",
           subcategory: "Lighting Controls & Dimming",
           slug: "ne-rgb-w-c-30-amp",
           shortDescription: "Heavy-duty 30A 5-channel power booster configuration matching comprehensive spec systems.",
@@ -607,7 +607,7 @@ const LEDlinearlighting = {
 
         {
           name: "CCT TUNABLE PANEL",
-          category: "Linear & Cove Lighting",
+          category: "Linear Lighting",
           subcategory: "Lighting Controls & Dimming",
           slug: "cct-tunable-panel",
           shortDescription: "Wall-mounted 6-mode touch scene switch glass plate designed for tuning standard color loops.",
@@ -617,7 +617,7 @@ const LEDlinearlighting = {
 
         {
           name: "RUNNING CONTROLLER",
-          category: "Linear & Cove Lighting",
+          category: "Linear Lighting",
           subcategory: "Lighting Controls & Dimming",
           slug: "running-controller",
           shortDescription: "Pre-programmed 28-mode dynamic digital controller intended for active neon flex applications.",
@@ -627,7 +627,7 @@ const LEDlinearlighting = {
 
         {
           name: "KNOB DIMMER",
-          category: "Linear & Cove Lighting",
+          category: "Linear Lighting",
           subcategory: "Lighting Controls & Dimming",
           slug: "knob-dimmer",
           shortDescription: "Manual rotary knob potentiometer engineered for smooth low-voltage lighting dimming profiles.",
@@ -643,117 +643,117 @@ const LEDlinearlighting = {
       productFamilies: [
         {
           name: "PIR SF SENSOR",
-          category: "Linear & Cove Lighting",
+          category: "Linear Lighting",
           subcategory: "Sensors & Smart Controls",
           slug: "pir-sf-sensor",
           shortDescription: "Surface-mounted passive infrared occupancy sensor tracking targeted area movement patterns.",
-          thumbnail: "/images/products/pir-sf-sensor.jpg",
+          thumbnail: "/images/products/families/pir-sf-sensor/thumbnail.png",
           productType: "PIR Sensor",
         },
 
         {
           name: "PIR RC SENSOR",
-          category: "Linear & Cove Lighting",
+          category: "Linear Lighting",
           subcategory: "Sensors & Smart Controls",
           slug: "pir-rc-sensor",
           shortDescription: "Recessed architectural flush-fit PIR presence sensor matching premium clean interiors.",
-          thumbnail: "/images/products/pir-rc-sensor.jpg",
+          thumbnail: "/images/products/families/pir-rc-sensor/thumbnail.png",
           productType: "PIR Sensor",
         },
 
         {
           name: "MICROWAVE SF SENSOR",
-          category: "Linear & Cove Lighting",
+          category: "Linear Lighting",
           subcategory: "Sensors & Smart Controls",
           slug: "microwave-sf-sensor",
           shortDescription: "Surface-attach high frequency microwave motion detector sensing across physical partition structures.",
-          thumbnail: "/images/products/microwave-sf-sensor.jpg",
+          thumbnail: "/images/products/families/microwave-sf-sensor/thumbnail.png",
           productType: "Microwave Sensor",
         },
 
         {
           name: "MICROWAVE RC SENSOR",
-          category: "Linear & Cove Lighting",
+          category: "Linear Lighting",
           subcategory: "Sensors & Smart Controls",
           slug: "microwave-rc-sensor",
           shortDescription: "Recessed high sensitivity microwave sensor tracking seamless structural spatial sweeps.",
-          thumbnail: "/images/products/microwave-rc-sensor.jpg",
+          thumbnail: "/images/products/families/microwave-rc-sensor/thumbnail.png",
           productType: "Microwave Sensor",
         },
 
         {
           name: "MICROWAVE FC SENSOR",
-          category: "Linear & Cove Lighting",
+          category: "Linear Lighting",
           subcategory: "Sensors & Smart Controls",
           slug: "microwave-fc-sensor",
           shortDescription: "False-ceiling integrated structural microwave motion sensor setup offering maximized range boundaries.",
-          thumbnail: "/images/products/microwave-fc-sensor.jpg",
+          thumbnail: "/images/products/families/microwave-fc-sensor/thumbnail.png",
           productType: "Microwave Sensor",
         },
 
         {
           name: "STAIRCASE SENSOR",
-          category: "Linear & Cove Lighting",
+          category: "Linear Lighting",
           subcategory: "Sensors & Smart Controls",
           slug: "staircase-sensor",
           shortDescription: "Specialized cascading path sensor optimized for precise multi-step safe guidance lines.",
-          thumbnail: "/images/products/staircase-sensor.jpg",
+          thumbnail: "/images/products/families/staircase-sensor/thumbnail.png",
           productType: "Staircase Sensor",
         },
 
         {
           name: "IR DOOR SENSOR",
-          category: "Linear & Cove Lighting",
+          category: "Linear Lighting",
           subcategory: "Sensors & Smart Controls",
           slug: "ir-door-sensor",
           shortDescription: "Single-leaf proximity IR interrupt sensor configured for seamless door and pocket setups.",
-          thumbnail: "/images/products/ir-door-sensor.jpg",
+          thumbnail: "/images/products/families/ir-door-sensor/thumbnail.png",
           productType: "IR Sensor",
         },
 
         {
           name: "IR CABINET SENSOR",
-          category: "Linear & Cove Lighting",
+          category: "Linear Lighting",
           subcategory: "Sensors & Smart Controls",
           slug: "ir-cabinet-sensor",
           shortDescription: "Ultra-compact reflective IR motion detector tuned for premium interior closet spaces.",
-          thumbnail: "/images/products/ir-cabinet-sensor.jpg",
+          thumbnail: "/images/products/families/ir-cabinet-sensor/thumbnail.png",
           productType: "IR Sensor",
         },
 
         {
           name: "IR DOOR SENSOR DOUBLE",
-          category: "Linear & Cove Lighting",
+          category: "Linear Lighting",
           subcategory: "Sensors & Smart Controls",
           slug: "ir-door-sensor-double",
           shortDescription: "Dual-head relative IR barrier sensor designed for twin sliding or bypass door fixtures.",
-          thumbnail: "/images/products/ir-door-sensor-double.jpg",
+          thumbnail: "/images/products/families/ir-door-sensor-double/thumbnail.png",
           productType: "IR Sensor",
         },
 
         {
           name: "WALL HANGING PIR SENSOR",
-          category: "Linear & Cove Lighting",
+          category: "Linear Lighting",
           subcategory: "Sensors & Smart Controls",
           slug: "wall-hanging-pir-sensor",
           shortDescription: "Directional wall-bracket mounted PIR sensor optimized for corridor perimeter zones.",
-          thumbnail: "/images/products/wall-hanging-pir-sensor.jpg",
+          thumbnail: "/images/products/families/wall-hanging-pir-sensor/thumbnail.png",
           productType: "PIR Sensor",
         },
 
         {
           name: "WARDROBE SWITCH",
-          category: "Linear & Cove Lighting",
+          category: "Linear Lighting",
           subcategory: "Sensors & Smart Controls",
           slug: "wardrobe-switch",
           shortDescription: "Mechanical or basic physical interrupt limit switch matching millwork lighting profiles.",
-          thumbnail: "/images/products/wardrobe-switch.jpg",
+          thumbnail: "/images/products/families/wardrobe-switch/thumbnail.png",
           productType: "Wardrobe Switch",
         },
 
         {
           name: "WARDROBE IR SENSOR",
-          category: "Linear & Cove Lighting",
+          category: "Linear Lighting",
           subcategory: "Sensors & Smart Controls",
           slug: "wardrobe-ir-sensor",
           shortDescription: "Proximity infrared sensor providing reliable touchless illumination upon opening cabinetry doors.",
@@ -763,37 +763,37 @@ const LEDlinearlighting = {
 
         {
           name: "WATERPROOF TOUCH SENSOR",
-          category: "Linear & Cove Lighting",
+          category: "Linear Lighting",
           subcategory: "Sensors & Smart Controls",
           slug: "waterproof-touch-sensor",
           shortDescription: "IP-rated touch sensor intended for wet areas, mirrors, and vanity architectural details.",
-          thumbnail: "/images/products/waterproof-touch-sensor.jpg",
+          thumbnail: "/images/products/families/waterproof-touch-sensor/thumbnail.png",
           productType: "Touch Sensor",
         },
 
         {
           name: "TOUCH DIMMER SWITCH",
-          category: "Linear & Cove Lighting",
+          category: "Linear Lighting",
           subcategory: "Sensors & Smart Controls",
           slug: "touch-dimmer-switch",
           shortDescription: "Touch-capacitive inline dimmer module pairing directly with extruded profile diffuser tracks.",
-          thumbnail: "/images/products/touch-dimmer-switch.jpg",
+          thumbnail: "/images/products/families/touch-dimmer-switch/thumbnail.png",
           productType: "Dimmer Switch",
         },
 
         {
           name: "HANDWAVE SENSOR",
-          category: "Linear & Cove Lighting",
+          category: "Linear Lighting",
           subcategory: "Sensors & Smart Controls",
           slug: "handwave-sensor",
           shortDescription: "Touchless proximity handwave gesture module ensuring clean under-cabinet kitchen operations.",
-          thumbnail: "/images/products/handwave-sensor.jpg",
+          thumbnail: "/images/products/families/handwave-sensor/thumbnail.png",
           productType: "Handwave Sensor",
         },
 
         {
           name: "HANDWAVE 2 SENSOR",
-          category: "Linear & Cove Lighting",
+          category: "Linear Lighting",
           subcategory: "Sensors & Smart Controls",
           slug: "handwave-2-sensor",
           shortDescription: "Advanced secondary configuration handwave control switch with prolonged range tracking accuracy.",
@@ -809,7 +809,7 @@ const LEDlinearlighting = {
       productFamilies: [
         {
           name: "Constant Voltage Power Supplies",
-          category: "Linear & Cove Lighting",
+          category: "Linear Lighting",
           subcategory: "Drivers & Power Supplies",
           slug: "constant-voltage-power-supplies",
           shortDescription: "Comprehensive range of ultra-slim, stick-profile, and waterproof constant voltage power drivers.",
@@ -908,7 +908,7 @@ const LEDlinearlighting = {
 
         {
           name: "Dimmable Power Supplies",
-          category: "Linear & Cove Lighting",
+          category: "Linear Lighting",
           subcategory: "Drivers & Power Supplies",
           slug: "dimmable-power-supplies",
           shortDescription: "Premium TRIAC, 0-10V, PWM, and DALI DT6/DT8 protocols dimmable supply drivers.",
@@ -980,7 +980,7 @@ const LEDlinearlighting = {
       productFamilies: [
         {
           name: "Surface-Mounted Profiles",
-          category: "Linear & Cove Lighting",
+          category: "Linear Lighting",
           subcategory: "Architectural Profiles",
           slug: "surface-mounted-profiles",
           shortDescription: "Surface-applied high grade aluminum extrusion profiles complete with custom diffusers.",
@@ -1004,7 +1004,7 @@ const LEDlinearlighting = {
 
         {
           name: "Recessed Profiles",
-          category: "Linear & Cove Lighting",
+          category: "Linear Lighting",
           subcategory: "Architectural Profiles",
           slug: "recessed-profiles",
           shortDescription: "Recessed flanged and collarless extrusion channels intended for flush plaster finishes.",
@@ -1196,7 +1196,7 @@ const LEDlinearlighting = {
 
         {
           name: "Trimless / Plaster-In Profiles",
-          category: "Linear & Cove Lighting",
+          category: "Linear Lighting",
           subcategory: "Architectural Profiles",
           slug: "trimless-plaster-in-profiles",
           shortDescription: "Plaster-in modular trimless linear tracks creating perfect edge integrations with ceilings.",
@@ -1232,7 +1232,7 @@ const LEDlinearlighting = {
 
         {
           name: "Corner & Angular Profiles",
-          category: "Linear & Cove Lighting",
+          category: "Linear Lighting",
           subcategory: "Architectural Profiles",
           slug: "corner-angular-profiles",
           shortDescription: "Angled perimeter tracks structured to provide flawless 45-degree corner lighting distributions.",
@@ -1274,7 +1274,7 @@ const LEDlinearlighting = {
 
         {
           name: "Wallwashers & Grazers",
-          category: "Linear & Cove Lighting",
+          category: "Linear Lighting",
           subcategory: "Architectural Profiles",
           slug: "wallwashers-grazers",
           shortDescription: "Specialized wall-washing lens extrusion paths built for uniform vertical facade washing.",
@@ -1322,7 +1322,7 @@ const LEDlinearlighting = {
 
         {
           name: "Stair & Step Profiles",
-          category: "Linear & Cove Lighting",
+          category: "Linear Lighting",
           subcategory: "Architectural Profiles",
           slug: "stair-step-profiles",
           shortDescription: "Staircase non-slip functional tread profiles featuring downward asymmetric protective lighting gaps.",
@@ -1346,7 +1346,7 @@ const LEDlinearlighting = {
 
         {
           name: "In-Ground / Underground Profiles",
-          category: "Linear & Cove Lighting",
+          category: "Linear Lighting",
           subcategory: "Architectural Profiles",
           slug: "in-ground-underground-profiles",
           shortDescription: "Heavy-duty driveway certified structural layout inground floor linear aluminum tracks.",
@@ -1370,7 +1370,7 @@ const LEDlinearlighting = {
 
         {
           name: "Specialty Architectural Profiles",
-          category: "Linear & Cove Lighting",
+          category: "Linear Lighting",
           subcategory: "Architectural Profiles",
           slug: "specialty-architectural-profiles",
           shortDescription: "Comprehensive display cabinet, direct-indirect suspended, baseboard, and curvy customized lighting tracks.",
@@ -1490,7 +1490,7 @@ const LEDlinearlighting = {
       productFamilies: [
         {
           name: "Top Bend",
-          category: "Linear & Cove Lighting",
+          category: "Linear Lighting",
           subcategory: "Neon Flex Lighting",
           slug: "top-bend",
           shortDescription: "Vertical bending contour neon flex configured for rounded spatial layout framing.",
@@ -1584,7 +1584,7 @@ const LEDlinearlighting = {
         },
         {
           name: "Side Bend",
-          category: "Linear & Cove Lighting",
+          category: "Linear Lighting",
           subcategory: "Neon Flex Lighting",
           slug: "side-bend",
           shortDescription: "Horizontal flat contour bending neon flex optimal for structural perimeter channels.",
@@ -1629,7 +1629,7 @@ const LEDlinearlighting = {
         },
         {
           name: "Concealed Series",
-          category: "Linear & Cove Lighting",
+          category: "Linear Lighting",
           subcategory: "Neon Flex Lighting",
           slug: "concealed-series",
           shortDescription: "Specialized winglet plaster-fit edge concealed architectural profile neon strips.",
@@ -1652,7 +1652,7 @@ const LEDlinearlighting = {
         },
         {
           name: "Round Neon",
-          category: "Linear & Cove Lighting",
+          category: "Linear Lighting",
           subcategory: "Neon Flex Lighting",
           slug: "round-neon",
           shortDescription: "360-degree fully cylindrical emitting round profile decorative neon flex systems.",
@@ -1676,7 +1676,7 @@ const LEDlinearlighting = {
         },
         {
           name: "Braided Series",
-          category: "Linear & Cove Lighting",
+          category: "Linear Lighting",
           subcategory: "Neon Flex Lighting",
           slug: "braided-series",
           shortDescription: "High-strength outer braided sheath aesthetic neon strip adding advanced structural reinforcement.",
@@ -1693,7 +1693,7 @@ const LEDlinearlighting = {
         },
         {
           name: "Black Series",
-          category: "Linear & Cove Lighting",
+          category: "Linear Lighting",
           subcategory: "Neon Flex Lighting",
           slug: "black-series",
           shortDescription: "Distinctive black jacket aesthetic neon flex blending invisibly into dark architectural spaces.",
@@ -1717,7 +1717,7 @@ const LEDlinearlighting = {
         },
         {
           name: "3D Flex",
-          category: "Linear & Cove Lighting",
+          category: "Linear Lighting",
           subcategory: "Neon Flex Lighting",
           slug: "3d-flex",
           shortDescription: "Multi-axis compound bending 3D flex neon designed for highly complex structural configurations.",
@@ -1734,7 +1734,7 @@ const LEDlinearlighting = {
         },
         {
           name: "IP65 Ready",
-          category: "Linear & Cove Lighting",
+          category: "Linear Lighting",
           subcategory: "Waterproof Linear Lighting",
           slug: "ip65-ready",
           shortDescription: "Dust and moisture-proof standard IP65 calibrated robust neon flex lighting series.",
@@ -1798,7 +1798,7 @@ const LEDlinearlighting = {
         },
         {
           name: "Silicone Sleeve Series",
-          category: "Linear & Cove Lighting",
+          category: "Linear Lighting",
           subcategory: "Neon Flex Lighting",
           slug: "silicone-sleeve-series",
           shortDescription: "Hollow protective premium grade silicone extrusion sleeves tracking naked LED light lines.",

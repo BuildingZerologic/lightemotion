@@ -2,8 +2,14 @@ import { useState } from "react";
 
 import { AnimatePresence, motion } from "framer-motion";
 
-import { imageReveal } from "../../utils/motion";
-import { reveal, staggerReveal } from "./servicesAnimations";
+import {
+    EASE,
+    revealCard,
+    revealHeading,
+    revealImage,
+    staggerContainer,
+    viewport,
+} from "../../utils/motion";
 
 import "./ServicesIndustries.scss";
 
@@ -38,12 +44,18 @@ export default function ServicesIndustries() {
     const [activeIndustry, setActiveIndustry] = useState(industries[0]);
 
     return (
-        <section className="services-industries" aria-labelledby="services-industries-title">
+        <motion.section
+            className="services-industries"
+            aria-labelledby="services-industries-title"
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.2 }}
+        >
             <div className="container">
                 <div className="services-industries__grid">
                     <motion.div
                         className="services-industries__image"
-                        {...imageReveal}
+                        {...revealImage}
                     >
                         <AnimatePresence mode="sync">
                             <motion.img
@@ -57,7 +69,7 @@ export default function ServicesIndustries() {
                                 exit={{ opacity: 0}}
                                 transition={{
                                     duration: 0.6,
-                                    ease: [0.22, 1, 0.36, 1],
+                                    ease: EASE,
                                 }}
                             />
                         </AnimatePresence>
@@ -68,22 +80,22 @@ export default function ServicesIndustries() {
                         initial="hidden"
                         whileInView="visible"
                         viewport={{ once: true, amount: 0.25 }}
-                        variants={staggerReveal}
+                        variants={staggerContainer}
                     >
-                        <motion.h5
+                        <motion.h4
                             className="services-industries__label"
                             id="services-industries-title"
-                            variants={reveal}
+                            variants={revealHeading}
                         >
                             Industries We Cover
-                        </motion.h5>
+                        </motion.h4>
 
                         <motion.ul
                             className="services-industries__list"
-                            variants={staggerReveal}
+                            variants={staggerContainer}
                         >
                             {industries.map((industry) => (
-                                <motion.li key={industry.name} variants={reveal}>
+                                <motion.li key={industry.name} variants={revealCard}>
                                     <button
                                         className={
                                             activeIndustry.name === industry.name
@@ -103,6 +115,6 @@ export default function ServicesIndustries() {
                     </motion.div>
                 </div>
             </div>
-        </section>
+        </motion.section>
     );
 }

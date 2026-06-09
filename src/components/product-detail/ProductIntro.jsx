@@ -2,6 +2,8 @@ import { Link } from "react-router-dom";
 
 import { motion } from "framer-motion";
 
+import { revealSection, viewport } from "../../utils/motion";
+
 export default function ProductIntro({
     description,
     onVariantsClick,
@@ -13,14 +15,15 @@ export default function ProductIntro({
     return (
         <motion.div
             className="product-detail__content"
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.12, ease: [0.22, 1, 0.36, 1] }}
+            variants={revealSection}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.3 }}
         >
             <header className="product-detail__header">
-                <h3 className="product-detail__title" id="product-detail-title">
+                <h4 className="product-detail__title" id="product-detail-title">
                     {title}
-                </h3>
+                </h4>
 
                 {description && (
                     <p className="product-detail__description">

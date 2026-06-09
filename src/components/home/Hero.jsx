@@ -1,14 +1,32 @@
-import { useReducedMotion } from "framer-motion";
+import { motion, useReducedMotion } from "framer-motion";
 import { Link } from "react-router-dom";
+
+import { EASE, viewport } from "../../utils/motion";
+
 import "./Hero.scss";
 
 export default function Hero() {
     const shouldReduceMotion = useReducedMotion();
 
     return (
-        <section className="hero">
+        <motion.section
+            className="hero"
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.12 }}
+            variants={{
+                hidden: {},
+                visible: { transition: { staggerChildren: 0.1 } },
+            }}
+        >
 
-            <div className="hero__video-wrapper">
+            <motion.div
+                className="hero__video-wrapper"
+                variants={{
+                    hidden:  { opacity: 0 },
+                    visible: { opacity: 1, transition: { duration: 0.9, ease: EASE } },
+                }}
+            >
 
                 <video
                     className="hero__video"
@@ -23,30 +41,40 @@ export default function Hero() {
                     <source src="/videos/herovideo.mp4" type="video/mp4" />
                 </video>
 
-            </div>
+            </motion.div>
 
             <div className="hero__overlay"></div>
 
             <div className="container">
 
-                <div className="hero__content">
+                <motion.div
+                    className="hero__content"
+                    variants={{
+                        hidden:  { opacity: 0, y: 24 },
+                        visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: EASE, delay: 0.1 } },
+                    }}
+                >
 
-                    <h2 className="hero__title">
+                    <h4 className="hero__title">
                         Lighting Solutions For Business
-                    </h2>
+                    </h4>
 
                     <div className="hero__actions">
 
-                        <Link to="/contact" className="btn-light">
+                        <Link to="/contact"
+                            className="btn-light"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
                             START COLLABORATION
                         </Link>
 
                     </div>
 
-                </div>
+                </motion.div>
 
             </div>
 
-        </section>
+        </motion.section>
     );
 }

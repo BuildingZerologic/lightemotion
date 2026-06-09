@@ -1,0 +1,88 @@
+@use "../../styles/abstracts/mixins" as *;
+
+.project-technical {
+    padding-block: var(--space-2xl);
+ 
+    @include respond(md) {
+        padding-block: var(--space-5xl);
+    }
+
+    @include respond(lg) {
+        padding-block: var(--space-3xl);
+    }
+}
+
+.project-technical__layout {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-3xl);
+
+    @include respond(lg) {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) minmax(22rem, 0.9fr);
+        gap: var(--space-5xl);
+        align-items: start;
+    }
+}
+
+.project-technical__intro {
+    max-width: 46rem;
+}
+
+.project-technical__eyebrow {
+    margin: 0 0 var(--space-md);
+    font-size: 0.62rem;
+    font-weight: var(--fw-medium);
+    letter-spacing: var(--ls-caption);
+    text-transform: uppercase;
+    color: var(--color-text-secondary);
+    opacity: 0.7;
+}
+
+.project-technical__title {
+    margin: 0 0 var(--space-lg);
+}
+
+.project-technical__body {
+    margin: 0;
+    color: var(--color-text-secondary);
+}
+
+.project-technical__list {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+}
+
+.project-technical__item {
+    padding-block: var(--space-lg);
+    border-top: 1px solid var(--color-border);
+}
+
+.project-technical__item:first-child {
+    border-top: none;
+}
+
+.project-technical__item:last-child {
+    border-bottom: 1px solid var(--color-border);
+}
+
+.project-technical__label,
+.project-technical__value {
+    margin: 0;
+}
+
+.project-technical__label {
+    margin-bottom: var(--space-xs);
+    font-size: 0.62rem;
+    font-weight: var(--fw-medium);
+    line-height: var(--lh-heading);
+    letter-spacing: var(--ls-caption);
+    text-transform: uppercase;
+    color: var(--color-text-secondary);
+    opacity: 0.7;
+}
+
+.project-technical__value {
+    color: var(--color-text-primary);
+}

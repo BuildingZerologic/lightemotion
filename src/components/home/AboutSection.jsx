@@ -2,6 +2,8 @@ import "./AboutSection.scss";
 import { useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 
+import { revealEyebrow, viewport } from "../../utils/motion";
+
 
 export default function AboutSection() {
 
@@ -19,19 +21,29 @@ export default function AboutSection() {
     const overlayOpacity = useTransform(scrollYProgress, [0, 1], [0.85, 0]);
 
     return (
-        <section className="about-section" ref={sectionRef}>
+        <motion.section
+            className="about-section"
+            ref={sectionRef}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.2 }}
+            variants={{
+                hidden:  { opacity: 0, y: 24 },
+                visible: { opacity: 1, y: 0,  transition: { duration: 0.8, ease: [0.22, 1, 0.36, 1] } },
+            }}
+        >
             <div className="container">
                 <div className="about-section__content">
 
-                    <motion.h5
+                    <motion.p
                         className="about-section__eyebrow"
-                        initial={{ opacity: 0, y: 20 }}
-                        whileInView={{ opacity: 1, y: 0 }}
+                        variants={revealEyebrow}
+                        initial="hidden"
+                        whileInView="visible"
                         viewport={{ once: true, amount: 0.4 }}
-                        transition={{ duration: 0.7 }}
                     >
                         Who We Are
-                    </motion.h5>
+                    </motion.p>
 
                     {/* Wrapper is relative so the overlay can sit absolute on top of the text */}
                     <div className="about-section__text-wrapper">
@@ -55,6 +67,6 @@ export default function AboutSection() {
 
                 </div>
             </div>
-        </section>
+        </motion.section>
     );
 }

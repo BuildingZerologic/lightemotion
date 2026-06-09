@@ -1,0 +1,28 @@
+@use "../../styles/abstracts/mixins" as *;
+
+.project-outcome {
+    padding-block: var(--space-2xl);
+ 
+    @include respond(md) {
+        padding-block: var(--space-5xl);
+    }
+
+    @include respond(lg) {
+        padding-block-start: var(--space-3xl);
+        padding-block-end: var(--space-6xl);
+    }
+}
+ 
+
+.project-outcome__title {
+    margin: 0 0 var(--space-lg);
+}
+
+.project-outcome__body {
+    margin: 0;
+    color: var(--color-text-secondary);
+
+    @include respond(lg) {
+        max-width: 70%;
+    }
+}

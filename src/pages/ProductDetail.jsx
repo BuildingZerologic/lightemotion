@@ -1,5 +1,6 @@
 import { useMemo, useRef } from "react";
 
+import { motion } from "framer-motion";
 import { useParams } from "react-router-dom";
 
 import ProductGallery from "../components/product-detail/ProductGallery";
@@ -36,14 +37,29 @@ export default function ProductDetail() {
 
     return (
         <div className="product-detail-page" data-navbar-solid>
-            <section className="product-detail" aria-labelledby="product-detail-title">
-                <div className="container-pdp">
-                    <div className="product-detail__layout">
-                        <ProductGallery
-                            images={galleryImages}
-                            title={product?.name}
-                        />
+            <motion.section
+                className="product-detail"
+                aria-labelledby="product-detail-title"
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true, amount: 0.12 }}
+                variants={{
+                    hidden: { opacity: 0, y: 24 },
+                    visible: {
+                        opacity: 1,
+                        y: 0,
+                        transition: { duration: 0.85, ease: [0.22, 1, 0.36, 1] },
+                    },
+                }}
+            >
 
+                <div className="product-detail__layout">
+                    <ProductGallery
+                        images={galleryImages}
+                        title={product?.name}
+                    />
+
+                    <div className="container-pdp">
                         <ProductIntro
                             title={product?.name}
                             description={product?.shortDescription}
@@ -52,7 +68,7 @@ export default function ProductDetail() {
                         />
                     </div>
                 </div>
-            </section>
+            </motion.section>
 
             <div ref={variantsSectionRef}>
                 <ProductVariantsTable

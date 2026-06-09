@@ -2,7 +2,7 @@
 
 export const subcategoryContent = {
   "deep-recessed-antiglare": {
-    title: "Deep Recessed & Anti-Glare Downlights",
+    title: "Recessed Downlights",
 
     description:
       "Precision-engineered recessed downlighting systems designed to deliver superior visual comfort, controlled glare reduction, and calm architectural illumination.",
@@ -74,7 +74,7 @@ export const subcategoryContent = {
   },
 
   "miniature-niche-lighting": {
-    title: "Miniature & Niche Lighting",
+    title: "Niche Lights",
 
     description:
       "Micro-scale luminaires engineered for discrete integration within millwork, displays, and intimate architectural alcoves.",
@@ -86,7 +86,7 @@ export const subcategoryContent = {
   },
 
   "wallwasher-downlights": {
-    title: "Wallwasher Downlights",
+    title: "Wallwasher",
 
     description:
       "Sophisticated asymmetric optical systems delivering uniform vertical illuminance to expand spatial perception and emphasize vertical surfaces.",
@@ -98,7 +98,7 @@ export const subcategoryContent = {
   },
 
   "twin-multi-module-downlights": {
-    title: "Twin & Multi-Module Downlights",
+    title: "Multi-Light Downlights",
 
     description:
       "Scalable multi-lamp configurations offering consolidated ceiling apertures with independent directional targeting.",
@@ -182,7 +182,7 @@ export const subcategoryContent = {
   },
 
   "linear-profile-systems": {
-    title: "Linear Profile Systems",
+    title: "Linear Profiles",
 
     description:
       "Rigid linear extrusions offering continuous structural illumination for modern interior geometries.",
@@ -193,16 +193,40 @@ export const subcategoryContent = {
       "/images/subcategories/linear-profile-systems.webp",
   },
 
-  "decorative-linear-suspended-lighting": {
-    title: "Decorative Linear & Suspended Lighting",
+  "decorative-linear-shapes": {
+    title: "Decorative Linear Shapes",
 
     description:
-      "Expressive, high-end suspended luminaires that fuse architectural scale with striking geometric design elements.",
+      "Architectural decorative linear lighting systems sculpted into expressive geometric shapes for statement ceiling and spatial installations.",
 
     heroType: "image",
 
     heroMedia:
-      "/images/subcategories/decorative-linear-suspended-lighting.webp",
+      "/images/subcategories/decorative-linear-shapes/hero.webp",
+  },
+
+  "styla-hanging-light": {
+    title: "Styla Hanging Light",
+
+    description:
+      "Refined pendant luminaire system offering clean architectural silhouettes and premium suspended light distribution.",
+
+    heroType: "image",
+
+    heroMedia:
+      "/images/subcategories/styla-hanging-light/hero.webp",
+  },
+
+  "luster-hanging-lights": {
+    title: "Luster Hanging Lights",
+
+    description:
+      "Sculptural clustered pendant systems delivering layered luminous depth and elegant spatial presence.",
+
+    heroType: "image",
+
+    heroMedia:
+      "/images/subcategories/luster-hanging-lights/hero.webp",
   },
 
   "cob-dotless-strips": {
@@ -430,7 +454,7 @@ export const subcategoryContent = {
     heroType: "image",
 
     heroMedia:
-      "/images/subcategories/panel-lights.webp",
+      "/images/subcategories/panel-light.jpg",
   },
 
   "flood-lighting": {
@@ -446,7 +470,7 @@ export const subcategoryContent = {
   },
 
   "sports-stadium-lighting": {
-    title: "Sports & Stadium Lighting",
+    title: "Stadium Lighting",
 
     description:
       "High-power asymmetric optical arrays delivering precision glare control and broadcast-quality light levels for sports infrastructure.",
@@ -454,7 +478,7 @@ export const subcategoryContent = {
     heroType: "image",
 
     heroMedia:
-      "/images/subcategories/sports-stadium-lighting.webp",
+      "/images/subcategories/stadium-lighting.webp",
   },
 
   "street-roadway-lighting": {
@@ -466,6 +490,6 @@ export const subcategoryContent = {
     heroType: "image",
 
     heroMedia:
-      "/images/subcategories/street-roadway-lighting.webp",
+      "/images/subcategories/street-lighting.webp",
   },
 };

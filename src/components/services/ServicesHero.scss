@@ -3,7 +3,7 @@
 .services-hero {
     position: relative;
 
-    height: 55svh;
+    height: 100svh;
 
     min-height: 28rem;
 
@@ -11,13 +11,7 @@
 
     background: var(--color-media-bg);
 
-    @include respond(md) {
-        height: 65svh;
-    }
-
-    @include respond(lg) {
-        height: 100svh;
-    }
+     
 
     img {
         position: absolute;
@@ -47,7 +41,7 @@
 .services-hero__heading {
     position: absolute;
 
-    bottom: var(--space-xl);
+    bottom: var(--space-6xl);
 
     left: var(--container-padding);
 
@@ -60,7 +54,7 @@
     pointer-events: none;
 
     @include respond(md) {
-        bottom: var(--space-2xl);
+        bottom: var(--space-5xl);
      }
 
     @include respond(lg) {

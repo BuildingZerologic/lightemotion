@@ -1,0 +1,58 @@
+@use "../../styles/abstracts/mixins" as *;
+
+.projects-hero {
+    padding-top: calc(var(--navbar-height-compact) + var(--space-4xl));
+    padding-bottom: var(--space-4xl);
+
+    background: var(--color-bg);
+
+    @include respond(md) {
+        padding-top: calc(var(--navbar-height-compact) + var(--space-5xl));
+        padding-bottom: var(--space-5xl);
+    }
+
+    @include respond(lg) {
+        padding-top: calc(var(--navbar-height-compact) + var(--space-5xl));
+        padding-bottom: var(--space-3xl);
+    }
+}
+
+.projects-hero__content {
+    max-width: 52rem;
+}
+
+.projects-hero__eyebrow {
+    margin: 0 0 var(--space-md);
+
+    font-family: var(--font-body);
+    font-size: 0.62rem;
+    font-weight: var(--fw-medium);
+    letter-spacing: var(--ls-caption);
+    text-transform: uppercase;
+    color: var(--color-text-secondary);
+    opacity: 0.7;
+}
+
+.projects-hero__title {
+    margin: 0 0 var(--space-lg);
+
+    @include respond(md) {
+        margin-bottom: var(--space-xl);
+    }
+}
+
+.projects-hero__description {
+    margin: 0;
+
+    font-size: var(--fs-body-sm);
+    line-height: var(--lh-body);
+    color: var(--color-text-secondary);
+
+    max-width: 44rem;
+
+    text-wrap: balance;
+
+    @include respond(md) {
+        font-size: var(--fs-body);
+    }
+}

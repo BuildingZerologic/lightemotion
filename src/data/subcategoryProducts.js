@@ -10,14 +10,12 @@ import {
 const subcategoryContentAliases = {
     "narrow-beam-downlights": "narrow-beam-pin-spot-downlights",
     "multi-module-downlights": "twin-multi-module-downlights",
-    "decorative-linear-lighting": "decorative-linear-suspended-lighting",
-    "decorative-suspended-lighting": "decorative-linear-suspended-lighting",
     "stadium-lighting": "sports-stadium-lighting",
 };
 
 const subcategoryDataAliases = {
     "garden-landscape-spotlights": "led-garden-light",
-    "facade-tree-uplighting": "led-facade-tree-up-lighter",
+    "facade-tree-uplighting": "led-facade-and-tree-up-lighter",
     "linear-wall-washers": "led-linear-wallwasher",
     "inground-lights": "led-inground-burial",
     "pathway-foot-lights": "led-foot-light",
@@ -96,24 +94,105 @@ export function getSubcategoryPageData(slug) {
         navigationItem ? slugify(navigationItem.name) : "",
     ].filter(Boolean));
 
-    const subcategory = productCollections
+    const allFamilies = productCollections
         .flatMap((collection) => collection.subcategories || [])
-        .find((item) => {
-            const itemSlug = item.slug || slugify(item.name);
-            const itemNameSlug = slugify(item.name);
+        .flatMap((sub) => sub.productFamilies || []);
 
-            return lookupSlugs.has(itemSlug) || lookupSlugs.has(itemNameSlug);
-        });
+    // First try to perfectly match product families by their own `subcategory` field
+    let matchedFamilies = allFamilies.filter((family) => {
+        if (family.subcategory) {
+            return lookupSlugs.has(slugify(family.subcategory));
+        }
+        return false;
+    });
 
-    const title = content?.title || navigationItem?.name || subcategory?.name || "";
+    let subcategoryObj = null;
+
+    // If no families have this exact subcategory field, fallback to matching the parent subcategory
+    if (matchedFamilies.length === 0) {
+        subcategoryObj = productCollections
+            .flatMap((collection) => collection.subcategories || [])
+            .find((item) => {
+                const itemSlug = item.slug || slugify(item.name);
+                const itemNameSlug = slugify(item.name);
+
+                return lookupSlugs.has(itemSlug) || lookupSlugs.has(itemNameSlug);
+            });
+
+        if (subcategoryObj) {
+            matchedFamilies = subcategoryObj.productFamilies || [];
+        }
+    }
+
+    // Always resolve subcategoryObj so we can read metadata flags (e.g. isDecorativeListing)
+    if (!subcategoryObj) {
+        subcategoryObj = productCollections
+            .flatMap((collection) => collection.subcategories || [])
+            .find((item) => {
+                const itemSlug = item.slug || slugify(item.name);
+                const itemNameSlug = slugify(item.name);
+
+                return lookupSlugs.has(itemSlug) || lookupSlugs.has(itemNameSlug);
+            });
+    }
+
+    const title = content?.title || navigationItem?.name || subcategoryObj?.name || "";
     const description = content?.description || "";
     const heroMedia = getSubcategoryHeroImage(slug, content?.heroMedia);
+    const isValid = Boolean(navigationItem || content || subcategoryObj || matchedFamilies.length > 0);
+
+    // Build decorative product grid when subcategory is flagged as a curated listing.
+    // Returns a flat array of up to 12 items — { name, slug, image } — for the image card grid.
+    const isDecorativeListing = Boolean(subcategoryObj?.isDecorativeListing);
+    let decorativeProducts = null;
+
+    if (isDecorativeListing) {
+        // Primary: extract individual named models from subGroups → variants OR family → variants
+        const allModels = matchedFamilies.flatMap((family) => {
+            const subGroupVariants = (family.subGroups || []).flatMap((group) =>
+                (group.variants || []).map((v) => ({
+                    name: v.model,
+                    slug: `${slug}/${slugify(v.model)}`,
+                }))
+            );
+
+            const directVariants = (family.variants || []).map((v) => ({
+                name: v.model,
+                slug: `${slug}/${slugify(v.model)}`,
+            }));
+
+            return [...subGroupVariants, ...directVariants];
+        });
+
+        if (allModels.length > 0) {
+            // Subcategory has individual models (Chandeliers, Pendants, etc.)
+            decorativeProducts = allModels.map((item) => ({
+                name: item.name,
+                slug: item.slug,
+                image: getProductFamilyThumbnailImage({ slug: item.slug }),
+            }));
+
+        } else {
+            // Fallback: no model-level data — show the product families themselves as cards
+            // (e.g. Decorative Linear Shapes with family-level entries only)
+            decorativeProducts = matchedFamilies.map((family) => ({
+                name: family.name,
+                slug: family.slug || slugify(family.name),
+                image: getProductFamilyThumbnailImage({
+                    slug: family.slug || slugify(family.name),
+                    legacyThumbnail: family.thumbnail,
+                }),
+            }));
+        }
+    }
 
     return {
+        isValid,
         title,
         description,
         heroMedia,
-        productFamilies: (subcategory?.productFamilies || []).map((family) => ({
+        decorativeProducts,
+        productFamilies: matchedFamilies.map((family) => ({
             name: family.name,
             slug: family.slug || slugify(family.name),
             image: getProductFamilyThumbnailImage({

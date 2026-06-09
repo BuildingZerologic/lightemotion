@@ -13,11 +13,20 @@ import "./Navbar.scss";
 const navLinks = [
 
     {
+        label: "Home",
+        href: "/",
+    },
+
+    {
         label: "Products",
     },
     {
         label: "Services",
         href: "/services",
+    },
+    {
+        label: "Projects",
+        href: "/projects",
     },
     {
         label: "About",
@@ -29,9 +38,14 @@ const navLinks = [
     },
 ];
 
+// Routes that start with a full-bleed transparent hero surface.
+// Every other route gets a solid navbar immediately.
+const HERO_ROUTES = new Set(["/"]);
+
 export default function Navbar() {
     const location = useLocation();
-    const [isScrolled, setIsScrolled] = useState(false);
+    const isHeroRoute = HERO_ROUTES.has(location.pathname);
+    const [isScrolled, setIsScrolled] = useState(!isHeroRoute);
     const [isNavbarHidden, setIsNavbarHidden] = useState(false);
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const [isProductsMenuOpen, setIsProductsMenuOpen] = useState(false);
@@ -61,9 +75,10 @@ export default function Navbar() {
 
             lastScrollYRef.current = currentScrollY;
 
-            const solidSurface = document.querySelector("[data-navbar-solid]");
-
-            if (solidSurface) {
+            // Non-hero routes are always solid — no transparent phase.
+            // This avoids a timing race where the page's [data-navbar-solid]
+            // DOM node hasn't been committed yet on initial client-side navigation.
+            if (!isHeroRoute) {
                 setIsScrolled(true);
                 document.documentElement.style.setProperty(
                     "--navbar-height",
@@ -105,7 +120,7 @@ export default function Navbar() {
             window.removeEventListener("scroll", handleScrollState);
             window.removeEventListener("resize", handleScrollState);
         };
-    }, [isMenuOpen, isProductsMenuOpen, location.pathname]);
+    }, [isMenuOpen, isProductsMenuOpen, location.pathname, isHeroRoute]);
 
     useEffect(() => {
         if (!isMenuOpen && !isProductsMenuOpen) {
@@ -257,14 +272,16 @@ export default function Navbar() {
                 </nav>
             </div>
 
-            <div
-                className="products-mega-menu"
-                id="products-mega-menu"
-                aria-hidden={!isProductsMenuOpen}
-                onMouseEnter={openProductsMenu}
-                onMouseLeave={closeProductsMenuWithDelay}
-            >
-                <div className="container">
+            <div className="container">
+                <div
+                    className="products-mega-menu"
+                    id="products-mega-menu"
+                    aria-hidden={!isProductsMenuOpen}
+                    inert={!isProductsMenuOpen}
+                    onMouseEnter={openProductsMenu}
+                    onMouseLeave={closeProductsMenuWithDelay}
+                >
+
                     <div className="products-mega-menu__inner">
                         <section className="products-mega-menu__column products-mega-menu__column--categories" aria-labelledby="products-mega-menu-categories">
                             <h2 id="products-mega-menu-categories">Categories</h2>

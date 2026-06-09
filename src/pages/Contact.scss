@@ -1,84 +1,106 @@
 @use "../styles/abstracts/mixins" as *;
 
 .contact-page {
-    /* Uses the very light off-white from your mockup */
     background: var(--color-bg);
     min-height: 100svh;
 }
 
 .contact {
-    padding-block: calc(var(--navbar-height) + var(--space-2xl)) var(--space-4xl);
-    
+    padding-block: calc(var(--navbar-height-compact) + var(--space-4xl)) var(--space-4xl);
+
     @include respond(md) {
-        padding-block: calc(var(--navbar-height-compact) + var(--space-6xl)) var(--space-6xl);
+        padding-block: calc(var(--navbar-height-compact) + var(--space-5xl)) var(--space-6xl);
     }
 }
 
-
-.contact__container{
+.contact__container {
     width: 100%;
 
     margin-inline: auto;
 
-    padding-inline: 2rem;
-
-    @include respond(sm) {
-        padding-inline: 2rem;
-    }
+    padding-inline: var(--container-padding);
 
     @include respond(md) {
-        padding-inline: 3rem;
+        padding-inline: var(--space-3xl);
     }
 
     @include respond(lg) {
-        padding-inline: 4rem;
+        padding-inline: var(--space-4xl);
     }
 
     @include respond(xl) {
-        padding-inline: 4rem;
-        max-width: 800px;
+        max-width: var(--container-width);
     }
 
     @include respond(2xl) {
-        max-width: 800px;
-
-        padding-inline: 5rem;
+        padding-inline: var(--space-5xl);
     }
 }
 
 .contact__header {
-    margin-bottom: var(--space-2xl);
-
-    @include respond(md) {
-        margin-bottom: var(--space-3xl);
-    }
+    margin-bottom: var(--space-4xl);
 }
 
 .contact__title {
     margin-bottom: var(--space-md);
-    font-family: var(--font-heading);
-    font-size: var(--fs-h3);
-    font-weight: var(--fw-regular);
-    line-height: var(--lh-heading);
-    letter-spacing: var(--ls-normal);
-    color: var(--color-text-primary);
-
-    @include respond(md) {
-        font-size: 4.5rem;
-    }
 }
 
 .contact__description {
     max-width: 34rem;
+
     font-size: var(--fs-body);
-    line-height: 1.6;
+    line-height: var(--lh-body);
     color: var(--color-text-secondary);
 }
 
+.contact__layout {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-4xl);
+
+    @include respond(lg) {
+        display: grid;
+        grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.2fr);
+        align-items: start;
+        gap: var(--space-5xl);
+    }
+}
+
+.contact__map-panel {
+    order: 2;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-lg);
+
+    @include respond(lg) {
+        order: 0;
+        grid-column: 1;
+        grid-row: 1;
+        height: 500px;
+    }
+}
+
 .contact__form {
+    order: 1;
     display: flex;
     flex-direction: column;
     gap: var(--space-xl);
+    height: 100%;
+    padding: var(--space-md);
+    background: none;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-sm);
+
+    @include respond(md) {
+        padding: var(--space-xl);
+    }
+
+    @include respond(lg) {
+        order: 2;
+        grid-column: 2;
+        grid-row: 1;
+        min-height: 500px;
+    }
 }
 
 .contact__field {
@@ -97,10 +119,10 @@
 
 .contact__input {
     width: 100%;
-    padding: var(--space-md) var(--space-lg);
+    padding: var(--space-sm) var(--space-lg);
     background: var(--color-input-bg);
     border: 1px solid var(--color-border);
-    border-radius: var(--radius-xs, 4px);
+    border-radius: var(--radius-xs);
     font-family: var(--font-body);
     font-size: var(--fs-body-sm);
     color: var(--color-text-primary);
@@ -121,40 +143,91 @@
 
 .contact__textarea {
     resize: vertical;
-    min-height: 140px;
+    min-height: 120px;
 }
 
-.contact__submit {
-    margin-top: var(--space-md);
-    width: 100%;
-    padding: 1.25rem;
-    background: var(--color-text-primary);
-    color: var(--color-bg);
-    border: none;
-    font-family: var(--font-body);
-    font-size: var(--fs-body-sm);
-    font-weight: var(--fw-medium);
-    letter-spacing: var(--ls-caption);
-    text-transform: uppercase;
-    cursor: pointer;
-    transition: 
-        background var(--transition-medium), 
-        transform var(--transition-medium);
+.contact__map-link {
+    display: block;
+    flex: 1;
+    overflow: hidden;
+    border-radius: var(--radius-sm);
+    border: 1px solid var(--color-border);
+    background: var(--color-surface-muted);
+    transition: opacity var(--transition-medium);
 
     @media (hover: hover) and (pointer: fine) {
         &:hover {
-            background: var(--color-text-primary);
-            opacity: 0.86;
+            opacity: 0.88;
         }
     }
 
-    &:active {
-        transform: scale(0.98);
+    @include respond(lg) {
+        min-height: 0;
     }
 }
 
+.contact__map {
+    display: block;
+    width: 100%;
+    height: 100%;
+    min-height: 18rem;
+    border: none;
+    pointer-events: none;
+
+    @include respond(md) {
+        min-height: 24rem;
+    }
+
+    @include respond(lg) {
+        min-height: 0;
+    }
+}
+
+.contact__details {
+    font-style: normal;
+    display: grid;
+    gap: var(--space-md);
+    padding-top: var(--space-sm);
+
+    p {
+        margin: 0;
+        font-size: var(--fs-body-sm);
+        line-height: var(--lh-body);
+        color: var(--color-text-secondary);
+
+        span {
+            color: var(--color-text-primary);
+            font-weight: var(--fw-medium);
+        }
+
+        a {
+            color: var(--color-text-secondary);
+            text-decoration: none;
+
+            &:hover {
+                color: var(--color-text-primary);
+            }
+        }
+    }
+}
+
+.contact__contact-phones {
+    word-break: break-word;
+
+    a {
+        white-space: nowrap;
+    }
+}
+
+.contact__submit-note {
+    margin: calc(-1 * var(--space-sm)) 0 0;
+    color: var(--color-text-secondary);
+    font-size: var(--fs-body-sm);
+    line-height: var(--lh-body);
+}
+
 @media (prefers-reduced-motion: reduce) {
-    .contact__submit {
+    .contact__map-link {
         transition: none;
     }
 }

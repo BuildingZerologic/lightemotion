@@ -5,30 +5,18 @@ import { Link, useParams } from "react-router-dom";
 
 import { getCollectionBySlug } from "../data/editorialCollections";
 import { getCollectionPageData } from "../data/collectionProducts";
-import { imageRevealVariants } from "../utils/motion";
+import {
+    EASE,
+    revealCard,
+    revealHeading,
+    revealParagraph,
+    revealSection,
+    staggerContainer,
+    viewportLow,
+} from "../utils/motion";
 import { resolveImageFallback } from "../utils/productImages";
 
 import "./Collection.scss";
-
-// ——————————————————————————————————————————————
-// Animation variants
-// ——————————————————————————————————————————————
-
-const gridReveal = {
-    hidden: {},
-    visible: {
-        transition: { staggerChildren: 0.06 },
-    },
-};
-
-const headerReveal = {
-    hidden: { opacity: 0, y: 20 },
-    visible: {
-        opacity: 1,
-        y: 0,
-        transition: { duration: 0.7, ease: [0.22, 1, 0.36, 1] },
-    },
-};
 
 // ——————————————————————————————————————————————
 // Page
@@ -67,10 +55,13 @@ export default function Collection() {
         <div className="collection-page" key={collectionSlug}>
 
             {/* ——— HERO BANNER ——— */}
-            <section
+            <motion.section
                 className="collection-hero"
                 data-navbar-transparent
                 aria-label={`${collection.title} collection hero`}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true, amount: 0.12 }}
             >
                 <motion.img
                     className="collection-hero__image"
@@ -79,41 +70,47 @@ export default function Collection() {
                     loading="eager"
                     fetchPriority="high"
                     decoding="async"
-                    initial={{ opacity: 0, scale: 1.025 }}
-                    animate={{ opacity: 1, scale: 1 }}
-                    transition={{ duration: 1, ease: [0.22, 1, 0.36, 1] }}
+                    initial={{ opacity: 0, scale: 1.04 }}
+                    whileInView={{ opacity: 1, scale: 1 }}
+                    viewport={{ once: true, amount: 0.12 }}
+                    transition={{ duration: 1, ease: EASE }}
                 />
 
                 <div className="collection-hero__overlay" aria-hidden="true" />
 
-                <motion.h1
+                <motion.h3
                     className="collection-hero__title"
                     initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true, amount: 0.12 }}
                     transition={{
-                        duration: 0.9,
+                        duration: 0.8,
                         delay: 0.4,
-                        ease: [0.22, 1, 0.36, 1],
+                        ease: EASE,
                     }}
                 >
                     {collection.title}
-                </motion.h1>
-            </section>
+                </motion.h3>
+            </motion.section>
 
             {/* ——— PRODUCT GROUPS ——— */}
-            <section
+            <motion.section
                 className="collection-body"
                 aria-label={`${collection.title} products`}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true, amount: 0.1 }}
+                variants={revealSection}
             >
                 <div className="container">
 
                     {collection.description && (
                         <motion.p
                             className="collection-body__description"
-                            initial={{ opacity: 0, y: 16 }}
-                            whileInView={{ opacity: 1, y: 0 }}
+                            variants={revealParagraph}
+                            initial="hidden"
+                            whileInView="visible"
                             viewport={{ once: true, amount: 0.5 }}
-                            transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
                         >
                             {collection.description}
                         </motion.p>
@@ -133,7 +130,7 @@ export default function Collection() {
                     )}
 
                 </div>
-            </section>
+            </motion.section>
 
         </div>
     );
@@ -145,7 +142,13 @@ export default function Collection() {
 
 function CollectionGroup({ group }) {
     return (
-        <div className="collection-group">
+        <motion.div
+            className="collection-group"
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.16 }}
+            variants={revealSection}
+        >
 
             {/* Group heading */}
             <motion.header
@@ -153,7 +156,7 @@ function CollectionGroup({ group }) {
                 initial="hidden"
                 whileInView="visible"
                 viewport={{ once: true, amount: 0.4 }}
-                variants={headerReveal}
+                variants={revealHeading}
             >
                 <h2 className="collection-group__title">
                     {group.subcategoryTitle}
@@ -165,14 +168,14 @@ function CollectionGroup({ group }) {
                 className="collection-grid"
                 initial="hidden"
                 whileInView="visible"
-                viewport={{ once: true, amount: 0.1 }}
-                variants={gridReveal}
+                viewport={viewportLow}
+                variants={staggerContainer}
             >
                 {group.productFamilies.map((family) => (
                     <motion.article
                         className="collection-card"
                         key={family.slug}
-                        variants={imageRevealVariants}
+                        variants={revealCard}
                     >
                         <Link
                             className="collection-card__link"
@@ -217,6 +220,6 @@ function CollectionGroup({ group }) {
                 ))}
             </motion.div>
 
-        </div>
+        </motion.div>
     );
 }

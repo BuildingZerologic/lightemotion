@@ -1,12 +1,12 @@
 @use "../../styles/abstracts/mixins" as *;
 
 .how-work {
-    padding-block: var(--space-3xl);
+    padding-block: var(--space-6xl);
 
     background: var(--color-surface-elevated);
 
     @include respond(md) {
-        padding-block: var(--space-4xl);
+        padding-block: var(--space-6xl);
     }
 }
 
@@ -112,7 +112,7 @@
 
     font-family: var(--font-heading);
 
-    font-size: var(--fs-h2);
+    font-size: var(--fs-body);
 
     font-weight: var(--fw-regular);
 
@@ -152,19 +152,7 @@
 
     margin: 0;
 
-    font-size: var(--fs-body);
-
-    line-height: var(--lh-body);
-
-    letter-spacing: var(--ls-normal);
-
     color: var(--color-text-secondary);
 
-    @include respond(md) {
-        font-size: var(--fs-body-lg);
-    }
-
-    @include respond(lg) {
-        font-size: var(--fs-body);
-    }
+   
 }

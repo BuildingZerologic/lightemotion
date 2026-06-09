@@ -1,0 +1,238 @@
+@use "../../styles/abstracts/mixins" as *;
+
+/* =====================================================
+   SECTION WRAPPER
+===================================================== */
+
+.projects-grid-section {
+    padding-bottom: var(--space-6xl);
+
+    background: var(--color-bg);
+}
+
+
+/* =====================================================
+   FILTERS
+===================================================== */
+
+.projects-filters {
+    margin-bottom: var(--space-3xl);
+
+    @include respond(lg) {
+        margin-bottom: var(--space-4xl);
+    }
+}
+
+.projects-filters__list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-xs) var(--space-sm);
+
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.projects-filters__btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    height: 2.25rem;
+
+    padding-inline: var(--space-md);
+
+    border: 1px solid var(--color-border-strong);
+    border-radius: var(--radius-full);
+
+    background: transparent;
+
+    font-family: var(--font-body);
+    font-size: 0.65rem;
+    font-weight: var(--fw-medium);
+    letter-spacing: var(--ls-caption);
+    text-transform: uppercase;
+
+    color: var(--color-text-secondary);
+
+    cursor: pointer;
+
+    transition:
+        background-color var(--transition-fast),
+        color var(--transition-fast),
+        border-color var(--transition-fast);
+
+    &.is-active {
+        background: var(--color-text-primary);
+        border-color: var(--color-text-primary);
+        color: var(--color-bg);
+    }
+
+    @media (hover: hover) and (pointer: fine) {
+        &:not(.is-active):hover {
+            border-color: var(--color-text-primary);
+            color: var(--color-text-primary);
+        }
+    }
+}
+
+
+/* =====================================================
+   GRID
+===================================================== */
+
+.projects-grid {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-xl);
+
+    @include respond(md) {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        align-items: start;
+        gap: var(--space-xl) var(--space-lg);
+    }
+
+    @include respond(lg) {
+        grid-template-columns: repeat(3, 1fr);
+        align-items: start;
+        gap: var(--space-2xl) var(--space-xl);
+    }
+}
+
+
+/* =====================================================
+   PROJECT CARD
+===================================================== */
+
+.project-card {
+    min-width: 0;
+}
+
+.project-card__link {
+    display: block;
+    text-decoration: none;
+    color: inherit;
+    cursor: pointer;
+}
+
+/* ── Image ── */
+
+.project-card__image-wrap {
+    aspect-ratio: 3 / 2;
+
+    overflow: hidden;
+
+    background: var(--color-surface);
+
+    border-radius: var(--radius-xs);
+
+    margin-bottom: var(--space-md);
+
+    position: relative;
+}
+
+.project-card__image-placeholder {
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: var(--color-surface);
+
+    transition: transform 0.65s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.project-card__placeholder-text {
+    font-family: var(--font-heading);
+    font-size: var(--fs-h5);
+    font-weight: var(--fw-medium);
+    color: var(--color-text-secondary);
+    opacity: 0.28;
+    text-align: center;
+    padding: var(--space-md);
+    line-height: var(--lh-heading);
+}
+
+/* ── Real image (when added later) ── */
+
+.project-card__image {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: var(--radius-xs);
+
+    transition:
+        transform 0.65s cubic-bezier(0.22, 1, 0.36, 1),
+        filter 0.65s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* ── Card content ── */
+
+.project-card__content {
+    padding-top: var(--space-xs);
+    padding-bottom: var(--space-xs);
+}
+
+.project-card__category {
+    margin: 0 0 var(--space-xs);
+
+    font-size: 0.6rem;
+    font-weight: var(--fw-medium);
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    line-height: var(--lh-heading);
+    color: var(--color-text-secondary);
+    opacity: 0.7;
+}
+
+.project-card__name {
+    margin: 0 0 var(--space-xs);
+
+    font-family: var(--font-heading);
+    font-size: var(--fs-h5);
+    font-weight: var(--fw-medium);
+    line-height: var(--lh-heading);
+    color: var(--color-text-primary);
+}
+
+.project-card__location {
+    margin: 0;
+
+    font-size: var(--fs-body-sm);
+    color: var(--color-text-secondary);
+    line-height: var(--lh-body);
+}
+
+/* ── Hover interactions ── */
+
+@media (hover: hover) and (pointer: fine) {
+    .project-card__link:hover .project-card__image-placeholder {
+        transform: scale(1.025);
+    }
+
+    .project-card__link:hover .project-card__image {
+        transform: scale(1.025);
+        filter: brightness(0.94);
+    }
+
+    .project-card__link:hover .project-card__name {
+        opacity: 0.7;
+        transition: opacity var(--transition-fast);
+    }
+}
+
+
+/* =====================================================
+   EMPTY STATE
+===================================================== */
+
+.projects-grid__empty {
+    text-align: center;
+    color: var(--color-text-secondary);
+    padding: var(--space-5xl) 0;
+    font-size: var(--fs-body);
+}

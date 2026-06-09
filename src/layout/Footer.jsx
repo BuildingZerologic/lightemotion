@@ -2,72 +2,46 @@ import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 
 import logo from "../assets/brand/light-emotion-logo.png";
-import { imageReveal } from "../utils/motion";
+import { editorialCollections } from "../data/editorialCollections";
+
+import {
+    revealFooterLogo,
+    revealSection,
+    staggerContainer,
+    staggerFast,
+    viewport,
+} from "../utils/motion";
 
 import "./Footer.scss";
 
 const footerColumns = [
     {
         title: "Products",
-        links: [
-            { label: "Industrial Lighting", href: "/" },
-            { label: "Ceiling Lighting",    href: "/" },
-            { label: "Decorative Lighting", href: "/" },
-            { label: "Outdoor Lighting",    href: "/" },
-            { label: "Track Lighting",      href: "/" },
-            { label: "Linear Lighting",     href: "/" },
-            { label: "Panel Lighting",      href: "/" },
-        ],
+        links: editorialCollections.map((collection) => ({
+            label: collection.title,
+            to: `/collections/${collection.slug}`,
+        })),
     },
     {
         title: "Information",
         links: [
-            { label: "Home",               to: "/" },
-            { label: "Services",           to: "/services" },
-            { label: "About",              to: "/about" },
-            { label: "Privacy Policy",     href: "#" },
-            { label: "Terms & Conditions", href: "#" },
+            { label: "Home", to: "/" },
+            { label: "Services", to: "/services" },
+            {label: "Projects", to: "/projects"},
+            { label: "About", to: "/about" },
+            { label: "Contact", to: "/contact" },
         ],
     },
+
     {
         title: "Social Media",
         links: [
-            { label: "Facebook",  href: "#" },
-            { label: "Instagram", href: "#" },
-            { label: "Pinterest", href: "#" },
-            { label: "LinkedIn",  href: "#" },
+            { label: "Instagram", to: "https://www.instagram.com/lightemotion.in" },
+            { label: "Linkedin", to: "https://www.linkedin.com/company/light-emotion/" },
+            { label: "Facebook", to: "https://www.facebook.com/share/1BJ1DANrvE/" },
         ],
     },
 ];
-
-const offices = [
-    {
-        country: "India",
-        lines: [
-            "E-3/14, Basement, Bodhi Marg,",
-            "DLF Phase-1, Gurugram - 122002",
-            "+91 888 888 8888",
-        ],
-    },
-];
-
-const containerReveal = {
-    hidden: {},
-    visible: {
-        transition: {
-            staggerChildren: 0.08,
-        },
-    },
-};
-
-const itemReveal = {
-    hidden: { opacity: 0, y: 30 },
-    visible: {
-        opacity: 1,
-        y: 0,
-        transition: { duration: 0.8 },
-    },
-};
 
 export default function Footer() {
     return (
@@ -76,25 +50,33 @@ export default function Footer() {
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, amount: 0.16 }}
-            variants={containerReveal}
+            variants={staggerContainer}
         >
             <div className="container">
 
                 <div className="site-footer__top">
-                    <motion.p className="site-footer__intro" variants={itemReveal}>
-                        We craft architectural lighting experiences that enhance spaces, shape atmosphere, and elevate the way people live, work, and connect. Thoughtfully designed for hospitality, retail, commercial, and luxury residential environments.
-                    </motion.p>
+                    <div>
+                        <motion.p className="site-footer__intro" variants={revealSection}>
+                            We craft architectural lighting experiences that enhance spaces, shape atmosphere, and elevate the way people live, work, and connect. Thoughtfully designed for hospitality, retail, commercial, and luxury residential environments.
+                        </motion.p>
+
+                        <motion.div className="footer-contact" variants={revealSection}>
+                            <Link to="/contact" className="btn-secondary">
+                                Let's Connect
+                            </Link>
+                        </motion.div>
+                    </div>
 
                     <motion.div
                         className="site-footer__nav-grid"
-                        variants={containerReveal}
+                        variants={staggerFast}
                     >
                         {footerColumns.map((column) => (
                             <motion.nav
                                 className="site-footer__nav"
                                 aria-label={column.title}
                                 key={column.title}
-                                variants={itemReveal}
+                                variants={revealSection}
                             >
                                 <h2 className="site-footer__nav-title">
                                     {column.title}
@@ -121,12 +103,34 @@ export default function Footer() {
                 </div>
 
                 <div className="site-footer__middle">
+                    <motion.div
+                        className="site-footer__contact-wrap"
+                        variants={revealSection}
+                    >
+                        <address className="site-footer__contact">
+                            <p className="site-footer__contact-phones">
+                                <span>Ph.No.:</span>{" "}
+                                <a href="tel:+919999848200">9999848200</a>{" | "}
+                                <a href="tel:+919891233340">9891233340</a>{" | "}
+                                <a href="tel:+919899616500">9899616500</a>{" | "}
+                                <a href="tel:+919811039947">9811039947</a>
+                            </p>
+                            <p>
+                                <span>Email:</span>{" "}
+                                <a href="mailto:info@lightemotion.in">info@lightemotion.in</a>
+                            </p>
+                            <p>
+                                <span>Address:</span>{" "}
+                                E-3/14, Basement, Bodhi Marg, DLF Phase-1, Gurugram - 122002, INDIA
+                            </p>
+                        </address>
+                    </motion.div>
 
                     <motion.a
                         className="site-footer__brand"
                         href="/"
                         aria-label="Light Emotion homepage"
-                        {...imageReveal}
+                        variants={revealFooterLogo}
                     >
                         <img
                             src={logo}
@@ -138,56 +142,14 @@ export default function Footer() {
                         />
                     </motion.a>
 
-                    <motion.div
-                        className="site-footer__right"
-                        variants={containerReveal}
-                    >
-
-                        <motion.div
-                            className="site-footer__offices"
-                            variants={containerReveal}
-                        >
-                            {offices.map((office) => (
-                                <motion.address
-                                    className="site-footer__office"
-                                    key={office.country}
-                                    variants={itemReveal}
-                                >
-                                     
-
-                                    {office.lines.map((line) => (
-                                        <p key={line}>
-                                            {line}
-                                        </p>
-                                    ))}
-                                </motion.address>
-                            ))}
-                        </motion.div>
-
-                        <motion.div variants={itemReveal}>
-                            <Link to="/contact" className="btn-secondary">
-                                Let's Connect
-                            </Link>
-                        </motion.div>
-
-                    </motion.div>
-
                 </div>
 
-                <motion.div className="site-footer__legal" variants={itemReveal}>
+                <motion.div className="site-footer__legal" variants={revealSection}>
+
                     <p>
-                        &copy; Light Emotion 2026. All rights reserved.
+                        &copy; LightEmotion 2026. All rights reserved.
                     </p>
 
-                    {/* <div className="site-footer__legal-links">
-                        <a href="/">
-                            Privacy Policy
-                        </a>
-
-                        <a href="/">
-                            Terms & Conditions
-                        </a>
-                    </div> */}
                 </motion.div>
 
             </div>

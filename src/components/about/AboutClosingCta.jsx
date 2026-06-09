@@ -1,33 +1,66 @@
+import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
+
+import {
+    revealButton,
+    revealHeading,
+    revealParagraph,
+    revealSection,
+    staggerFast,
+    viewport,
+} from "../../utils/motion";
+
 import "./AboutClosingCta.scss"
 
 export default function AboutClosingCta() {
     return (
-        <section className="about-closing-cta">
+        <motion.section
+            className="about-closing-cta"
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.2 }}
+            variants={revealSection}
+        >
             <div className="container">
-                <div className="about-closing-cta__inner">
-                    <div className="about-closing-cta__content">
-                        <h3 className="about-closing-cta__heading heading-lg">
+                <motion.div
+                    className="about-closing-cta__inner"
+                    variants={staggerFast}
+                    initial="hidden"
+                    whileInView="visible"
+                    viewport={{ once: true, amount: 0.3 }}
+                >
+                    <motion.div
+                        className="about-closing-cta__content"
+                        variants={revealHeading}
+                    >
+                        <h5 className="about-closing-cta__heading">
                             Have a vision for a space?
-                        </h3>
+                        </h5>
 
-                        <p className="about-closing-cta__text body-lg">
+                        <motion.p
+                            className="about-closing-cta__text"
+                            variants={revealParagraph}
+                        >
                             Let us bring technical precision and artistic
                             sensitivity to your next project.
-                        </p>
-                    </div>
-                    <div className="about-closing-cta__actions">
-                        <a
-                            href="/contact"
+                        </motion.p>
+                    </motion.div>
+                    <motion.div
+                        className="about-closing-cta__actions"
+                        variants={revealButton}
+                    >
+                        <Link
+                            to="/contact"
                             className="btn-secondary"
                         >
                             Discuss a Project
-                        </a>
+                        </Link>
 
 
-                    </div>
+                    </motion.div>
 
-                </div>
+                </motion.div>
             </div>
-        </section>
+        </motion.section>
     );
 }

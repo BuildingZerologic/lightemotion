@@ -1,0 +1,76 @@
+@use "../../styles/abstracts/mixins" as *;
+
+.project-concept {
+    padding-block: var(--space-2xl);
+ 
+    @include respond(md) {
+        padding-block: var(--space-3xl);
+    }
+
+    
+}
+
+.project-concept__intro {
+    max-width: 100%;
+    margin-bottom: var(--space-xl);
+
+    @include respond(md) {
+        margin-bottom: var(--space-2xl);
+        max-width: 70%;
+    }
+}
+
+.project-concept__eyebrow {
+    margin: 0 0 var(--space-md);
+    font-size: 0.62rem;
+    font-weight: var(--fw-medium);
+    letter-spacing: var(--ls-caption);
+    text-transform: uppercase;
+    color: var(--color-text-secondary);
+    opacity: 0.7;
+}
+
+// .project-concept__title {
+//     margin: 0 0 var(--space-lg);
+// }
+
+.project-concept__body {
+    margin: 0;
+    color: var(--color-text-secondary);
+}
+
+.project-concept__grid {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-xl);
+
+    @include respond(md) {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: var(--space-xl);
+    }
+
+    @include respond(lg) {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: var(--space-2xl);
+    }
+}
+
+.project-concept__title {
+    margin: 0 0 var(--space-lg);
+}
+
+.project-concept__item-title {
+    margin: 0 0 var(--space-sm);
+    font-size: var(--fs-h5);
+}
+
+.project-concept__item-text {
+    margin: 0;
+    color: var(--color-text-secondary);
+    text-wrap: balance;
+
+    @include respond(lg) {
+        max-width: 25rem;
+    }
+}

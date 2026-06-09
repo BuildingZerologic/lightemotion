@@ -1,15 +1,12 @@
 @use "../../styles/abstracts/mixins" as *;
 
 .about-hero {
-    padding-top: var(--space-5xl);
 
-    background: var(--color-surface-elevated);
+     background: var(--color-surface-elevated);
 
     overflow: hidden;
 
-    @include respond(md) {
-        padding-top: var(--space-6xl);
-    }
+   
 }
 
 .about-hero__content {
@@ -21,42 +18,33 @@
 
     align-items: flex-start;
 
-
-    padding-bottom: var(--space-3xl);
-
     text-align: left;
 
-    @include respond(md) {
-        padding-bottom: var(--space-4xl);
+    padding-top: calc(var(--space-4xl) + var(--navbar-height-compact));
+    padding-bottom: var(--space-4xl);
+
+     @include respond(md) {
+        padding-block: var(--space-6xl);
     }
 }
 
 .about-hero__title {
     margin: 0 0 var(--space-lg);
 
-    font-weight: var(--fw-medium);
-
-    line-height: var(--lh-tight);
-
-    letter-spacing: var(--ls-tight);
-
-    color: var(--color-text-primary);
 
     @include respond(md) {
         margin-bottom: var(--space-2xl);
 
-         
+
     }
 }
 
 .about-hero__description {
-    max-width: 50rem;
 
     margin: 0;
 
-    color: var(--color-text-primary);
-
     @include respond(md) {
+        max-width: 50rem;
     }
 }
 
@@ -84,7 +72,7 @@
 
     z-index: 1;
 
-    background: rgb(0,0,0, 0.2);
+    background: rgb(0, 0, 0, 0.2);
 }
 
 .about-hero__video {

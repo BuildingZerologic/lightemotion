@@ -5,7 +5,12 @@ import pendantLighting from "../../assets/categories/pendant-lighting.jpg";
 import hospitalityLighting from "../../assets/categories/hospitality-lighting.jpg";
 import commercialLighting from "../../assets/categories/commercial-lighting.jpg";
 
-import { imageRevealVariants } from "../../utils/motion";
+import {
+    revealCard,
+    revealHeading,
+    staggerContainer,
+    viewportLow,
+} from "../../utils/motion";
 
 import "./ShopByCategory.scss";
 
@@ -32,48 +37,43 @@ const categories = [
     },
 ];
 
-const sectionReveal = {
-    hidden: {},
-    visible: {
-        transition: {
-            staggerChildren: 0.12,
-        },
-    },
-};
-
-const itemReveal = {
-    ...imageRevealVariants,
-};
-
+// Parked: the current homepage uses EditorialCollections as the active category entry point.
 export default function ShopByCategory() {
     return (
-        <section className="shop-category" aria-labelledby="shop-category-title">
+        <motion.section
+            className="shop-category"
+            aria-labelledby="shop-category-title"
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.18 }}
+            variants={staggerContainer}
+        >
 
             <div className="container">
 
                 <motion.h3
                     className="shop-category__heading"
                     id="shop-category-title"
-                    initial={{ opacity: 0, y: 30 }}
-                    whileInView={{ opacity: 1, y: 0 }}
+                    variants={revealHeading}
+                    initial="hidden"
+                    whileInView="visible"
                     viewport={{ once: true, amount: 0.5 }}
-                    transition={{ duration: 0.8 }}
                 >
                     Shop By Category
                 </motion.h3>
 
                 <motion.div
                     className="shop-category__grid"
-                    variants={sectionReveal}
+                    variants={staggerContainer}
                     initial="hidden"
                     whileInView="visible"
-                    viewport={{ once: true, amount: 0.18 }}
+                    viewport={viewportLow}
                 >
                     {categories.map((category) => (
                         <motion.article
                             className="shop-category__card"
                             key={category.title}
-                            variants={itemReveal}
+                            variants={revealCard}
                         >
                             <img
                                 className="shop-category__image"
@@ -94,6 +94,6 @@ export default function ShopByCategory() {
 
             </div>
 
-        </section>
+        </motion.section>
     );
 }

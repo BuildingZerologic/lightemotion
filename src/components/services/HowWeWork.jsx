@@ -1,5 +1,13 @@
 import { motion, useReducedMotion } from "framer-motion";
 
+import {
+    EASE,
+    revealCard,
+    revealHeading,
+    staggerContainer,
+    viewport,
+} from "../../utils/motion";
+
 import "./HowWeWork.scss";
 
 const processItems = [
@@ -29,53 +37,38 @@ const processItems = [
     },
 ];
 
-const ease = [0.22, 1, 0.36, 1];
-
 export default function HowWeWork() {
     const shouldReduceMotion = useReducedMotion();
 
+    // Respect prefers-reduced-motion at the component level
     const introReveal = {
-        hidden: {
-            opacity: 0,
-            y: shouldReduceMotion ? 0 : 28,
-        },
-        visible: {
-            opacity: 1,
-            y: 0,
-            transition: {
-                duration: shouldReduceMotion ? 0.01 : 0.8,
-                ease,
-            },
-        },
-    };
-
-    const processReveal = {
-        hidden: {},
-        visible: {
-            transition: {
-                delayChildren: shouldReduceMotion ? 0 : 0.85,
-                staggerChildren: shouldReduceMotion ? 0 : 0.18,
-            },
-        },
+        hidden:  { opacity: 0, y: shouldReduceMotion ? 0 : 24 },
+        visible: { opacity: 1, y: 0, transition: { duration: shouldReduceMotion ? 0.01 : 0.8, ease: EASE } },
     };
 
     const itemReveal = {
-        hidden: {
-            opacity: 0,
-            y: shouldReduceMotion ? 0 : 24,
-        },
+        hidden:  { opacity: 0, y: shouldReduceMotion ? 0 : 32 },
+        visible: { opacity: 1, y: 0, transition: { duration: shouldReduceMotion ? 0.01 : 0.75, ease: EASE } },
+    };
+
+    const processReveal = {
+        hidden:  {},
         visible: {
-            opacity: 1,
-            y: 0,
             transition: {
-                duration: shouldReduceMotion ? 0.01 : 0.68,
-                ease,
+                delayChildren: shouldReduceMotion ? 0 : 0.6,
+                staggerChildren: shouldReduceMotion ? 0 : 0.12,
             },
         },
     };
 
     return (
-        <section className="how-work" aria-labelledby="how-work-title">
+        <motion.section
+            className="how-work"
+            aria-labelledby="how-work-title"
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.3 }}
+        >
             <div className="container">
                 <motion.div
                     className="how-work__grid"
@@ -87,14 +80,12 @@ export default function HowWeWork() {
                         className="how-work__intro"
                         variants={introReveal}
                     >
-                        {/* <h5 className="how-work__eyebrow">How We Work</h5> */}
-
-                        <h2
+                        <h3
                             className="how-work__heading"
                             id="how-work-title"
                         >
                             How We Work
-                        </h2>
+                        </h3>
                     </motion.div>
 
                     <motion.div
@@ -130,6 +121,6 @@ export default function HowWeWork() {
                     </motion.div>
                 </motion.div>
             </div>
-        </section>
+        </motion.section>
     );
 }

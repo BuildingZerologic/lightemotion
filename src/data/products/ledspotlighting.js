@@ -3,13 +3,13 @@ const LEDspotlighting = {
 
   subcategories: [
     {
-      name: "Deep Recessed & Anti-Glare Downlights",
+      name: "Recessed Downlights",
       productFamilies: [
         {
           name: "LED GLORIOUS R2 DOWNLIGHT",
           slug: "led-glorious-r2-downlight",
           category: "Downlights & Accent Lighting",
-          subcategory: "Deep Recessed & Anti-Glare Downlights",
+          subcategory: "Recessed Downlights",
           shortDescription: "Premium deep recessed antiglare downlight featuring a front loading structural design and integrated Herculex performance lens technology.",
           thumbnail: "assets/images/products/led-glorious-r2-downlight.jpg",
           variants: [
@@ -70,7 +70,7 @@ const LEDspotlighting = {
           name: "LED GLORIOUS PRO DOWNLIGHT",
           slug: "led-glorious-pro-downlight",
           category: "Downlights & Accent Lighting",
-          subcategory: "Deep Recessed & Anti-Glare Downlights",
+          subcategory: "Recessed Downlights",
           shortDescription: "Premium structural anti-glare downlight boasting a sleek minimal aesthetic and high maintenance ease via front-loading hardware.",
           thumbnail: "assets/images/products/led-glorious-pro-downlight.jpg",
           variants: [
@@ -113,7 +113,7 @@ const LEDspotlighting = {
           name: "LED SWORD DOWNLIGHT",
           slug: "led-sword-downlight",
           category: "Downlights & Accent Lighting",
-          subcategory: "Deep Recessed & Anti-Glare Downlights",
+          subcategory: "Recessed Downlights",
           shortDescription: "Premium deep recessed anti-glare spot downlight featuring an elegant 2-step removal design mechanism.",
           thumbnail: "assets/images/products/round-face-ring.jpg",
           variants: [
@@ -210,7 +210,7 @@ const LEDspotlighting = {
           name: "LED SKYFALL DOWNLIGHT",
           slug: "led-skyfall-downlight",
           category: "Downlights & Accent Lighting",
-          subcategory: "Deep Recessed & Anti-Glare Downlights",
+          subcategory: "Recessed Downlights",
           shortDescription: "High-grade anti-glare architectural spotlight configuration tailored with customizable secondary shields.",
           thumbnail: "assets/images/products/led-skyfall-downlight.jpg",
           variants: [
@@ -231,7 +231,7 @@ const LEDspotlighting = {
           name: "LED GLIMMER DOWNLIGHT",
           slug: "led-glimmer-downlight",
           category: "Downlights & Accent Lighting",
-          subcategory: "Deep Recessed & Anti-Glare Downlights",
+          subcategory: "Recessed Downlights",
           shortDescription: "Extremely compact architectural deep recessed spot utilizing performance anti-glare physics and versatile reflector inserts.",
           thumbnail: "assets/images/products/led-glimmer-downlight.jpg",
           variants: [
@@ -275,7 +275,7 @@ const LEDspotlighting = {
           name: "LED NINJA DOWNLIGHT",
           slug: "led-ninja-downlight",
           category: "Downlights & Accent Lighting",
-          subcategory: "Deep Recessed & Anti-Glare Downlights",
+          subcategory: "Recessed Downlights",
           shortDescription: "Micro-scale premium structural anti-glare light engine offered in an extensive palette of electroplated architectural finishes.",
           thumbnail: "assets/images/products/led-ninja-downlight.jpg",
           variants: [
@@ -326,7 +326,7 @@ const LEDspotlighting = {
           name: "LED LOTUS R2 DOWNLIGHT",
           slug: "led-lotus-r2-downlight",
           category: "Downlights & Accent Lighting",
-          subcategory: "Deep Recessed & Anti-Glare Downlights",
+          subcategory: "Recessed Downlights",
           shortDescription: "Elongated architectural deep recessed downlight system blending fine spatial visual comfort with a high-end ultra-thin bezel profile.",
           thumbnail: "assets/images/products/led-lotus-r2-downlight.jpg",
           variants: [
@@ -609,7 +609,7 @@ const LEDspotlighting = {
           name: "LED JAWA LOW DEPTH TRIMLESS WALLWASHER",
           slug: "led-jawa-low-depth-trimless-wallwasher",
           category: "Downlights & Accent Lighting",
-          subcategory: "Wallwasher Downlights",
+          subcategory: "Wallwasher",
           shortDescription: "Shallow recess architectural wallwasher component explicitly structured for extremely tight ceiling plenum restrictions.",
           thumbnail: "assets/images/products/led-jawa-low-depth-trimless-wallwasher.jpg",
           variants: [
@@ -747,13 +747,13 @@ const LEDspotlighting = {
     },
 
     {
-      name: "Miniature & Niche Lighting",
+      name: "Niche Lights",
       productFamilies: [
         {
           name: "LED MINIATURE DOWNLIGHT",
           slug: "led-miniature-downlight",
           category: "Downlights & Accent Lighting",
-          subcategory: "Miniature & Niche Lighting",
+          subcategory: "Niche Lights",
           shortDescription: "Ultra small structural deep recessed downlights equipped with highly robust aluminum fin thermal management.",
           thumbnail: "assets/images/products/led-miniature-downlight.jpg",
           variants: [
@@ -783,7 +783,7 @@ const LEDspotlighting = {
           name: "LED NICHE LIGHT",
           slug: "led-niche-light",
           category: "Downlights & Accent Lighting",
-          subcategory: "Miniature & Niche Lighting",
+          subcategory: "Niche Lights",
           shortDescription: "Micro structural accent fixtures explicitly packaged for tight spatial niches, product cabinets, and fine showcases.",
           thumbnail: "assets/images/products/led-niche-light.jpg",
           variants: [
@@ -806,13 +806,13 @@ const LEDspotlighting = {
     },
 
     {
-      name: "Wallwasher Downlights",
+      name: "Wallwasher",
       productFamilies: [
         {
           name: "LED SKYFALL R2 DOWNLIGHT",
           slug: "led-skyfall-r2-downlight",
           category: "Downlights & Accent Lighting",
-          subcategory: "Wallwasher Downlights",
+          subcategory: "Wallwasher",
           shortDescription: "Premium anti-glare downlight configuration housing high performance precision asymmetric wallwasher optics.",
           thumbnail: "assets/images/products/led-skyfall-r2-downlight.jpg",
           variants: [
@@ -831,7 +831,7 @@ const LEDspotlighting = {
           name: "LED ELVIN WALLWASHER DOWNLIGHT",
           slug: "led-elvin-wallwasher-downlight",
           category: "Downlights & Accent Lighting",
-          subcategory: "Wallwasher Downlights",
+          subcategory: "Wallwasher",
           shortDescription: "Low operational height wallwasher array engineered with an ultra-low glare rating and full 355° structural pivot tracking.",
           thumbnail: "assets/images/products/led-elvin-wallwasher-downlight.jpg",
           variants: [
@@ -855,13 +855,13 @@ const LEDspotlighting = {
     },
 
     {
-      name: "Twin & Multi-Module Downlights",
+      name: "Multi-Light Downlights",
       productFamilies: [
         {
           name: "LED MEGATWIN DOWNLIGHT",
           slug: "led-megatwin-downlight",
           category: "Downlights & Accent Lighting",
-          subcategory: "Twin & Multi-Module Downlights",
+          subcategory: "Multi-Light Downlights",
           shortDescription: "Dual-head layout architectural spot modules offering adjustable directional pointing and a wide variety of structural front-load trims.",
           thumbnail: "assets/images/products/led-megatwin-downlight.jpg",
           variants: [
@@ -1511,13 +1511,13 @@ const LEDspotlighting = {
     },
 
     {
-      name: "Linear Profile Systems",
+      name: "Linear Profiles",
       productFamilies: [
         {
           name: "LED MAGNA BLADE PROFILE",
           slug: "led-magna-blade-profile",
           category: "Downlights & Accent Lighting",
-          subcategory: "Linear Profile Systems",
+          subcategory: "Linear Profiles",
           shortDescription: "Ultra thin customizable linear profile channels enabling integration across spotlights, tracks, and continuous diffusers.",
           thumbnail: "assets/images/products/led-magna-blade-profile.jpg",
           variants: [
